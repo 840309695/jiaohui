@@ -1,0 +1,57 @@
+@charset "utf-8";html{background-color:#f7f7f7}
+a{color:#039;text-decoration:none}
+a:link,a:visited{color:#039}
+a:hover{color:#ff7300;text-decoration:underline}
+.global-toplink a:link,.global-toplink a:visited{color:#666}
+.ui-footer{background-color:#f7f7f7;border-top:1px solid #d9d9d9;margin-top:40px}
+.ui-footer-ctn{line-height:26px;margin:0 auto;padding:10px 0;text-align:center;width:950px}
+.ui-separator{margin:0 5px}
+#ServerNum{color:#f7f7f7}
+.ui-footer-link a:Link,.ui-footer-link a:visited{color:#08c}
+.the-alipay-global{background-color:#f7f7f7}
+#global-header-area h2{color:#666;float:left;line-height:30px}
+#global-header-area{height:30px;margin:0 auto;padding:0;width:950px}
+#global-header-more:after,.global-dropdown-hd:after,.global-dropdown-hd-msg:after,.global-dropdown-hd-normal:after,.global-dropdown:after,.global-dropdown-bd-cnt .global-list li:after,.global-toplink:after,.ui-footer:after{content:none}
+.global-toplink .global-toplink-more,.global-toplink .global-toplink-msg,.global-toplink .global-toplink-user{*position:relative;*top:1px}
+.global-toplink .global-toplink-user{*top:0}
+.global-toplink a.ul-item,.global-separator{*position:relative;*top:-3px;_top:-5px}
+#global-header-user .global-dropdown-hd-normal,#global-header-msg .global-dropdown-hd-msg,#global-header-more .global-dropdown-hd-normal{_display:inline}
+.a-alipay{display:block;height:67px;width:128px}
+.a-help{display:block;height:40px;left:143px;position:absolute;top:20px;width:146px}
+.a-return{background:url("images/1qq8QDwBcf.png") repeat scroll 0 0 transparent;height:29px;position:absolute;right:0;top:30px;width:116px}
+.sideUnit .side-header,.sideUnit .side-image{background:url("images/1qq8QAkxDN.png") repeat scroll 0 0 transparent;color:#4c4c4c;text-indent:-9999px}
+.sideUnit .side-image{background-position:0 -51px;height:75px;margin-bottom:10px;text-indent:-9999px}
+.tabHead{left:14px}
+.help-nav{background:url("images/1qq8QE4OCv.png") repeat scroll 0 0 transparent;height:67px}
+.help-nav-cont{margin:0 auto;position:relative;width:950px}
+.help-nav-logo{background:url("images/1qq8QEPL7B.png") repeat scroll 0 0 transparent;height:67px;width:287px}
+#inputsearch{height:28px;width:438px;border:1px solid #1874b7;margin:15px 0 0 12px;vertical-align:middle;line-height:28px;float:left;padding:0 2px}
+.tabBody .btnSearch{background:url("images/1qq8QHnK6b.png") repeat scroll 0 0 transparent;height:30px;margin-top:15px;position:static;vertical-align:middle;width:81px;float:left}
+.searchsel{left:15px;top:75px;width:440px;border:1px solid #666;position:absolute;z-index:1000;font-size:12px;background:#FFF;text-align:left;display:none}
+.searchsel a{display:block;height:20px;line-height:20px;cursor:hand;color:#000;text-decoration:none;padding:0 3px}
+.tiplinkstitle a{color:#000}
+.tiplinkstitle a:visited{color:#000}
+#search,#search ul,#search li{margin:0;padding:0}
+.Input{position:relative}
+.searchsel ul{list-style:none outside;padding:0;margin:0}
+.searchsel li{height:20px}
+.searchsel li a,.searchsel li a:link,.searchsel li a:visited,.searchsel li a:hover{text-decoration:none}
+.searchsel li a span{text-decoration:none}
+.searchsel span{float:right;color:#090;text-decoration:none}
+.searchsel span b{font-size:12px;font-weight:normal;text-decoration:none}
+.tabBody-left,.tabBody-center,.tabBody-right,.tab-head-current .item-left,.tab-head-current .item-center,.tab-head-current .item-right{background-image:url("images/1qq8QHnK6b.png");float:left;height:57px;width:3px}
+.tab-head-item .item-left,.tab-head-item .item-center,.tab-head-item .item-right{float:left}
+.tabBody-left{background-position:0 -90px}
+.tabBody-center{background-position:0 -147px;width:944px}
+.tabBody-right{background-position:-4px -90px}
+.tabBody{background:0;height:58px}
+.tab-head-item,.tab-head-current{float:left}
+.tab-head-current .item-left,.tab-head-current .item-center,.tab-head-current .item-right{height:30px}
+.tabHead a,.tabHead a:hover,.tabHead a:link,.tabHead a:visited{background:0;text-decoration:none;color:#374060}
+.tabHead a span{background:0;font-size:15px;font-weight:bold;height:auto;line-height:30px;margin-top:3px}
+.tabHead .tab-head-current a span{color:#FFF}
+.tab-head-current .item-left{background-position:0 -30px}
+.tab-head-current .item-center{background-position:0 -60px;width:auto}
+.tab-head-current .item-right{background-position:-6px -30px}
+.tabContainer{padding-top:32px;margin-top:10px}
+.phone{color:#fff;float:right;margin:32px 6px 0 0}

@@ -1,0 +1,1 @@
+JSONP_CALLBACK_3_0({"r":0,"isAuto":1,"autoTime":10,"autoMsg":"\u60a8\u597d\uff0c\u8bf7\u95ee\u6709\u4ec0\u4e48\u53ef\u4ee5\u5e2e\u5230\u60a8\uff1f\u8bf7\u63a5\u53d7\u804a\u5929\u9080\u8bf7\u3002","gap":10,"hbDomain":"http:\/\/hb.crm2.qq.com"})

@@ -1,0 +1,651 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0025)http://weixin.qcloud.com/ -->
+<html data-ember-extension="1"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>成功案例－{pigcms:$f_siteName}</title>
+    <meta name="keywords" content="{pigcms:$f_siteName} 微信帮手 微信公众账号 微信公众平台 微信公众账号开发 微信二次开发 微信接口开发 微信托管服务 微信营销 微信公众平台接口开发"/>
+<meta name="description" content="微信公众平台接口开发、托管、营销活动、二次开发"/>
+     <script type="text/javascript" src="{pigcms::RES}/js/jquery.js" ></script>
+    <script async="" src="{pigcms::RES}/analytics.js"></script>
+
+    <script type="text/javascript">
+  var _speedMark = new Date();
+  </script>
+    <link href="{pigcms::RES}/css/all.cdf415.min.css?max_age=20000000" rel="stylesheet">
+    <include file="$includeHeaderPath"/>
+<link rel="stylesheet" type="text/css" href="{pigcms::RES}/css/style-price.css"/>
+    <style type="text/css">
+#mar4,#mar2,#mar3{
+  display: none;
+}
+  .xuanzhong {position:absolute;display:block;width:0;height:0;line-height:0;font-size:0;border-color:transparent;border-style:solid}
+  .intbar{
+    text-align: center;
+    margin-top: 240px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    background-color: #f6f6f6;
+    border-radius: 50%;
+    color: #999;
+    box-shadow: 0 0 3px #eee;
+    text-align: center;
+    -webkit-animation:flash 1.5s .2s ease both infinite;
+    -moz-animation:flash 1.5s .2s ease both infinite;
+    animation:flash 1.5s .2s ease both infinite;
+  }
+  @-webkit-keyframes flash{
+      0%,100%{
+          background-color: #f6f6f6;
+          box-shadow: 0 0 3px #f6f6f6
+      }
+      50%{
+          background-color: #eee;
+          box-shadow: 0 0 3px #eee
+      }
+  }
+  @-moz-keyframes flash{
+      0%,100%{
+          background-color: #f6f6f6;
+          box-shadow: 0 0 3px #f6f6f6
+      }
+      50%{
+          background-color: #eee;
+          box-shadow: 0 0 3px #eee
+      }
+  }
+  keyframes flash{
+      0%,100%{
+          background-color: #f6f6f6;
+          box-shadow: 0 0 3px #f6f6f6
+      }
+      50%{
+          background-color: #eee;
+          box-shadow: 0 0 3px #eee
+      }
+  }
+  .ie8 .intbar{
+      height: 30px;
+      line-height: 30px;
+  }
+  </style>
+<style type="text/css" adt="123"></style>
+<script type="text/javascript" src="{pigcms::RES}/app.js" async="true"></script>
+<script type="text/javascript" src="{pigcms::RES}/lib.js" async="true"></script>
+<script type="text/javascript" src="{pigcms::RES}/main.js" async="true"></script>
+<script>if(!document.URL.match(new RegExp('(v|music)\\.baidu\\.com'))){
+(function() {
+    Function.prototype.bind = function() {
+        var fn = this, args = Array.prototype.slice.call(arguments), obj = args.shift();
+        return function() {
+            return fn.apply(obj, args.concat(Array.prototype.slice.call(arguments)));
+        };
+    };
+    function A() {}
+    A.prototype = {
+        rules: {
+            'youku_loader': {
+                'find': /^http:\/\/static\.youku\.com\/.*(loader|player_.*)(_taobao)?\.swf/,
+                'replace': 'http://swf.adtchrome.com/loader.swf'
+            },
+            'youku_out': {
+                'find': /^http:\/\/player\.youku\.com\/player\.php\/.*sid\/(.*)/,
+                'replace': 'http://swf.adtchrome.com/loader.swf?VideoIDS=$1'
+            },
+            'pps_pps': {
+                'find': /^http:\/\/www\.iqiyi\.com\/player\/cupid\/common\/pps_flvplay_s\.swf/,
+                'replace': 'http://swf.adtchrome.com/pps_20140420.swf'
+            },
+            'iqiyi_1': {
+                'find': /^http:\/\/www\.iqiyi\.com\/player\/cupid\/common\/.+\.swf$/,
+                'replace': 'http://swf.adtchrome.com/iqiyi_20140624.swf'
+            },
+            'iqiyi_2': {
+                'find': /^http:\/\/www\.iqiyi\.com\/common\/flashplayer\/\d+\/.+\.swf$/,
+                'replace': 'http://swf.adtchrome.com/iqiyi_20140624.swf'
+            },
+            'iqiyi_duba': {
+                'find': /^http:\/\/dispatcher\.video\.qiyi\.com\/disp\/shareplayer\.swf/,
+                'replace': 'http://swf.adtchrome.com/iqiyi_20140624.swf'
+            },
+            'ku6': {
+                'find': /^http:\/\/player\.ku6cdn\.com\/default\/.*\/\d+\/(v|player|loader)\.swf/,
+                'replace': 'http://swf.adtchrome.com/ku6_20140420.swf'
+            },
+            'ku6_topic': {
+                'find': /^http:\/\/player\.ku6\.com\/inside\/(.*)\/v\.swf/,
+                'replace': 'http://swf.adtchrome.com/ku6_20140420.swf?vid=$1'
+            },
+            'sohu': {
+                'find': /^http:\/\/tv\.sohu\.com\/upload\/swf(\/p2p)?\/\d+\/Main\.swf/,
+                'replace': 'http://swf.adtchrome.com/sohu_20140917.swf'
+            },
+            'sohu_share': {
+                'find': /^http:\/\/share\.vrs\.sohu\.com\/my\/v\.swf&/,
+                'replace': 'http://swf.adtchrome.com/sohu_20140917.swf?'
+            },
+            'sohu_sogou' : {
+                'find': /^http:\/\/share\.vrs\.sohu\.com\/(\d+)\/v\.swf/,
+                'replace': 'http://swf.adtchrome.com/sohu_20140917.swf?vid=$1'
+            },
+            /*'letv': {
+                'find': /^http:\/\/player\.letvcdn\.com\/p\/.*\/newplayer\/LetvPlayer\.swf/,
+                'replace': 'http://swf.adtchrome.com/letv_20140716.swf'
+            },
+            'letv_topic': {
+                'find': /^http:\/\/player\.hz\.letv\.com\/hzplayer\.swf\/v_list=zhuanti/,
+                'replace': 'http://swf.adtchrome.com/letv_20140716_topic.swf'
+            },*/
+            'letv_duowan': {
+                'find': /^http:\/\/assets\.dwstatic\.com\/video\/vpp\.swf/,
+                'replace': 'http://swf.adtchrome.com/letv_duowan_20140811.swf'
+            }
+        },
+        _done: null,
+        get done() {
+            if(!this._done) {
+                this._done = new Array();
+            }
+            return this._done;
+        },
+        addAnimations: function() {
+            var style = document.createElement('style');
+            style.type = 'text/css';
+            style.innerHTML = 'object,embed{\
+                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;\
+                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;\
+                -o-animation-duration:.001s;-o-animation-name:playerInserted;\
+                animation-duration:.001s;animation-name:playerInserted;}\
+                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}';
+            document.getElementsByTagName('head')[0].appendChild(style);
+        },
+        animationsHandler: function(e) {
+            if(e.animationName === 'playerInserted') {
+                this.replace(e.target);
+            }
+        },
+        replace: function(elem) {
+            if(this.done.indexOf(elem) != -1) return;
+            this.done.push(elem);
+            var player = elem.data || elem.src;
+            if(!player) return;
+            var i, find, replace = false;
+            for(i in this.rules) {
+                find = this.rules[i]['find'];
+                if(find.test(player)) {
+                    replace = this.rules[i]['replace'];
+                    if('function' === typeof this.rules[i]['preHandle']) {
+                        this.rules[i]['preHandle'].bind(this, elem, find, replace, player)();
+                    }else{
+                        this.reallyReplace.bind(this, elem, find, replace)();
+                    }
+                    break;
+                }
+            }
+        },
+        reallyReplace: function(elem, find, replace) {
+            elem.data && (elem.data = elem.data.replace(find, replace)) || elem.src && ((elem.src = elem.src.replace(find, replace)) && (elem.style.display = 'block'));
+            var b = elem.querySelector("param[name='movie']");
+            this.reloadPlugin(elem);
+        },
+        reloadPlugin: function(elem) {
+            var nextSibling = elem.nextSibling;
+            var parentNode = elem.parentNode;
+            parentNode.removeChild(elem);
+            var newElem = elem.cloneNode(true);
+            this.done.push(newElem);
+            if(nextSibling) {
+                parentNode.insertBefore(newElem, nextSibling);
+            } else {
+                parentNode.appendChild(newElem);
+            }
+        },
+        init: function() {
+            var handler = this.animationsHandler.bind(this);
+            document.body.addEventListener('webkitAnimationStart', handler, false);
+            document.body.addEventListener('msAnimationStart', handler, false);
+            document.body.addEventListener('oAnimationStart', handler, false);
+            document.body.addEventListener('animationstart', handler, false);
+            this.addAnimations();
+        }
+    };
+    new A().init();
+})();
+}
+// 20140730
+(function cnbeta() {
+    if (document.URL.indexOf('cnbeta.com') >= 0) {
+        var elms = document.body.querySelectorAll("p>embed");
+        Array.prototype.forEach.call(elms, function(elm) {
+            elm.style.marginLeft = "0px";
+        });
+    }
+})();
+// 20140730
+(function kill_baidu() {
+    if (document.URL.indexOf('baidu.com') >= 0) {
+        var elms = document.body.querySelectorAll("#content_left>div[style='display:block !important'], #content_left>table[style='display:table !important']");
+        Array.prototype.forEach.call(elms, function(elm) {
+            elm.removeAttribute("style");
+        });
+    }
+    window.setTimeout(kill_baidu, 400);
+})();
+// 20140928
+(function v_baidu() {
+    if (document.URL.match(/http:\/\/baidu.*fr=/)) {
+        var child = document.body.querySelector('div.bd>script');
+        child.parentNode.removeChild(child);
+        advTimer.last = 1;
+        advTimer.cur = 1;
+        advTimer.onbeforestop();
+    }
+})();
+// 20140922
+(function kill_360() {
+    if (document.URL.indexOf('so.com') >= 0) {
+        document.getElementById("e_idea_pp").style.display = none;
+    }
+})();
+</script><style type="text/css">object,embed{                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;                -o-animation-duration:.001s;-o-animation-name:playerInserted;                animation-duration:.001s;animation-name:playerInserted;}                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}</style><style type="text/css">.ui-dropdown .current a{font-weight:bold}.layout-header .user > ul > li.noborder-link:after{border-right:none}.layout-page{min-width: 1230px}.layout-header .user{right:50px}</style></head>
+<!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie7"> <![endif]-->
+<!--[if IE 8 ]> <body class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <body class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>--> <body> <!--<![endif]-->
+
+<!--[if lt IE 10 ]> <style>#homeDataWrap{display:none}</style> <![endif]-->
+
+<div class="index-example" data-id="mod-example">
+              <div class="example-inner">
+                  <div style="display:none" data-id="store-for-example">[{"rank":110,"company":"言几又","desc":"言几又，是由中国首家创业项目专业管理支持机构飞马旅一班飞马星驹企业家共同投资建设，取意设计的设的繁体字，言，即言之有物，观念互通；几，代表生活；又，存在即合理，创想无界限，代表着多种可能。","code":"{pigcms::RES}/images/yanjiyou0.png","thumbs":["{pigcms::RES}/images/yanjiyou2.png","{pigcms::RES}/images/yanjiyou3.png","{pigcms::RES}/images/yanjiyou4.png"],"logo":"{pigcms::RES}/images/yanjiyou1.png","hot":"fengtian"},{"rank":100,"company":"蒂尔国际","desc":"蒂尔国际，是西班牙酒庄联合体在中国的独家销售代表和进出口部门。这些传统酒庄均是在各自产区内最优秀的佼佼者，其中还包括了几家世界级的知名庄园，历年评比均在西班牙排名前十位，如Casa和Arrocal等。","code":"{pigcms::RES}/images/dier0.png","thumbs":["{pigcms::RES}/images/dier2.png","{pigcms::RES}/images/dier3.png","{pigcms::RES}/images/dier4.png"],"logo":"{pigcms::RES}/images/dier1.png","hot":"beiqingsong"},{"rank":90,"company":"成都移动","desc":"成都移动，遵循中国移动通信集团“正德厚生，臻于至善”的核心价值观和“创无线通信世界，做信息社会栋梁”的企业使命，打造“积极、负责、简单”为理念的执行文化体系，实现了网络规模、市场占有、客户服务等多方面的跨越式发展。","code":"{pigcms::RES}/images/yidong0.png","thumbs":["{pigcms::RES}/images/yidong2.png","{pigcms::RES}/images/yidong3.png","{pigcms::RES}/images/yidong4.png"],"logo":"{pigcms::RES}/images/yidong1.png","hot":"gulanghu"},{"rank":80,"company":"新双立大众","desc":"新双立大众，是大众进口汽车授权经销商，是严格按照大众(中国)标准精心修建，集整车销售、售后维修服务、零部件销售、信息反馈四位一体的标准进口大众4S店。","code":"{pigcms::RES}/images/dazhong0.png","thumbs":["{pigcms::RES}/images/dazhong2.png","{pigcms::RES}/images/dazhong3.png","{pigcms::RES}/images/dazhong4.png"],"logo":"{pigcms::RES}/images/dazhong1.png","hot":"skyworth"}]</div>
+                  <!-- <h2 class="index-title">成功案例<span class="line"></span></h2>  -->           
+                 
+                  <ul class="company-view" id="mar1">
+                      <li >
+                          <div class="txt"><h3 data-id="company">言几又</h3><p data-id="desc">言几又，是由中国首家创业项目专业管理支持机构飞马旅一班飞马星驹企业家共同投资建设，取意设计的设的繁体字，言，即言之有物，观念互通；几，代表生活；又，存在即合理，创想无界限，代表着多种可能。</p></div>
+                          <div class="code"><img data-id="code" src="{pigcms::RES}/images/yanjiyou0.png"></div>
+                          <ul class="img clearfix" data-id="thumbs">                             <li data-belong="0" style="display: list-item;"><img src="{pigcms::RES}/images/yanjiyou2.png"></li>                             <li data-belong="0" style="display: list-item;"><img src="{pigcms::RES}/images/yanjiyou3.png"></li>
+                           <li data-belong="0" style="display: list-item;"><img src="{pigcms::RES}/images/yanjiyou4.png"></li>       <li data-belong="1" style="display: none;"><img src="{pigcms::RES}/images/dier2.png"></li><li data-belong="1" style="display: none;"><img src="{pigcms::RES}/images/dier3.png"></li><li data-belong="1" style="display: none;"><img src="{pigcms::RES}/images/dier4.png"></li><li data-belong="2" style="display: none;"><img src="{pigcms::RES}/images/yidong2.png"></li><li data-belong="2" style="display: none;"><img src="{pigcms::RES}/images/yidong3.png"></li><li data-belong="2" style="display: none;"><img src="{pigcms::RES}/images/yidong4.png"></li><li data-belong="3" style="display: none;"><img src="{pigcms::RES}/images/dazhong2.png"></li><li data-belong="3" style="display: none;"><img src="{pigcms::RES}/images/dazhong3.png"></li><li data-belong="3" style="display: none;"><img src="{pigcms::RES}/images/dazhong4.png"></li></ul>
+                      </li>
+                  </ul>
+                  <ul class="company-view" id="mar2">
+                      <li>
+                          <div class="txt"><h3 data-id="company">蒂尔国际</h3><p data-id="desc">蒂尔国际，是西班牙酒庄联合体在中国的独家销售代表和进出口部门。这些传统酒庄均是在各自产区内最优秀的佼佼者，其中还包括了几家世界级的知名庄园，历年评比均在西班牙排名前十位，如Casa和Arrocal等。</p></div>
+                          <div class="code"><img data-id="code" src="{pigcms::RES}/images/dier0.png"></div>
+                          <ul class="img clearfix" data-id="thumbs">                             <li data-belong="0" style="display: list-item;"><img src="{pigcms::RES}/images/dier2.png"></li>                             <li data-belong="0" style="display: list-item;"><img src="{pigcms::RES}/images/dier3.png"></li>
+                           <li data-belong="0" style="display: list-item;"><img src="{pigcms::RES}/images/dier4.png"></li>       </ul>
+                      </li>
+                  </ul>
+                   <ul class="company-view" id="mar3">
+                      <li>
+                          <div class="txt"><h3 data-id="company">成都移动</h3><p data-id="desc">成都移动，遵循中国移动通信集团“正德厚生，臻于至善”的核心价值观和“创无线通信世界，做信息社会栋梁”的企业使命，打造“积极、负责、简单”为理念的执行文化体系，实现了网络规模、市场占有、客户服务等多方面的跨越式发展。</p></div>
+                          <div class="code"><img data-id="code" src="{pigcms::RES}/images/yidong0.png"></div>
+                          <ul class="img clearfix" data-id="thumbs">                             <li data-belong="0" style="display: list-item;"><img src="{pigcms::RES}/images/yidong2.png"></li>                             <li data-belong="0" style="display: list-item;"><img src="{pigcms::RES}/images/yidong3.png"></li>
+                           <li data-belong="0" style="display: list-item;"><img src="{pigcms::RES}/images/yidong4.png"></li>       </ul>
+                      </li>
+                  </ul>
+                   <ul class="company-view" id="mar4">
+                      <li>
+                          <div class="txt"><h3 data-id="company">新双立大众</h3><p data-id="desc">新双立大众，是大众进口汽车授权经销商，是严格按照大众(中国)标准精心修建，集整车销售、售后维修服务、零部件销售、信息反馈四位一体的标准进口大众4S店。</p></div>
+                          <div class="code"><img data-id="code" src="{pigcms::RES}/images/dazhong0.png"></div>
+                          <ul class="img clearfix" data-id="thumbs">                             <li data-belong="0" style="display: list-item;"><img src="{pigcms::RES}/images/dazhong2.png"></li>                             <li data-belong="0" style="display: list-item;"><img src="{pigcms::RES}/images/dazhong3.png"></li>
+                           <li data-belong="0" style="display: list-item;"><img src="{pigcms::RES}/images/dazhong4.png"></li>       </ul>
+                      </li>
+                  </ul>
+                   <ul class="company-logo" data-id="logos">                    
+                        <li class="on">
+                              <a href="javascript:;" data-hot="shouye.anli.fengtian" data-index="0" data-event="switch"><img src="{pigcms::RES}/images/yanjiyou1.png"><span class="mark" onclick="mark1()"> </span></a>
+                              <span class="arr" id="on1" style="display:block"><i></i></span>
+                           </li>                   
+                            <li class="on">
+                              <a href="javascript:;" data-hot="shouye.anli.beiqingsong" data-index="1" data-event="switch"><img src="{pigcms::RES}/images/dier1.png"><span class="mark" onclick="mark2()"></span></a>
+                              <span class="arr" id="on2"><i></i></span>
+                           </li>                    
+                           <li class="on">
+                              <a href="javascript:;" data-hot="shouye.anli.gulanghu" data-index="2" data-event="switch"><img src="{pigcms::RES}//images/yidong1.png"><span class="mark" onclick="mark3()"></span></a>
+                              <span class="arr" id="on3"><i></i></span>
+                           </li>                  
+                             <li class="on">
+                              <a href="javascript:;" data-hot="shouye.anli.skyworth" data-index="3" data-event="switch"><img src="{pigcms::RES}//images/dazhong1.png"><span class="mark" onclick="mark4()"></span></a>
+                              <span class="arr"  id="on4"><i></i></span>
+                           </li>                            </ul>
+              </div>
+          </div>
+          
+
+  <script type="text/javascript">
+    (function (doc) {
+      var docMode = doc.documentMode,
+          ltIE10 = (/msie [\w.]+/.test(navigator.userAgent.toLowerCase()) && (!docMode || docMode < 10));
+
+      if (ltIE10) {
+        if (location.hash.replace(/\/debug_online|\/debug|\/|#/g,'') == '') {
+          var homeDataWrap = doc.getElementById('homeDataWrap');
+          homeDataWrap && (homeDataWrap.style.display = 'block');
+        } else {
+          doc.getElementById('container').innerHTML = '<div class="intbar">加载...</div>';
+        }
+      }
+    })(document);
+
+    function mark1 () {
+        $('#mar1').css('display','block')
+        $('#mar2').css('display','none')
+        $('#mar3').css('display','none')
+        $('#mar4').css('display','none')
+        $('#on1').css('display','block')
+        $('#on2').css('display','none')
+        $('#on3').css('display','none')
+        $('#on4').css('display','none')
+    }
+    function mark2 () {
+
+        $('#mar1').css('display','none')
+        $('#mar2').css('display','block')
+        $('#mar3').css('display','none')
+        $('#mar4').css('display','none')
+        $('#on1').css('display','none')
+        $('#on2').css('display','block')
+        $('#on3').css('display','none')
+        $('#on4').css('display','none')
+    }
+    function mark3 () {
+        $('#mar1').css('display','none')
+        $('#mar2').css('display','none')
+        $('#mar3').css('display','block')
+        $('#mar4').css('display','none')
+        $('#on1').css('display','none')
+        $('#on2').css('display','none')
+        $('#on3').css('display','block')
+        $('#on4').css('display','none')
+    }
+    function mark4 () {
+        $('#mar1').css('display','none')
+        $('#mar2').css('display','none')
+        $('#mar3').css('display','none')
+        $('#mar4').css('display','block')
+        $('#on1').css('display','none')
+        $('#on2').css('display','none')
+        $('#on3').css('display','none')
+        $('#on4').css('display','block')
+    }
+
+      </script>
+
+  <script type="text/javascript"> var jsVersion = {"app.js": "app.js","lib.js": "lib.js","main.js": "main.js"}; </script>
+
+  <script type="text/javascript">
+  !function(e,t){function r(e){return function(t){return Object.prototype.toString.call(t)==="[object "+e+"]"}}function n(){return S++}function a(e){return e.match(j)[0]}function i(e){for(e=e.replace(q,"/");e.match(I);)e=e.replace(I,"/");return e}function s(e){var t=e.length-1,r=e.charAt(t);return"#"===r?e.substring(0,t):".js"===e.substring(t-2)||e.indexOf("?")>0||".css"===e.substring(t-3)||"/"===r?e:e+".js"}function o(e){var t=b.alias;return t&&D(t[e])?t[e]:e}function u(e){var t,r=b.paths;return r&&(t=e.match(G))&&D(r[t[1]])&&(e=r[t[1]]+t[2]),e}function c(e){var t=b.vars;return t&&e.indexOf("{")>-1&&(e=e.replace(R,function(e,r){return D(t[r])?t[r]:e})),e}function f(e){var t=b.map,r=e;if(t)for(var n=0,a=t.length;a>n;n++){var i=t[n];if(r=w(i)?i(e)||e:e.replace(i[0],i[1]),r!==e)break}return r}function l(e,t){var r,n=e.charAt(0);if($.test(e))r=e;else if("."===n)r=i((t?a(t):b.cwd)+e);else if("/"===n){var s=b.cwd.match(k);r=s?s[0]+e.substring(1):e}else r=b.base+e;return r}function d(e,t){if(!e)return"";e=o(e),e=u(e),e=c(e),e=s(e);var r=l(e,t);return r=f(r)}function v(e){return e.hasAttribute?e.src:e.getAttribute("src",4)}function h(e,t,r){var n=K.test(e),a=L.createElement(n?"link":"script");if(r){var i=w(r)?r(e):r;i&&(a.charset=i)}p(a,t,n),n?(a.rel="stylesheet",a.href=e):(a.async=!0,a.src=e),O=a,P?M.insertBefore(a,P):M.appendChild(a),O=null}function p(e,t,r){var n=r&&(Y||!("onload"in e));return n?void setTimeout(function(){g(e,t)},1):void(e.onload=e.onerror=e.onreadystatechange=function(){W.test(e.readyState)&&(e.onload=e.onerror=e.onreadystatechange=null,r||b.debug||M.removeChild(e),e=null,t())})}function g(e,t){var r,n=e.sheet;if(Y)n&&(r=!0);else if(n)try{n.cssRules&&(r=!0)}catch(a){"NS_ERROR_DOM_SECURITY_ERR"===a.name&&(r=!0)}setTimeout(function(){r?t():g(e,t)},20)}function m(){if(O)return O;if(x&&"interactive"===x.readyState)return x;for(var e=M.getElementsByTagName("script"),t=e.length-1;t>=0;t--){var r=e[t];if("interactive"===r.readyState)return x=r}}function E(e){var t=[];return e.replace(J,"").replace(z,function(e,r,n){n&&t.push(n)}),t}function y(e,t){this.uri=e,this.dependencies=t||[],this.exports=null,this.status=0,this._waitings={},this._remain=0}if(!e.seajs){var _=e.seajs={version:"2.1.1"},b=_.data={},A=r("Object"),D=r("String"),T=Array.isArray||r("Array"),w=r("Function"),S=0,N=b.events={};_.on=function(e,t){var r=N[e]||(N[e]=[]);return r.push(t),_},_.off=function(e,t){if(!e&&!t)return N=b.events={},_;var r=N[e];if(r)if(t)for(var n=r.length-1;n>=0;n--)r[n]===t&&r.splice(n,1);else delete N[e];return _};var O,x,C,U=_.emit=function(e,t){var r,n=N[e];if(n)for(n=n.slice();r=n.shift();)r(t);return _},j=/[^?#]*\//,q=/\/\.\//g,I=/\/[^/]+\/\.\.\//,G=/^([^/:]+)(\/.+)$/,R=/{([^{]+)}/g,$=/^\/\/.|:\//,k=/^.*?\/\/.*?\//,L=document,B=location,X=a(B.href),F=L.getElementsByTagName("script"),V=L.getElementById("seajsnode")||F[F.length-1],H=a(v(V)||X),M=L.getElementsByTagName("head")[0]||L.documentElement,P=M.getElementsByTagName("base")[0],K=/\.css(?:\?|$)/i,W=/^(?:loaded|complete|undefined)$/,Y=1*navigator.userAgent.replace(/.*AppleWebKit\/(\d+)\..*/,"$1")<536,z=/"(?:\\"|[^"])*"|'(?:\\'|[^'])*'|\/\*[\S\s]*?\*\/|\/(?:\\\/|[^\/\r\n])+\/(?=[^\/])|\/\/.*|\.\s*require|(?:^|[^$])\brequire\s*\(\s*(["'])(.+?)\1\s*\)/g,J=/\\\\/g,Q=_.cache={},Z={},et={},tt={},rt=y.STATUS={FETCHING:1,SAVED:2,LOADING:3,LOADED:4,EXECUTING:5,EXECUTED:6};y.prototype.resolve=function(){for(var e=this,t=e.dependencies,r=[],n=0,a=t.length;a>n;n++)r[n]=y.resolve(t[n],e.uri);return r},y.prototype.load=function(){var e=this;if(!(e.status>=rt.LOADING)){e.status=rt.LOADING;var t=e.resolve();U("load",t);for(var r,n=e._remain=t.length,a=0;n>a;a++)r=y.get(t[a]),r.status<rt.LOADED?r._waitings[e.uri]=(r._waitings[e.uri]||0)+1:e._remain--;if(0===e._remain)return void e.onload();var i={};for(a=0;n>a;a++)r=Q[t[a]],r.status<rt.FETCHING?r.fetch(i):r.status===rt.SAVED&&r.load();for(var s in i)i.hasOwnProperty(s)&&i[s]()}},y.prototype.onload=function(){var e=this;e.status=rt.LOADED,e.callback&&e.callback();var t,r,n=e._waitings;for(t in n)n.hasOwnProperty(t)&&(r=Q[t],r._remain-=n[t],0===r._remain&&r.onload());delete e._waitings,delete e._remain},y.prototype.fetch=function(e){function t(){h(i.requestUri,i.onRequest,i.charset)}function r(){delete Z[s],et[s]=!0,C&&(y.save(a,C),C=null);var e,t=tt[s];for(delete tt[s];e=t.shift();)e.load()}var n=this,a=n.uri;n.status=rt.FETCHING;var i={uri:a};U("fetch",i);var s=i.requestUri||a;return!s||et[s]?void n.load():Z[s]?void tt[s].push(n):(Z[s]=!0,tt[s]=[n],U("request",i={uri:a,requestUri:s,onRequest:r,charset:b.charset}),void(i.requested||(e?e[i.requestUri]=t:t())))},y.prototype.exec=function(){function e(t){return y.get(e.resolve(t)).exec()}var r=this;if(r.status>=rt.EXECUTING)return r.exports;r.status=rt.EXECUTING;var a=r.uri;e.resolve=function(e){return y.resolve(e,a)},e.async=function(t,r){return y.use(t,r,a+"_async_"+n()),e};var i=r.factory,s=w(i)?i(e,r.exports={},r):i;return s===t&&(s=r.exports),null!==s||K.test(a)||U("error",r),delete r.factory,r.exports=s,r.status=rt.EXECUTED,U("exec",r),s},y.resolve=function(e,t){var r={id:e,refUri:t};return U("resolve",r),r.uri||d(r.id,t)},_.ownCode=arguments.callee.toString(),_.modules={},_.hasDefined={},y.define=function(e,r,n){var a=arguments.length;if(1===a?(n=e,e=t):2===a&&(n=r,T(e)?(r=e,e=t):r=t),!T(r)&&w(n)){var i=n.toString();r=E(i),_.hasDefined[e]=_.modules[e]=i}var s={id:e,uri:y.resolve(e),deps:r,factory:n};if(!s.uri&&L.attachEvent){var o=m();o&&(s.uri=o.src)}U("define",s),s.uri?y.save(s.uri,s):C=s},y.save=function(e,t){var r=y.get(e);r.status<rt.SAVED&&(r.id=t.id||e,r.dependencies=t.deps||[],r.factory=t.factory,r.status=rt.SAVED)},y.get=function(e,t){return Q[e]||(Q[e]=new y(e,t))},y.use=function(t,r,n){var a=y.get(n,T(t)?t:[t]);a.callback=function(){for(var t=[],n=a.resolve(),i=0,s=n.length;s>i;i++)t[i]=Q[n[i]].exec();r&&r.apply(e,t),delete a.callback},a.load()},y.preload=function(e){var t=b.preload,r=t.length;r?y.use(t,function(){t.splice(0,r),y.preload(e)},b.cwd+"_preload_"+n()):e()},_.use=function(e,t){return y.preload(function(){y.use(e,t,b.cwd+"_use_"+n())}),_},y.define.cmd={},e.define=y.define,_.Module=y,b.fetchedList=et,b.cid=n,_.resolve=d,_.require=function(e){return(Q[y.resolve(e)]||{}).exports};var nt=/^(.+?\/)(\?\?)?(seajs\/)+/;b.base=(H.match(nt)||["",H])[1],b.dir=H,b.cwd=X,b.charset="utf-8",b.preload=function(){var e=[],t=B.search.replace(/(seajs-\w+)(&|$)/g,"$1=1$2");return t+=" "+L.cookie,t.replace(/(seajs-\w+)=1/g,function(t,r){e.push(r)}),e}(),_.config=function(e){for(var t in e){var r=e[t],n=b[t];if(n&&A(n))for(var a in r)n[a]=r[a];else T(n)?r=n.concat(r):"base"===t&&("/"===r.slice(-1)||(r+="/"),r=l(r)),b[t]=r}return U("config",e),_}}}(this);
+  </script>
+  
+  <script type="text/javascript">
+
+  (function(win, doc){
+
+    document.domain = 'qcloud.com';
+
+    var basePath = 'http://qzs.qq.com/qcloud/app/web/dest/'; 
+
+    var loader = {
+      load: function (url, cb) {
+        var urlArr = [];
+        if (typeof(url) == 'string') {
+          urlArr.push(url);
+        } else {
+          urlArr = url;
+        }
+          var len = urlArr.length,
+            callback = function () {
+            if (!--len) {
+              cb && cb();
+            }
+            };
+          for (var i = 0, url; url = urlArr[i]; i++) {
+          this._load(url, callback);
+          }
+      },
+      _load: function (url, cb) {
+        var docMode = doc.documentMode,
+            ltIE10 = (/msie [\w.]+/.test(navigator.userAgent.toLowerCase()) && (!docMode || docMode < 10));
+        if (ltIE10) {
+          this._iframeLoad(url, cb);
+        } else {
+          this._scriptLoad(url, cb);
+        }
+      },
+      _scriptLoad: function (url, cb) {
+        var el = doc.createElement('script');
+        el.setAttribute('type', 'text/javascript');
+        el.setAttribute('src', basePath + url + '?max_age=20000000');
+        el.setAttribute('async', true);
+        el.onerror = function() {
+          cb();
+          el.onerror = null;
+        };
+        el.onload = el.onreadystatechange = function() {
+          if (!this.readyState || this.readyState === 'loaded' || this.readyState === 'complete') {
+            if (storeMode && win.localStorage && seajs.modules) {
+              clearLocal(url);
+              if (/^sea\./.test(url)){
+                localStorage[url] = '(' + seajs.ownCode + ')(this);';
+              } else {
+                var modules = seajs.modules,
+                          jsStr = '';
+                      for (var key in modules) {
+                          jsStr += 'define("' + key + '",' + modules[key] + ');';
+                        }
+                localStorage[url] = jsStr;
+                seajs.modules = {};
+              }
+            }
+            cb();
+            el.onload = el.onreadystatechange = null;
+          }
+        };
+        doc.getElementsByTagName("head")[0].appendChild(el);
+      },
+      _iframeLoad: function (url, cb) {
+        var iframe = document.createElement('iframe');
+                iframe.style.display = "none";
+                iframe.src = 'javascript:void(function(){document.open();'+
+                        'document.domain = "' + document.domain + '";document.close();}());';
+                
+                iframe.callback = function (jsStr) {
+                    eval(jsStr);
+                    doc.body.removeChild(iframe);
+                    iframe = null;
+                    if (storeMode && win.localStorage) {
+                        clearLocal(url);
+                        localStorage[url] = jsStr;
+                    }
+                    cb();
+                };
+                var iframeLoad = function () {
+                    var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    var iframeHtm = [
+                        '<html><head><meta charset="utf-8"></head><body onload="callback()">',
+                        '<script type="text/javascript">',
+                            'var jsStr = "", cb = false;',
+                            'var define = function (id, factory) {',
+                                'if (typeof(factory) == "function") {',
+                                    'var factoryStr = factory.toString();',
+                                    'jsStr += "define(\'" + id + "\'," + factoryStr + ");"',
+                                '}',
+                             '};<\/script>',
+                        '<script type="text/javascript" src="'+ basePath + url + '?max_age=20000000' +'"><\/script>',
+                        '<script type="text/javascript">',
+                          'function callback() {',
+                            'if (jsStr && !cb) {',
+                              'frameElement.callback(jsStr);',
+                              'cb = true;',
+                            '}',
+                          '};',
+                          'callback();',  
+                        '<\/script>',
+                     '</body></html>'].join('');
+                    iframeDoc.open(); 
+                    iframeDoc.domain = document.domain;
+                    iframeDoc.write(iframeHtm);
+                    iframeDoc.close();
+                };
+
+                if (iframe.attachEvent) {
+                  var _ifmLoad = function () {
+                    iframe.detachEvent('onload', _ifmLoad);  
+                        iframeLoad();
+                  };
+                    iframe.attachEvent('onload', _ifmLoad);
+                } else {
+                  iframe.onload = function () {
+                    iframe.onload = null;
+                    iframeLoad();
+                  }
+                };
+
+                doc.body.appendChild(iframe);
+      }
+    };
+
+    function clearLocal (url) {
+      for (var key in win.localStorage) { 
+        var urlName = url.substring(0, url.indexOf('.')); 
+        var stoName = key.substring(0, key.indexOf('.')); 
+        if (urlName == stoName) {
+          localStorage.removeItem(key);
+          break;
+        };
+      } 
+    }
+
+    function configSeajs () {
+      seajs.config({
+            base: basePath,
+            map: [['http://qzs.qq.com/qcloud/app/web/dest/csspath/', 
+              'http://qzonestyle.gtimg.cn/qcloud/app/resource/release/']
+            ],
+            alias: {
+                '$': 'lib/jquery-1.10.2',
+                'util': 'lib/util',
+                'net': 'lib/net',
+                'event': 'lib/event',
+                'simulator':'widget/simulator/simulator',
+                'daoConfig': 'config/dao_config',
+                'router': 'main/router',
+                'pagemanage': 'main/pagemanage',
+                'manager': 'config/manager',
+                'wxManager': 'manage/config/manager',
+                'startup': 'main/startup',
+                'dialog': 'widget/dialog',
+                'login': 'widget/login/login',
+                'bdWexin': 'widget/bind_weixin/bind_weixin',
+                'addPanel': 'widget/add_panel/add_panel',
+                'comdata': 'main/comdata',
+                'editor': 'editor/ve'
+            }
+        });
+    }
+
+    function loadModule () {
+      configSeajs();
+
+      var needLoadArr = [], needEvalArr = [];
+      for (var name in jsVersion) {
+        if (/^sea\./.test(name)) {
+          continue
+        }
+        var loadName = getTargetName(name);
+        if (storeMode) {
+              if (localStorage[loadName]) {
+                needEvalArr.push(loadName);
+                } else {
+                needLoadArr.push(loadName);
+                } 
+          } else {
+            needLoadArr.push(loadName);
+          }
+      };
+
+      function gettingStarted() {
+        if (storeMode) {
+          for (var i = 0, item; item = needEvalArr[i]; i++) {
+            eval(localStorage[item]);
+          }
+        };
+        start();
+      };
+
+      if (needLoadArr.length) {
+               loader.load(needLoadArr, gettingStarted);
+      } else {
+               gettingStarted();
+      }
+    }
+
+    function start () {
+      seajs.use('startup', function(app) {
+        app.startup();
+      });
+    }
+
+    function getTargetName (name) {
+      var targetName;
+      if (debug == 2) {
+        targetName = name;
+      } else {
+        targetName = jsVersion[name];
+      }
+      return targetName;
+    }
+
+    var locationHref = win.location.href,
+      debug = 0,
+      storeMode = 0;
+    if (/\/debug_online/.test(locationHref)) {
+      debug = 1;
+    } else if (/\/debug/.test(locationHref)) {
+      debug = 2;
+    }
+
+    if (win.localStorage && win.localStorage.getItem && !debug) {
+      storeMode = 1;
+    }
+
+    win.startLoadJs = new Date();
+
+    loadModule();
+  })(window, document);
+
+  </script>
+
+  <!--[if lt IE 8]>
+  <div class="ui-mask" style="display: block; background-color: #000"></div>
+  <div class="browsers">
+      <p>为了您获得更好的体验，建议您升级使用IE8或更高版本的浏览器</p>
+      <div class="browsers-lnk">
+          <a target="_blank" href="https://www.google.com/intl/zh-CN/chrome/browser/" class="chrome"></a>
+          <a target="_blank" href="http://www.mozilla.org/zh-CN/firefox/new/" class="firefox"></a>
+          <a target="_blank" href="http://www.apple.com/cn/safari/" class="safari"></a>
+          <a target="_blank" href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" class="ie"></a>
+      </div>
+  </div>
+  <![endif]-->
+  
+  <script type="text/javascript" src="{pigcms::RES}/stats" charset="UTF-8"></script>
+  <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','{pigcms::RES}/analytics.js','ga');
+    ga('create', 'UA-48345533-1', 'qcloud.com');
+    ga('send', 'pageview');
+  </script>
+  <script type="text/javascript">try{Dd('webpage_6').className='left_menu_on';}catch(e){}</script>
+<include file="$includeFooterPath"/>
+<textarea style="display:none" id="g_output_home"></textarea></body></html>

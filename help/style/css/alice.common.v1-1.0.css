@@ -1,0 +1,170 @@
+.the-alipay-global{font:normal 12px Verdana,Arial,\5b8b\4f53,sans-serif}
+.the-alipay-global *{margin:0;padding:0;font-style:normal;font-weight:500;font-size:100%}
+.the-alipay-global ol,.the-alipay-global ul{list-style:none}
+.the-alipay-global a{text-decoration:none;color:#08C}
+.the-alipay-global .sl-alpha{padding:0 2px 2px;border-top:2px solid #e0e0e0;background:rgba(0,0,0,0.1);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#1b000000',EndColorStr='#1b000000')}
+:root .the-alipay-global .sl-alpha{filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#1b000000',EndColorStr='#1b000000')}
+.the-alipay-global .fn-clear{zoom:1}
+.the-alipay-global .fn-clear:after{visibility:hidden;display:block;font-size:0;content:"";clear:both;height:0}
+.the-alipay-global .fn-hide{display:none}
+#global-header-area{padding:7px 0}
+#global-header-nav{margin-bottom:15px}
+#global-topLink{float:right;height:38px}
+.global-logo{float:left;padding-top:7px}
+.global-logo a{display:block;width:108px;height:38px;background:transparent url(images/logo-alipay-t.png) left top no-repeat}
+.global-logo a span{display:none}
+.global-link{float:left;padding:15px 0 0 5px}
+#global-header-area .link{float:left;padding:18px 0 0 0}
+.global-loading{height:50px;background:url('img/preloader.gif') center no-repeat transparent}
+.global-separator{font-weight:normal;color:#ccc}
+.global-separator-pd{color:#ccc;padding:0 5px}
+.global-separator{font-weight:normal}
+.global-nav,.global-nav-cnt,.global-nav-cnt ul,.global-nav-master-current .global-nav-master-a,.global-nav-master-current strong,.global-nav-master-a:hover,.global-nav-master-a:hover strong,.global-subnav-current a,.global-subnav-current span,.global-subnav a:hover,.global-subnav a:hover span,.global-nav-master-current em,.global-nav-master-current a.global-nav-master-a:hover{background:transparent url(img/global-nav.png) no-repeat}
+.global-nav{overflow:hidden;position:relative;background-position:0 -160px;background-repeat:repeat-x}
+.global-nav-nosub{height:42px}
+.global-nav a:hover{text-decoration:none;cursor:pointer}
+.global-nav-cnt{height:80px;padding-left:10px}
+.global-nav-cnt ul{background-position:right -80px;overflow:hidden;height:100%}
+.global-nav-master,.global-nav-master-other{float:left;display:inline;margin:7px 5px 0 0}
+.global-nav-master-other{margin-right:0}
+a.global-nav-master-a{float:left;font-size:14px;text-align:center;color:#FFF}
+a.global-nav-master-a strong{padding:8px 15px 13px;font-size:14px;height:14px;line-height:14px;float:left;font-weight:bold}
+a.global-nav-master-a:hover strong{background-position:right -345px}
+.global-nav-master-current a.global-nav-master-a{color:#696969;background-position:0 -240px!important}
+.global-nav-master-current a.global-nav-master-a:hover,.global-nav-master-current a.global-nav-master-a:active{color:#696969}
+.global-nav-master-current strong{background-position:right -275px!important}
+.global-nav-master-other em{padding:8px 0 13px;color:#fef9f3;font-size:14px;height:14px;line-height:14px;float:left;font-weight:normal}
+.global-nav-master-current em{color:#696969;font-weight:bold;padding:8px 15px 13px;background-position:right -275px!important}
+.global-nav-master-other a.global-nav-master-a{margin-right:10px}
+.global-nav-master-other a.global-nav-master-a:hover{background:0}
+.global-nav-master-current a.global-nav-master-a:hover{background-position:0 -240px}
+.global-nav-master-other a.global-nav-master-a:hover em{text-decoration:underline}
+a.global-nav-master-a:hover,.global-nav-master-a:active{background-position:0 -310px;color:#fff}
+ul.global-subnav,p.global-subnav{display:none;position:absolute;top:46px;left:10px;background:0}
+p.global-subnav{padding:7px 15px}
+p.global-subnav .global-subnav-title{margin-right:10px;font-weight:bold;color:#808080}
+p.global-subnav a{color:#08c;margin:0 2px}
+p.global-subnav a:hover{text-decoration:underline;background:0;color:#08c}
+ul.global-subnav li{float:left;display:inline;margin-right:10px}
+ul.global-subnav a{float:left;color:#868686;text-align:center}
+ul.global-subnav span{padding:0 15px;height:28px;line-height:28px;*line-height:32px;line-height:32px\0;overflow:hidden;float:left}
+.global-nav-master-current .global-subnav{display:block}
+.global-subnav a:hover{color:#868686;background-position:0 -435px}
+.global-subnav a:hover span{background-position:right -463px}
+.global-subnav .global-subnav-current a{background-position:0 -379px!important}
+.global-subnav .global-subnav-current a span{background-position:right -407px!important}
+.global-nav-separator{color:#f9d3ae;font-size:14px;line-height:14px;font-weight:bold;float:left;margin:14px 5px 0 0;*margin:13px 5px 0 0;margin:13px 5px 0 0\0}
+.global-nav-separator-dashed{text-indent:-9999px;height:12px;float:left;border-left:2px dotted #fdf2e7;margin:16px 15px 0 0;*margin:15px 15px 0 0;margin:15px 15px 0 0\0;overflow:hidden}
+.global-toplink{float:right}
+.global-toplink .global-dropdown{height:28px}
+.global-toplink a{display:inline-block;padding:0 6px;color:#666}
+.global-toplink a:hover{color:#666;text-decoration:underline}
+.global-toplink .global-toplink-user{padding:0}
+.global-toplink-user,.global-toplink-more{text-decoration:none!important}
+.global-toplink .global-toplink-i,.global-toplink .global-toplink-username,.global-toplink .global-toplink-more{padding-right:15px;background:url(../../images/toplink-bg.png) no-repeat right -4px;height:16px}
+.global-toplink .global-toplink-username{background-color:#FFF}
+.global-toplink .global-toplink-more{padding:0 15px 0 0;background-position:right -6px\9}
+.global-toplink a.global-toplink-msg{padding:1px 6px;-moz-border-radius:2px 2px;-webkit-border-radius:2px 2px;-o-border-radius:2px 2px;border-radius:2px 2px;background:#d9d9d9;color:#484848;line-height:16px;vertical-align:middle}
+@-moz-document url-prefix(){.global-toplink .global-toplink-i,.global-toplink .global-toplink-user,.global-toplink .global-toplink-more,.global-toplink .global-toplink-msg{height:16px}
+}
+.global-dropdown-active a.global-toplink-msg,#global-header-msg a.global-toplink-msg-active{background:#f3623a;color:#fff}
+.global-dropdown-active a.global-toplink-msg:hover,#global-header-msg a.global-toplink-msg-active:hover{color:#FFF}
+.global-toplink a.global-toplink-msg:hover{text-decoration:none}
+.global-toplink a.global-toplink-msg span{padding-left:4px}
+.global-dropdown{position:relative;display:inline-block;*display:inline;zoom:1;z-index:666}
+.global-dropdown-hd{position:relative;display:inline-block;*display:inline;padding:3px 3px 0 3px;-moz-border-radius:2px 2px 0 0;-webkit-border-radius:2px 2px 0 0;-o-border-radius:2px 2px 0 0;border-radius:2px 2px 0 0;background:transparent;zoom:1;z-index:668;border-bottom:0;filter:alpha(opacity=100)}
+.global-dropdown-hd-normal,.global-dropdown-hd-msg{-moz-border-radius:2px 2px 0 0;-webkit-border-radius:2px 2px 0 0;-o-border-radius:2px 2px 0 0;border-radius:2px 2px 0 0;z-index:670;padding:6px 10px;padding:6px 10px 7px\0}
+.global-dropdown-hd-normal{line-height:16px}
+.global-dropdown-hd-msg{padding:6px 10px\0;+padding:5px 10px}
+@media screen and (-webkit-min-device-pixel-ratio:0){.global-dropdown-hd-normal,.global-dropdown-hd-msg{padding:6px 10px 5px}
+}
+#global-header-msg{position:relative;top:-2px}
+#global-header-user .global-dropdown-hd-normal,#global-header-i .global-dropdown-hd-normal{+padding:5px 10px;padding:7px 10px 5px\0}
+#global-header-i .global-dropdown-hd-normal{padding:6px 10px 5px\0;+line-height:15px}
+#global-header-more .global-dropdown-hd-normal{padding:6px 10px 5px\0;+padding:5px 10px;line-height:15px\0;_line-height:14px}
+#global-header-more .global-toplink-more,#global-header-msg .global-toplink-msg{_position:relative;_top:2px}
+.global-dropdown-bd{position:absolute;*display:block;top:26px;z-index:2}
+#global-header-msg .global-dropdown-bd{top:28px}
+#global-header-more .global-dropdown-hd{height:29px\0}
+@media screen and (-webkit-min-device-pixel-ratio:0){.global-dropdown-bd{top:25px}
+#global-header-msg .global-dropdown-bd{top:27px}
+}
+.global-dropdown-bd-pl{left:-2px}
+.global-dropdown-bd-pr{right:-2px;_right:-3px}
+.global-dropdown-bd-cnt{position:relative;padding:15px 10px 20px 10px;border:1px solid #b3b3b3;background-color:#fff;z-index:669;text-align:left}
+.global-dropdown-bd-cnt .global-tit{color:#808080;font-size:12px;font-weight:700}
+.global-dropdown-bd-cnt .global-tit-line{padding-bottom:2px;border-bottom:1px solid #CCC}
+.global-dropdown-bd-cnt .global-tit .global-tit-link{color:#0087c9}
+.global-dropdown-bd-cnt .global-tit .global-tit-action{float:right;font-weight:400}
+.global-dropdown-bd-cnt .global-tit .global-tit-action a{color:#0087c9}
+.global-dropdown-bd-cnt .global-button-box{margin:10px 0}
+.global-dropdown-bd-cnt .global-button-box a{padding:0}
+.global-dropdown-bd-cnt .global-button-box a.global-button-morange{margin-right:10px;*margin-right:8px}
+.global-dropdown-bd-cnt .global-button-box .global-button-text{padding-left:20px;padding-right:20px}
+.global-dropdown-bd-cnt .global-list{display:block;padding:5px 0 0;border-top:1px solid #fff}
+.global-dropdown-bd-cnt #global-list-user{_border-top:1px solid #ccc}
+.global-dropdown-bd-cnt .global-list li{position:relative;padding:8px}
+.global-dropdown-bd-cnt .global-list li a{color:#666;display:block;padding:0}
+.global-dropdown-bd-cnt .global-list li a:hover{text-decoration:none}
+.global-dropdown-bd-cnt .global-list li:hover,.global-dropdown-bd-cnt .global-list-hover{text-decoration:none;background:#e6e6e6}
+.global-dropdown-bd-cnt li a.global-list-close{position:absolute;top:8px;right:3px;display:none;width:15px;height:15px;background:url(images/toplink-bg.png) no-repeat 0 -30px;text-indent:-9999em;cursor:pointer;_overflow:hidden;padding:0!important;outline:0}
+.global-dropdown-bd-cnt li.global-list-hover a.global-list-close,.global-dropdown-bd-cnt .global-list li:hover a.global-list-close{display:block}
+.global-dropdown-bd-cnt .global-list-hover .global-list-close-hover,.global-dropdown-bd-cnt .global-list .global-list-close:hover{background-position:0 -50px}
+.global-dropdown-bd-cnt .global-list .global-list-level3,.global-dropdown-bd-cnt .global-list .global-list-level3 a,.global-dropdown-bd-cnt .global-list .global-list-level3 span,.global-dropdown-bd-cnt .global-list .global-list-necessary,.global-dropdown-bd-cnt .global-list .global-list-necessary a,.global-dropdown-bd-cnt .global-list .global-list-necessary span{color:#C30}
+.global-dropdown-bd-cnt .global-list .global-list-confirm{padding:0 10px 10px 10px;background:#ebebeb;zoom:1}
+.global-dropdown-bd-cnt .global-list .global-list-comfirm-txt{padding:5px 0 4px;line-height:normal}
+.global-dropdown-bd-cnt .global-list .global-list-comfirm a{display:inline-block;margin-right:5px;padding:0;line-height:normal}
+.global-dropdown-bd-cnt .global-list .global-button-text{padding:4px 12px 6px 12px;*padding:6px 12px 5px 12px}
+.global-dropdown-active{border:2px solid #e0e0e0;border-bottom:0;background:#e0e0e0;-moz-border-radius:2px 2px 0 0;-webkit-border-radius:2px 2px 0 0;-o-border-radius:2px 2px 0 0;border-radius:2px 2px 0 0;*border-top-width:0}
+.global-dropdown-active .global-dropdown-hd{padding:0;*position:relative;*top:2px;*padding-bottom:2px}
+.global-dropdown-active .global-dropdown-hd a{text-decoration:none}
+.global-dropdown-active .global-dropdown-hd-normal,.global-dropdown-active .global-dropdown-hd-msg{border-top:1px solid #b3b3b3;border-left:1px solid #b3b3b3;border-right:1px solid #b3b3b3;background:#FFF}
+.global-dropdown-user{width:166px;height:auto}
+.global-dropdown-i{width:105px;height:auto}
+.global-dropdown-msg{width:300px;height:auto}
+.global-dropdown-more{width:80px;height:auto}
+.global-dropdown-more .global-list,.global-dropdown-i .global-list{border-top:0;padding-top:0}
+#global-header-i,#global-header-user,#global-header-more{z-index:670}
+.global-dropdown-msg .global-list li a{padding-right:10px}
+.global-dropdown-msg .global-list-msg-content{color:#666;display:block;padding-right:10px;_padding-right:15px!important;_width:100%}
+#global-msg-confirm li a{color:#666}
+#global-dropdown-frame{position:absolute;left:3px;bottom:3px;background:transparent;border:0}
+.global-button{padding:0;display:inline-block;position:relative;text-align:center;text-decoration:none!important;vertical-align:middle;overflow:visible;cursor:pointer}
+div.global-button,p.global-button,span.global-button{*display:inline}
+.global-button-text{white-space:nowrap;display:block;cursor:pointer;border:0;text-decoration:none;overflow:visible}
+.global-button a.global-button-text:hover{text-decoration:none}
+.global-button input.global-button-text,.global-button button.global-button-text{*display:inline}
+.global-button-morange,.global-button-morange:hover,.global-button-mwhite,.global-button-mwhiter:hover,.global-button-sorange,.global-button-sorange:hover,.global-button-swhite,.global-button-swhite:hover,.global-button-mdisable,.global-button-text{background-image:url(img/global-button.png);background-repeat:no-repeat;background-color:transparent}
+.global-button-morange .global-button-text,.global-button-sorange .global-button-text,.global-button-mwhite .global-button-text,.global-button-swhite .global-button-text,.global-button-mdisable .global-button-text{font-family:Verdana,\5b8b\4f53,\9ED1\4F53,sans-serif;font-size:14px;font-weight:700}
+.global-button-mwhite,.global-button-morange{width:75px}
+.global-button-morange{background-position:0 -355px}
+.global-button-morange .global-button-text{display:block;height:31px;line-height:31px;text-align:center;background-position:right -503px;color:#fff}
+.global-button-morange:hover{background-position:0 -392px}
+.global-button-morange:hover .global-button-text{background-position:right -540px}
+.global-button-mwhite{background-position:0 -429px}
+.global-button-mwhite .global-button-text{display:block;height:31px;line-height:31px;background-position:right -577px;color:#595959}
+.global-button-mwhite:hover{background-position:0 -466px}
+.global-button-mwhite:hover .global-button-text{background-position:right -614px}
+.global-button-mdisable{background-position:0 -891px}
+.global-button-mdisable .global-button-text{padding:5px 22px;background-position:right -927px;color:#e6e6e6;cursor:text}
+.global-button-sorange{background-position:0 -651px}
+.global-button-sorange .global-button-text{padding:3px 12px 4px 12px;font-size:12px;background-position:right -771px;color:#fff}
+.global-button-sorange:hover{background-position:0 -681px}
+.global-button-sorange:hover .global-button-text{background-position:right -801px}
+.global-button-swhite{background-position:0 -711px}
+.global-button-swhite,.global-button-sorange{height:25px}
+.global-button-swhite .global-button-text{padding:3px 12px 4px 12px;font-size:12px;background-position:right -831px;color:#595959}
+.global-button-swhite:hover{background-position:0 -741px}
+.global-button-swhite:hover .global-button-text{background-position:right -861px}
+.global-button-morange input.global-button-text,.global-button-sorange input.global-button-text,.global-button-mdisable input.global-button-text,.global-button-mwhite input.global-button-text,.global-button-swhite input.global-button-text{*overflow:visible}
+.global-list{display:inline-block;padding:10px 10px}
+.global-list-item a{font-size:12px;line-height:20px}
+.global-footer{margin:0 auto;padding-bottom:30px;border-top:1px solid #d9d9d9;border-bottom:1px solid #d9d9d9;min-width:950px;text-align:center;color:#808080}
+.global-footer-about{margin-top:20px}
+.global-footer-about li,.global-footer-company li,.global-footer-custom li{display:inline}
+.global-footer-about a{color:#0089d8}
+.global-footer-copyright a{color:#808080}
+.global-footer-copyright{margin-top:15px}
+.global-feedback{position:fixed;right:0;top:180px;width:30px;_position:absolute;z-index:999}
+.global-feedback a{cursor:pointer;display:block;overflow:hidden;position:relative;text-indent:-999em;width:30px;height:89px;background:url(images/feedback.png) no-repeat scroll transparent;background-position:-30px 0;background-position:0 0\9;box-shadow:0 100px 100px rgba(255,255,255,0.3) inset;-webkit-transition:all .25s ease-in;-moz-transition:all .25s ease-in;transition:all .25s ease-in}
+.global-feedback a:hover{background-position:-30px 0\9;box-shadow:0 100px 100px rgba(255,255,255,0) inset;-webkit-transition:all .25s ease-in;-moz-transition:all .25s ease-in;transition:all .25s ease-in}
