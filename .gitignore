@@ -3,6 +3,5 @@ cms/cache/
 Conf/logs/Cache/Home/*.php
 Conf/logs/Cache/*
 Conf/logs/
-Conf/db.php
 uploads/
 .settings/
