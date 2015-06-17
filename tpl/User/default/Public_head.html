@@ -482,11 +482,9 @@ foreach ($menus as $mk => $mv){
 		if($menus[$mk]['subs'] == NULL){
 			unset($menus[$mk]);
 		}
-		
 	}
 }
-var_dump($not_exist);
-die;
+
 $i=0;
 
 $parms=$_SERVER['QUERY_STRING'];
