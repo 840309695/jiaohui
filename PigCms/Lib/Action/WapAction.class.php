@@ -326,7 +326,7 @@ class WapAction extends BaseAction{
 		$classid = $this->_get('classid','intval');
 		$classid = (int)$classid;
 		$info = $classify->where("id = $classid AND token = '$token'")->find();
-		if($info['public']){
+		if(!$info['public']){
 			return 1;
 		}else {
 			return 0;
