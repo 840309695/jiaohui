@@ -11,7 +11,7 @@
 			<input
 			type='text'
 			class='form-control input-lg' placeholder='请输入手机号' required>
-		 
+		 <div style='height: 10px; clear: both; display: block'></div>
 		<div class="dropdown">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
     所属小组
@@ -28,7 +28,7 @@
 		<button class='btn btn-lg btn-success btn-block' type='submit'>注册</button>
 	</form>
 	<div style='height: 10px; clear: both; display: block'></div>
-	<div class="text-center"><p><a  href="{pigcms::U('Wapuser/register', array('token' => $token, 'wecha_id' => $wecha_id))}">已有有账号，现在登录</a></p></div>
+	<div class="text-center"><p><a  href="{pigcms::U('Wapuser/login', array('token' => $token, 'wecha_id' => $wecha_id))}">已有有账号，现在登录</a></p></div>
 </div>
 </body>
 </html>
