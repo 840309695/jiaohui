@@ -12,6 +12,8 @@ class WapAction extends BaseAction{
 	public $shareScript;
 	protected function _initialize(){
 		parent::_initialize();
+		define('RES',THEME_PATH.'common');
+		define('STATICS',TMPL_PATH.'static');
 		$this->token=$this->_get('token');
 		$this->assign('token',$this->token);
 		
@@ -317,4 +319,34 @@ class WapAction extends BaseAction{
 		$temp = curl_exec($ch);
 		return $temp;
 	}
+	
+	private  function ispublic(){
+		$classify = M('classify');
+		$token = $this->token;
+		$classid = $this->_get('classid','intval');
+		$classid = (int)$classid;
+		$info = $classify->where("id = $classid AND token = '$token'")->find();
+		if($info['public']){
+			return 1;
+		}else {
+			return 0;
+		}
+	
+	}
+	
+	private function islogin(){
+		return 0;
+	}
+	
+	protected   function check(){
+		if(!$this->ispublic()){
+			if(!$this->islogin()){
+				$this->error("此板块未对外开放请登录或者注册",U('Wapuser/login',array('token'=>$this->token)));
+			}
+		}
+	}
+	
+	
+	
+	
 }

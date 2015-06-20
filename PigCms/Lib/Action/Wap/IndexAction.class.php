@@ -169,17 +169,16 @@ class IndexAction extends WapAction{
 	}
 	
 	public function lists(){
+	    $this->check();
 		$token = $this->token;
 		$classid = $this->_get('classid','intval');	
-
 		$classid = (int)$classid;
-
 		$where['token'] = $this->_get('token','trim');
 		$classify = M('classify');
 		$homes=M('Home')->where(array('token'=>$this->token))->getField('gzhurl');
 		$this->assign('homes',$homes);
 		//本分类信息		
-		$info = $classify->where("id = $classid AND token = '$token'")->find();		
+		$info = $classify->where("id = $classid AND token = '$token'")->find();	
 		//是否有子类
 		$sub = $classify->where("fid = $classid AND token = '$token' AND status = 1")->order('sorts desc')->select();
 		$sub = $this->convertLinks($sub);
@@ -469,6 +468,8 @@ class IndexAction extends WapAction{
 	
 	}
 	
+
+
 	public function flash(){
 		$where['token']=$this->_get('token','trim');
 		$flash=M('Flash')->where($where)->select();
