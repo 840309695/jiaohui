@@ -1,0 +1,64 @@
+<if condition="$ischild neq 1">
+<include file="Public:head" />
+<else />
+<include file="Repast:head" />
+</if>
+<link rel="stylesheet" href="{pigcms::STATICS}/kindeditor/themes/default/default.css" />
+<link rel="stylesheet" href="{pigcms::STATICS}/kindeditor/plugins/code/prettify.css" />
+
+  <div class="content"> 
+   <div class="cLineB"> 
+    <h4>用户设置</h4> 
+    <a href="{pigcms::U('Store/product',array('token'=>$token,'catid'=>$catid))}" class="right  btnGreen" style="margin-top:-27px">返回</a> 
+   </div> 
+<if condition="$isUpdate eq 1">
+<input type="hidden" name="id" value="{pigcms:$set.id}" />
+</if>
+<form method="post" action="" id="formID">
+<input type="hidden" name="discount" id="discount" value="{pigcms:$set.discount}" />
+    <div class="msgWrap bgfc"> 
+     <table class="userinfoArea" style=" margin:0;" border="0" cellspacing="0" cellpadding="0" width="100%"> 
+      <tbody> 
+       <tr> 
+        <th><span class="red">*</span>用户名：</th> 
+        <td>
+        <input type="hidden" name="pid" id="pid" value="{pigcms:$set.id}"/>
+        <input type="text" name="name" id="name" value="{pigcms:$set.name}" class="px" style="width:400px;" />
+        </td> 
+       </tr> 
+       <tr> 
+        <th>小组：</th> 
+        <td><select> 
+             <volist name="GroupInfo" id="GroupInfo">
+              <option name="group_id"  value ="{pigcms:$GroupInfo.id}">{pigcms:$GroupInfo.group_name}</option>  
+             </volist>
+          </select>  </td> 
+       </tr>
+  
+       <tr> 
+        <th><span class="red">*</span>密码：</th>
+        <td><input type="password" id="price" name="password" value="{pigcms:$set.price}" class="validate[required, length[0,20]] px" style="width:100px;" /> </td> 
+       </tr>
+  
+       <tr> 
+        <th><span class="red">*</span>手机：</th> 
+        <td><input type="text" id="vprice" name="tel" value="{pigcms:$set.vprice}" class="px" style="width:100px;" /> </td> 
+       </tr>
+       <tr> 
+        <th>用户状态：</th> 
+        <td>
+	        <input type="radio" name="status" class="status" value="0" id="status_0" <if condition="$set['status'] eq 0">checked</if> /><label for="status_0">开启</label>&nbsp;&nbsp;&nbsp;&nbsp;
+	        <input type="radio" name="status" class="status" value="1" id="status_1" <if condition="$set['status'] eq 1">checked</if> /><label for="status_1">关闭</label>
+		</td> 
+       </tr>
+      <TR>
+                  
+                  <TD><input type="submit" value="保存" name="sbmt" class="btnGreen left">　<a href="{pigcms::U('Essay/index')}"  class="btnGray vm">取消</a></TD>
+                </TR>
+      </tbody> 
+     </table> 
+     </div>
+</form>
+  </div> 
+
+<include file="Public:footer" />
