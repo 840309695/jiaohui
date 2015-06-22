@@ -1,0 +1,27 @@
+ALTER TABLE `pigcms_classify`
+ADD COLUMN `public`  int(11) NULL DEFAULT 0 AFTER `pc_web_id`;
+
+
+CREATE TABLE `pigcms_group` (
+`id`  int NULL AUTO_INCREMENT ,
+`group_name`  varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+`token`  varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+`create_date`  timestamp default current_timestamp,
+PRIMARY KEY (`id`)
+)
+;
+
+
+CREATE TABLE `pigcms_front_user` (
+`id`  int NULL AUTO_INCREMENT ,
+`group_id`  int NULL ,
+`name`  varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+`password`  varchar(32) NULL ,
+`tel`  varchar(11) NULL ,
+`status`  int NULL DEFAULT 0,
+`create_date`  timestamp default current_timestamp,
+`token`  varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+`openid`  varchar(50) NULL
+PRIMARY KEY (`id`)
+)
+;
