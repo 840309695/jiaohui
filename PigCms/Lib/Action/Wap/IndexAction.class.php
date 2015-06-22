@@ -409,6 +409,7 @@ class IndexAction extends WapAction{
 	}
 
 	public function content($contid='',$cid=''){
+		$this->check();
 		$token = $this->token;
 		$class = M('Classify');
 		$img = M('Img');	
