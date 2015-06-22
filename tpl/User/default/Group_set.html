@@ -8,7 +8,7 @@
   <div class="content"> 
    <div class="cLineB"> 
     <h4>小组设置</h4> 
-    <a href="{pigcms::U('Store/index',array('token'=>$token, 'cid' => $cid))}" class="right  btnGreen" style="margin-top:-27px">返回</a> 
+    <a href="{pigcms::U('Group/index',array('token'=>$token))}" class="right  btnGreen" style="margin-top:-27px">返回</a> 
    </div> 
    <form class="form" method="post" action="" enctype="multipart/form-data"> 
     <input type="hidden" name="id" value="{pigcms:$set.id}" /> 
@@ -32,7 +32,7 @@
        <tr>         
        <th>&nbsp;</th>
        <td>
-       <button type="submit" name="button" class="btnGreen">保存</button> &nbsp; <a href="{pigcms::U('Store/index',array('token' => $token, 'cid' => $cid))}" class="btnGray vm">取消</a></td> 
+       <button type="submit" name="button" class="btnGreen">保存</button> &nbsp; <a href="{pigcms::U('Group/index',array('token' => $token))}" class="btnGray vm">取消</a></td> 
        </tr> 
       </tbody> 
      </table> 

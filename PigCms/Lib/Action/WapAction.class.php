@@ -335,7 +335,11 @@ class WapAction extends BaseAction{
 	}
 	
 	private function islogin(){
+	   if($info=M("Front_user")->where(array("id"=>session("wapuid")))->find()){
+		return 1;
+	}else{
 		return 0;
+	  }
 	}
 	
 	protected   function check(){

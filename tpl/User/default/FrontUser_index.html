@@ -26,7 +26,7 @@
 </div>
 
 <div class="pageNavigator right">
-	<a href="{pigcms::U('Store/index',array('token'=>$token,'catid'=>$catid))}" class="btnGrayS vm bigbtn">返回</a>
+	<a href="{pigcms::U('FrontUser/index',array('token'=>$token))}" class="btnGrayS vm bigbtn">返回</a>
 </div>
 <div class="clr"></div>
 </div>
@@ -56,11 +56,11 @@
 <td>{pigcms:$userlist.name}</td> 
 <td>{pigcms:$userlist.tel}</td>
 <td>{pigcms:$userlist.group_name}</td> 
-<td>0</td> 
+<td><if condition="$userlist['status'] eq 0">关闭 <else/>开启</if></td> 
 <td>{pigcms:$userlist.create_date}</td> 
 <td class="norightborder" align="center">
-	<a href="{pigcms::U('Group/edit',array('id' =>$grouplist['id']))}">修改组别</a>
-	<a href="{pigcms::U('Group/del',array('id' =>$grouplist['id']))}">删除</a>
+	<a href="{pigcms::U('FrontUser/edit',array('id' =>$userlist['uid']))}">修改用户</a>
+	<a href="{pigcms::U('FrontUser/del',array('id' =>$userlist['uid']))}">删除</a>
 	
 </td>
 </tr>

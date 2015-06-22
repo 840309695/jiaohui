@@ -9,7 +9,7 @@
   <div class="content"> 
    <div class="cLineB"> 
     <h4>用户设置</h4> 
-    <a href="{pigcms::U('Store/product',array('token'=>$token,'catid'=>$catid))}" class="right  btnGreen" style="margin-top:-27px">返回</a> 
+    <a href="{pigcms::U('FrontUser/index',array('token'=>$token))}" class="right  btnGreen" style="margin-top:-27px">返回</a> 
    </div> 
 <if condition="$isUpdate eq 1">
 <input type="hidden" name="id" value="{pigcms:$set.id}" />
@@ -22,38 +22,38 @@
        <tr> 
         <th><span class="red">*</span>用户名：</th> 
         <td>
-        <input type="hidden" name="pid" id="pid" value="{pigcms:$set.id}"/>
+        <input type="hidden" name="id" id="id" value="{pigcms:$set.id}"/>
         <input type="text" name="name" id="name" value="{pigcms:$set.name}" class="px" style="width:400px;" />
         </td> 
        </tr> 
        <tr> 
         <th>小组：</th> 
-        <td><select> 
+        <td><select name="group_id">
              <volist name="GroupInfo" id="GroupInfo">
-              <option name="group_id"  value ="{pigcms:$GroupInfo.id}">{pigcms:$GroupInfo.group_name}</option>  
+              <option name="group_id"  value ="{pigcms:$GroupInfo.id}" <if condition="$GroupInfo['id'] eq $set['group_id']">selected</if>>{pigcms:$GroupInfo.group_name}</option>  
              </volist>
           </select>  </td> 
        </tr>
   
        <tr> 
         <th><span class="red">*</span>密码：</th>
-        <td><input type="password" id="price" name="password" value="{pigcms:$set.price}" class="validate[required, length[0,20]] px" style="width:100px;" /> </td> 
+        <td><input type="password" id="price" name="password" value="" class="validate[required, length[0,20]] px" style="width:100px;" /> </td> 
        </tr>
   
        <tr> 
         <th><span class="red">*</span>手机：</th> 
-        <td><input type="text" id="vprice" name="tel" value="{pigcms:$set.vprice}" class="px" style="width:100px;" /> </td> 
+        <td><input type="text" id="vprice" name="tel" value="{pigcms:$set.tel}" class="px" style="width:100px;" /> </td> 
        </tr>
        <tr> 
         <th>用户状态：</th> 
         <td>
-	        <input type="radio" name="status" class="status" value="0" id="status_0" <if condition="$set['status'] eq 0">checked</if> /><label for="status_0">开启</label>&nbsp;&nbsp;&nbsp;&nbsp;
-	        <input type="radio" name="status" class="status" value="1" id="status_1" <if condition="$set['status'] eq 1">checked</if> /><label for="status_1">关闭</label>
+	        <input type="radio" name="status" class="status" value="1" id="status_1" <if condition="$set['status'] eq 1">checked</if> /><label for="status_0">开启</label>&nbsp;&nbsp;&nbsp;&nbsp;
+	        <input type="radio" name="status" class="status" value="0" id="status_0" <if condition="$set['status'] eq 0">checked</if> /><label for="status_1">关闭</label>
 		</td> 
        </tr>
       <TR>
                   
-                  <TD><input type="submit" value="保存" name="sbmt" class="btnGreen left">　<a href="{pigcms::U('Essay/index')}"  class="btnGray vm">取消</a></TD>
+                  <TD><input type="submit" value="保存" name="sbmt" class="btnGreen left">　<a href="{pigcms::U('FrontUser/index',array('token'=>$token))}"  class="btnGray vm">取消</a></TD>
                 </TR>
       </tbody> 
      </table> 

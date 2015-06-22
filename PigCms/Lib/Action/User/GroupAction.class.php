@@ -34,7 +34,7 @@ public  function edit() {
 public  function del() {
 	$del=$this->group->where(array("id"=>$_GET['id']))->delete();
 	if($del){
-		
+		M("Front_user")->where(array("group_id"=>$_GET['id']))->delete();
 		$this->success('操作成功');
 		
 	}
