@@ -336,6 +336,7 @@ class WapAction extends BaseAction{
 	
 	private function islogin(){
 	   if($info=M("Front_user")->where(array("id"=>session("wapuid")))->find()){
+	    if(!$info['status']) {$this->error("您的账号还没有通过管理员审核");}	
 		return 1;
 	}else{
 		return 0;
