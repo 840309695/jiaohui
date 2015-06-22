@@ -43,7 +43,7 @@ class WapuserAction extends WapAction
    			}else{
 			 $id=$this->userdb->add();
 			if($id==true){
-				session("wapuid",$userinfo['id']);
+				session("wapuid",$id);
 				$this->success('注册成功等待管理审核',U('Index/index',array("token"=>$this->token,"wecha_id"=>$this->wecha_id)));
 				
 			}else{
