@@ -31,6 +31,34 @@ class WapuserAction extends WapAction
    }
   
    public  function register() {
+   	if($this->isPost()){
+   		if(!empty($_POST)){
+   			if($this->userdb->where(array("token"=>$this->token,"name"=>$_POST['name']))->find()){
+   				$this->error("用户名已经被注册了");
+   			}
+   			$_POST['token'] = $this->token;
+   			$_POST['password']=md5($_POST['password']);
+   			if($this->userdb->create()===false){
+   				$this->error($this->userdb->getError());
+   			}else{
+			 $id=$this->userdb->add();
+			if($id==true){
+				session("wapuid",$userinfo['id']);
+				$this->success('注册成功等待管理审核',U('Index/index',array("token"=>$this->token,"wecha_id"=>$this->wecha_id)));
+				
+			}else{
+				$this->error('操作失败');
+			}
+		}
+   			
+   		}
+
+   	
+   	 
+   		
+   	}
+   	$Groupinfo=M('Group')->where(array("token"=>$this->token))->select();
+   	$this->assign('Groupinfo',  $Groupinfo);
    	$this->display();
    	
    }

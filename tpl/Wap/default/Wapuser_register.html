@@ -1,29 +1,25 @@
 <include file="Wap:header"/>
-	<form action='#' class='form-signin' role='form'>
+	<form action='' class='form-signin' role='form'  method="post" >
 		<h4 class='form-signin-heading'>注册户账户</h4>
 		<input type='text' class='form-control input-lg'  placeholder='请输入姓名' required
-			autofocus>
+			autofocus name="name">
 		<div style='height: 10px; clear: both; display: block'></div>
-		<input
+		<input  
 			type='password'
-			class='form-control input-lg' placeholder='请输入密码' required>
+			class='form-control input-lg'  name="password" placeholder='请输入密码'  required>
 			<div style='height: 10px; clear: both; display: block'></div>
 			<input
-			type='text'
-			class='form-control input-lg' placeholder='请输入手机号' required>
+			type='text' name="tel"
+			class='form-control input-lg' placeholder='请输入手机号'   pattern="^1[3-9]\d{9}$"  required oninvalid="setCustomValidity('填写正确手机号');" oninput="setCustomValidity('');">
 		 <div style='height: 10px; clear: both; display: block'></div>
-		<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-    所属小组
-    <span class="caret"></span>
-  </button>
-   <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">迦南一组</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">迦南组二</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">和哈</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">迦南三组</a></li>
-  </ul>
-</div>
+		
+ 
+    <select class="form-control"  style="width: auto;"  name="group_id">
+    <volist name="Groupinfo" id="Groupinfo">
+     <option value="{pigcms:$Groupinfo.id}">{pigcms:$Groupinfo.group_name}</option>
+    </volist>
+   </select>
+
 <div style='height: 10px; clear: both; display: block'></div>
 		<button class='btn btn-lg btn-success btn-block' type='submit'>注册</button>
 	</form>
