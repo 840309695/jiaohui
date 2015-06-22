@@ -39,7 +39,7 @@ class FrontUserAction extends UserAction{
 			}else{
 			 unset($_POST['password']);
 			}
-			$this->chckuser();
+		
 			$this->save("Front_user");
 			
 		}
