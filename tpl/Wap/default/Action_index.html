@@ -1,75 +1,18 @@
-<!DOCTYPE html>
-<html class="huodongxing"><head>
-		<title>活动</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta http-equiv="Pragma" content="no-cache">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1, maximum-scale=1, user-scalable=no">
-		<meta name="MobileOptimized" content="width">
-		<meta name="HandheldFriendly" content="true">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="format-detection" content="telephone=no">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="distribution" content="global">
-		<meta name="author" content="活动行">
-		<meta name="publisher" content="活动行">
-		<meta name="rating" content="general">
-		<meta name="copyright" content="© 2012 京ICP备12026130号">
-		<meta name="webcrawlers" content="all">
-		<meta name="company" content="北京艾科创意信息技术有限公司">
-		<meta name="subject" content="活动行 伴活动同行">
+<include file="Wap:header" />
+
 		<link href="{pigcms::$staticFilePath}/action.css" rel="stylesheet" type="text/css">
-		<script type="text/javascript">
-		    function google_analytics_script(){
-				(function (i, s, o, g, r, a, m) {
-					i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-						(i[r].q = i[r].q || []).push(arguments)
-					}, i[r].l = 1 * new Date(); a = s.createElement(o),
-					m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
-				})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-				ga('create', 'UA-34953182-1', 'huodongxing.com');
-				if(false) {
-					ga('set', '&uid', { 'userId':''});
-				}
-				ga('require', 'displayfeatures');
-				ga('send', 'pageview');
 
-				ga(function(tracker) { $("#google_analytics_client_id").val(tracker.get('clientId')); });
-			}
-
-			var uvOptions = {};
-			var _atrk_opts = { atrk_acct: "GgKTe1aoiI00WL", domain: "huodongxing.com", dynamic: true };
-
-			//电子邮箱格式验证
-			function validateEmail(email) {
-				if (email == null || $.trim(email) == "") return false;
-				var pattern = /^([A-Za-z0-9]+)(([A-Za-z0-9]+)|(_+)|(\-+)|(\.+)|(\++))*@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6}$/i;
-				return pattern.test(email);
-			}
-			//手机号码格式验证
-			function validatePhone(phone) {
-				if (phone == null || $.trim(phone) == "") return false;
-				var pattern = /(^((0[1,2]{1}\d{1}-?\d{8})|(0[3-9]{1}\d{2}-?\d{7,8}))$)|(^(0|86|17951)?(13[0-9]|15[0-35-9]|17[0678]|18[0-9]|14[57])[0-9]{8}$)/;
-				return pattern.test(phone);
-			}
-			PathUtil = {
-			    path: '/Content/v2.0/mobile/',
-			    getStylePath:function(){
-			       return this.path
-			    }
-			}
-		</script>
-	<script type="text/javascript" src="http://hm.baidu.com/h.js?d89d7d47b4b1b8ff993b37eafb0b49bd"></script></head>
-	<body>
+	
         <!-- mobile端 datatable分页，添加jquery标志-->
         <input id="isHuoDongXingMobile" type="hidden" value="true">
      
          <header style="">
-				<div class="navbar-left"><div onclick="javascript:if(history.length>=2) { history.go(-1); } else { window.location = 'http://www.huodongxing.com'; }"><div class="icon-back"></div></div></div>
+				<div class="navbar-left"><div onclick="javascript:if(history.length>=2) { history.go(-1); } else { window.location = 'http://www.huodongxing.com'; }"><div class="glyphicon glyphicon-menu-left"></div></div></div>
                 <div class="navbar-right">
-                    <a href="http://www.huodongxing.com/myevents">主页</a>
+                    <a href="http://www.huodongxing.com/myevents"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
                 </div>
-				<h1><div class="logo">活动行</div></h1>
+				<h1><div class="glyphicon glyphicon-book"></div></h1>
+		
 		</header>
 		<div class="nav-menu modal fade">
 		    <div class="modal-dialog">
