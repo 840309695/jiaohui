@@ -1,10 +1,10 @@
 <?php
-class ActionAction extends BaseAction{
+class ActionAction extends WapAction{
 	
 	
 	public  function index (){
-		
-		echo "正在测试中......";
+		$this->assign('staticFilePath', str_replace('./', '/', THEME_PATH . 'common/css/action'));
+		$this->display();
 		
 	}
 	
