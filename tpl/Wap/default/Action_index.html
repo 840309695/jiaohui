@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="huodongxing"><head>
+		<title>专题精选_活动行-全球最大中文活动平台！</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="MobileOptimized" content="width">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="distribution" content="global">
+		<meta name="author" content="活动行">
+		<meta name="publisher" content="活动行">
+		<meta name="rating" content="general">
+		<meta name="copyright" content="© 2012 京ICP备12026130号">
+		<meta name="webcrawlers" content="all">
+		<meta name="company" content="北京艾科创意信息技术有限公司">
+		<meta name="subject" content="活动行 伴活动同行">
+		<link href="{pigcms::$staticFilePath}/action.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript">
+		    function google_analytics_script(){
+				(function (i, s, o, g, r, a, m) {
+					i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+						(i[r].q = i[r].q || []).push(arguments)
+					}, i[r].l = 1 * new Date(); a = s.createElement(o),
+					m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+				})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+				ga('create', 'UA-34953182-1', 'huodongxing.com');
+				if(false) {
+					ga('set', '&uid', { 'userId':''});
+				}
+				ga('require', 'displayfeatures');
+				ga('send', 'pageview');
+
+				ga(function(tracker) { $("#google_analytics_client_id").val(tracker.get('clientId')); });
+			}
+
+			var uvOptions = {};
+			var _atrk_opts = { atrk_acct: "GgKTe1aoiI00WL", domain: "huodongxing.com", dynamic: true };
+
+			//电子邮箱格式验证
+			function validateEmail(email) {
+				if (email == null || $.trim(email) == "") return false;
+				var pattern = /^([A-Za-z0-9]+)(([A-Za-z0-9]+)|(_+)|(\-+)|(\.+)|(\++))*@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6}$/i;
+				return pattern.test(email);
+			}
+			//手机号码格式验证
+			function validatePhone(phone) {
+				if (phone == null || $.trim(phone) == "") return false;
+				var pattern = /(^((0[1,2]{1}\d{1}-?\d{8})|(0[3-9]{1}\d{2}-?\d{7,8}))$)|(^(0|86|17951)?(13[0-9]|15[0-35-9]|17[0678]|18[0-9]|14[57])[0-9]{8}$)/;
+				return pattern.test(phone);
+			}
+			PathUtil = {
+			    path: '/Content/v2.0/mobile/',
+			    getStylePath:function(){
+			       return this.path
+			    }
+			}
+		</script>
+	<script type="text/javascript" src="http://hm.baidu.com/h.js?d89d7d47b4b1b8ff993b37eafb0b49bd"></script></head>
+	<body>
+        <!-- mobile端 datatable分页，添加jquery标志-->
+        <input id="isHuoDongXingMobile" type="hidden" value="true">
+     
+         <header style="">
+				<div class="navbar-left"><div onclick="javascript:if(history.length>=2) { history.go(-1); } else { window.location = 'http://www.huodongxing.com'; }"><div class="icon-back"></div></div></div>
+                <div class="navbar-right">
+                    <a href="http://www.huodongxing.com/myevents">主页</a>
+                </div>
+				<h1><div class="logo">活动行</div></h1>
+		</header>
+		<div class="nav-menu modal fade">
+		    <div class="modal-dialog">
+                <ul>
+                    <li><a href="http://www.huodongxing.com/events?show=list" class="more"><span>发现活动</span></a></li>
+                    <li><a href="http://www.huodongxing.com/organizers" class="organizer"><span>知名主办方</span></a></li>
+                    <li><a href="http://www.huodongxing.com/user/index" class="ticket"><span>已参加</span></a></li>
+                </ul>
+		    </div>
+    	</div>
+		<section>
+    <div class="topic-list">
+    <ul class="">
+                <li>
+                    <a href=""><img src="http://wimg.huodongxing.com/wp-uploads/2015/06/20150626180838509.jpg@!wmlogo" alt="周末闲不住 | 想出门总有理由"><h3>周末闲不住 | 想出门总有理由</h3></a>
+                </li>
+                <li>
+                    <a href=""><img src="http://wimg.huodongxing.com/wp-uploads/2015/06/20150623180929464.jpg@!wmlogo" alt="精品 | 浏览过万的好活动"><h3>精品 | 浏览过万的好活动</h3></a>
+                </li>
+               
+         
+    </ul>
+        <a class="btn btn-primary btn-lg btn-block" href="javascript:nextPage();">查看更多活动</a>
+    </div>
+</section>
+		
+
+		<!-- <div class="bottom_tools">
+	        <a id="gotop" class="fade hide" href="#">返回顶部</a>
+    	</div> -->
+		<footer>
+			
+
+	    </footer>
+		<div id="wx_error_msg" style="display:none;color:red;"></div>
+
+        
+        
+
+		
+		<script type="text/javascript">
+			+function ($) {
+				var $body = $('body');
+				
+				$('[type=password]').keyup(function () {
+					if (!this.nextElementSibling) return;
+					this.value == '' ? (this.nextElementSibling.style.display = 'none') : (this.nextElementSibling.style.display = 'block')
+				});
+				$('.btn-pw-visibility').click(function (e) {
+					if (this.previousElementSibling.type === 'password') {
+						this.previousElementSibling.type = 'text';
+						this.innerHTML = '隐藏';
+					}
+					else {
+						this.previousElementSibling.type = 'password';
+						this.innerHTML = '显示';
+					}
+				});
+				  var $headerTitle = $('header h1')
+				  $headerTitle.click(function(){
+				    $('.nav-menu').modal('toggle')
+				  })
+
+				  $('.nav-menu')
+				    .on('show:bs:modal',function(){
+				      $headerTitle.addClass('navbar-arrow-up')
+				    })
+				    .on('hide:bs:modal',function(){
+				      $headerTitle.removeClass('navbar-arrow-up')
+				    })
+
+				$('.promo_bottom .close').tap(function(){
+				    $(this).parents('.promo_bottom').fadeOut(300)
+				})
+
+			 	//wechat fix
+			 	if (history.length < 2){
+			        $('.icon-back').hide()
+			    }
+		    $(function(){
+		    	if (document.body.scrollHeight > window.innerHeight){
+				    $(document).on('focus','input,textarea',function(e){
+					    $body.addClass('position-fixed-fix')
+					});
+					$(document).on('blur','input,textarea', function(e){
+					    $body.removeClass('position-fixed-fix')
+					});
+				}
+		    })
+	    	 
+			} (window.Zepto)
+
+			Date.prototype.format = function (format) { //author: meizz 
+				var o = {
+					"M+": this.getMonth() + 1, //month 
+					"d+": this.getDate(),    //day 
+					"h+": this.getHours(),   //hour 
+					"m+": this.getMinutes(), //minute 
+					"s+": this.getSeconds(), //second 
+					"q+": Math.floor((this.getMonth() + 3) / 3),  //quarter 
+					"S": this.getMilliseconds() //millisecond 
+				}
+				if (/(y+)/.test(format)) format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+				for (var k in o) if (new RegExp("(" + k + ")").test(format))
+					format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+				return format;
+			}
+			function forwardEmailLink(email) {
+				if (email == null || email == "") return "";
+				var emlower = email.toLowerCase();
+				var link = "<a target='_blank' href='http://";
+				if (emlower.indexOf("@qq.com") > 0 || emlower.indexOf("@163.com") > 0 || emlower.indexOf("@126.com") > 0 || emlower.indexOf("@tom.com") > 0 || emlower.indexOf("@sina.com") > 0 || emlower.indexOf("@yahoo.com") > 0) {
+					link += "mail." + emlower.substring(emlower.indexOf("@") + 1);
+				}
+				else {
+					link += "www." + emlower.substring(emlower.indexOf("@") + 1);
+				}
+				link += "'>前往查收</a>";
+				return link;
+			}
+			function setupScriptDelay(scriptPath, sync, onHead){
+				var setupScript = document.createElement("script"); setupScript.type = 'text/javascript';
+				if(!sync) setupScript.async = true;
+				if(scriptPath.indexOf("http") == 0) setupScript.src = scriptPath;
+				else setupScript.src = (("https:" == document.location.protocol) ? "https://" : "http://") + scriptPath;
+				if(onHead) document.getElementsByTagName("head")[0].appendChild(setupScript);
+				else document.body.appendChild(setupScript);
+			}
+			function setupGlobalScript(){
+				setupScriptDelay("hm.baidu.com/h.js?d89d7d47b4b1b8ff993b37eafb0b49bd", true, true);
+				google_analytics_script();
+				//alexa_script();
+			}
+			$(function () {
+				window.setTimeout("setupGlobalScript()", 350);
+			});
+			
+
+			<script type="text/javascript" src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+	
+
+		<!-- Start Alexa Certify Javascript -->
+        <script type="text/javascript">
+            _atrk_opts = { atrk_acct: "GgKTe1aoiI00WL", domain: "huodongxing.com", dynamic: true };
+            function alexa_script() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(as, s); }
+        </script>
+        <noscript>&lt;img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=GgKTe1aoiI00WL" style="display:none" height="1" width="1" alt="" /&gt;</noscript>
+        <!-- End Alexa Certify Javascript -->
+
+		<input type="hidden" value="web01">
+    
+</body></html>
