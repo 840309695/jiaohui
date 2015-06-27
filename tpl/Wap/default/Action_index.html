@@ -7,9 +7,9 @@
         <input id="isHuoDongXingMobile" type="hidden" value="true">
      
          <header style="">
-				<div class="navbar-left"><div onclick="javascript:if(history.length>=2) { history.go(-1); } else { window.location = 'http://www.huodongxing.com'; }"><div class="glyphicon glyphicon-menu-left"></div></div></div>
+				<div class="navbar-left"><div onclick="javascript:if(history.length>=2) { history.go(-1); } else { window.location = ''; }"><div class="glyphicon glyphicon-menu-left"></div></div></div>
                 <div class="navbar-right">
-                    <a href="http://www.huodongxing.com/myevents"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+                    <a href="{pigcms::U('Wapuser/register', array('token' => $token, 'wecha_id' => $wecha_id))}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
                 </div>
 				<h1><div class="glyphicon glyphicon-book"></div></h1>
 		
