@@ -25,3 +25,32 @@ CREATE TABLE `pigcms_front_user` (
 PRIMARY KEY (`id`)
 )
 ;
+
+
+
+CREATE TABLE `pigcms_action` (
+`id`  int NULL AUTO_INCREMENT ,
+`name`  varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+`people_nu`  varchar(50) NULL ,
+`start_time`  int NULL ,
+`end_time`  int NULL ,
+`status`  int NULL ,
+`create_date`  timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ,
+`needs_nu`  int NULL ,
+`imgurl`  varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+`content`  text CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+
+PRIMARY KEY (`id`)
+)
+;
+
+CREATE TABLE `pigcms_action_user` (
+`uid`  int NULL ,
+`action_id`  int NULL ,
+`number`  varchar(20) NULL 
+)
+;
+
+
+
+
