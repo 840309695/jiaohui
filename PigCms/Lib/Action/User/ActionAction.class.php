@@ -36,6 +36,7 @@ class ActionAction extends UserAction{
 	 		$this->save();
 	 	}
 	 	$data=$this->db->where(array("id"=>$this->_get("id")))->find();
+	 	
 	 	$this->assign("list",$data);
 	 	$this->display("set");
 	    
