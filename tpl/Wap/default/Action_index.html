@@ -2,13 +2,7 @@
 
 		
 		<div class="nav-menu modal fade">
-		    <div class="modal-dialog">
-                <ul>
-                    <li><a href="http://www.huodongxing.com/events?show=list" class="more"><span>发现活动</span></a></li>
-                    <li><a href="http://www.huodongxing.com/organizers" class="organizer"><span>知名主办方</span></a></li>
-                    <li><a href="http://www.huodongxing.com/user/index" class="ticket"><span>已参加</span></a></li>
-                </ul>
-		    </div>
+		    
     	</div>
 		<section>
     <div class="topic-list">
@@ -40,110 +34,7 @@
         
 
 		
-		<script type="text/javascript">
-			+function ($) {
-				var $body = $('body');
-				
-				$('[type=password]').keyup(function () {
-					if (!this.nextElementSibling) return;
-					this.value == '' ? (this.nextElementSibling.style.display = 'none') : (this.nextElementSibling.style.display = 'block')
-				});
-				$('.btn-pw-visibility').click(function (e) {
-					if (this.previousElementSibling.type === 'password') {
-						this.previousElementSibling.type = 'text';
-						this.innerHTML = '隐藏';
-					}
-					else {
-						this.previousElementSibling.type = 'password';
-						this.innerHTML = '显示';
-					}
-				});
-				  var $headerTitle = $('header h1')
-				  $headerTitle.click(function(){
-				    $('.nav-menu').modal('toggle')
-				  })
-
-				  $('.nav-menu')
-				    .on('show:bs:modal',function(){
-				      $headerTitle.addClass('navbar-arrow-up')
-				    })
-				    .on('hide:bs:modal',function(){
-				      $headerTitle.removeClass('navbar-arrow-up')
-				    })
-
-				$('.promo_bottom .close').tap(function(){
-				    $(this).parents('.promo_bottom').fadeOut(300)
-				})
-
-			 	//wechat fix
-			 	if (history.length < 2){
-			        $('.icon-back').hide()
-			    }
-		    $(function(){
-		    	if (document.body.scrollHeight > window.innerHeight){
-				    $(document).on('focus','input,textarea',function(e){
-					    $body.addClass('position-fixed-fix')
-					});
-					$(document).on('blur','input,textarea', function(e){
-					    $body.removeClass('position-fixed-fix')
-					});
-				}
-		    })
-	    	 
-			} (window.Zepto)
-
-			Date.prototype.format = function (format) { //author: meizz 
-				var o = {
-					"M+": this.getMonth() + 1, //month 
-					"d+": this.getDate(),    //day 
-					"h+": this.getHours(),   //hour 
-					"m+": this.getMinutes(), //minute 
-					"s+": this.getSeconds(), //second 
-					"q+": Math.floor((this.getMonth() + 3) / 3),  //quarter 
-					"S": this.getMilliseconds() //millisecond 
-				}
-				if (/(y+)/.test(format)) format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-				for (var k in o) if (new RegExp("(" + k + ")").test(format))
-					format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
-				return format;
-			}
-			function forwardEmailLink(email) {
-				if (email == null || email == "") return "";
-				var emlower = email.toLowerCase();
-				var link = "<a target='_blank' href='http://";
-				if (emlower.indexOf("@qq.com") > 0 || emlower.indexOf("@163.com") > 0 || emlower.indexOf("@126.com") > 0 || emlower.indexOf("@tom.com") > 0 || emlower.indexOf("@sina.com") > 0 || emlower.indexOf("@yahoo.com") > 0) {
-					link += "mail." + emlower.substring(emlower.indexOf("@") + 1);
-				}
-				else {
-					link += "www." + emlower.substring(emlower.indexOf("@") + 1);
-				}
-				link += "'>前往查收</a>";
-				return link;
-			}
-			function setupScriptDelay(scriptPath, sync, onHead){
-				var setupScript = document.createElement("script"); setupScript.type = 'text/javascript';
-				if(!sync) setupScript.async = true;
-				if(scriptPath.indexOf("http") == 0) setupScript.src = scriptPath;
-				else setupScript.src = (("https:" == document.location.protocol) ? "https://" : "http://") + scriptPath;
-				if(onHead) document.getElementsByTagName("head")[0].appendChild(setupScript);
-				else document.body.appendChild(setupScript);
-			}
-			function setupGlobalScript(){
-				setupScriptDelay("hm.baidu.com/h.js?d89d7d47b4b1b8ff993b37eafb0b49bd", true, true);
-				google_analytics_script();
-				//alexa_script();
-			}
-			$(function () {
-				window.setTimeout("setupGlobalScript()", 350);
-			});
-			
-
-			<script type="text/javascript" src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
-	
-
-		<!-- Start Alexa Certify Javascript -->
-       
-
 		
+
     
 </body></html>
