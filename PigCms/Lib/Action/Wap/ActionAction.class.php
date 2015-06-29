@@ -10,10 +10,15 @@ class ActionAction extends WapAction{
 	
 	
 	public  function index (){
-		$hostlist=$this->action->where(array("tokn"=>$this->token))->order('create_date  desc')->limit(5)->select();
+		$hostlist=$this->action->where(array("token"=>$this->token))->order('create_date  desc')->limit(5)->select();
 		$this->assign("hostlist",$hostlist);
 		$this->display();
 		
+	}
+	
+	public  function  details(){
+		
+		$this->display();
 	}
 	
 }
