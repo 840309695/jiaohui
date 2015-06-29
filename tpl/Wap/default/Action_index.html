@@ -25,13 +25,13 @@
     	</div>
 		<section>
     <div class="topic-list">
-    <ul class="">
+    <ul class=""> 
+    <volist  name="hostlist" id="list">
+    
                 <li>
-                    <a href=""><img src="http://wimg.huodongxing.com/wp-uploads/2015/06/20150626180838509.jpg@!wmlogo" alt="周末闲不住 | 想出门总有理由"><h3>周末闲不住 | 想出门总有理由</h3></a>
+                    <a href=""><img src="{pigcms:$list.imgurl}" alt="{pigcms:$list.name}"><h3>{pigcms:$list.name}</h3></a>
                 </li>
-                <li>
-                    <a href=""><img src="http://wimg.huodongxing.com/wp-uploads/2015/06/20150623180929464.jpg@!wmlogo" alt="精品 | 浏览过万的好活动"><h3>精品 | 浏览过万的好活动</h3></a>
-                </li>
+        </volist>  
                
          
     </ul>
