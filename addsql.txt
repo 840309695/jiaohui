@@ -37,7 +37,7 @@ PRIMARY KEY (`id`)
 	`status`  int NULL ,
 	`create_date`  timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ,
 	`needs_nu`  int NULL ,
-	`imgurl`  varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+	`imgurl`  varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
 	`content`  text CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
 	`token`  varchar(50)  NULL ,
 	PRIMARY KEY (`id`)
