@@ -33,8 +33,6 @@ class ActionAction extends UserAction{
 	 public function  edit(){
 	 	if($this->isPost()){
 	 		$this-> postset();	
-             trace();
-             die;
 	 		$this->save();
 	 	}
 	 	$data=$this->db->where(array("id"=>$this->_get("id")))->find();
