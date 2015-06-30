@@ -18,6 +18,8 @@ class ActionAction extends WapAction{
 	
 	public  function  details(){
 		
+		$data=$this->action->where(array("token"=>$this->token,"id"=>$this->_get("id")))->order('create_date  desc')->find();
+		$this->assign("list",$data);
 		$this->display();
 	}
 	
