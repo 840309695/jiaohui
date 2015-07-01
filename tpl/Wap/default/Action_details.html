@@ -1,5 +1,65 @@
 <include file="Wap:header" />
-	
+<style>
+
+
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.number {
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.number i {
+  font-size: 30px;
+  line-height: 33px;
+  text-align: center;
+  font-style: normal;
+  position: relative;
+  top: 3px;
+    display: inline-block;
+  width: 48px;
+  height: 39px;
+  border: 1px solid #dcdcdc;
+
+}
+.number input[type=text] {
+  border-left: none;
+  border-right: 0;
+  text-align: center;
+  border-radius: 0;
+  display: inline-block;
+  width: 48px;
+  height: 39px;
+  border: 1px solid #dcdcdc;
+}
+</style>
+	<!-- mobile端 datatable分页，添加jquery标志-->
+        <input id="isHuoDongXingMobile" type="hidden" value="true">
+  <header style="">
+				<div class="navbar-left"><div onclick="javascript:if(history.length>=2) { history.go(-1); } else { window.location = ''; }"><div class="glyphicon glyphicon-menu-left"></div></div></div>
+                <div class="navbar-right">
+                    <a href="{pigcms::U('Index/index', array('token' => $token, 'wecha_id' => $wecha_id))}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+                </div>
+				<h1><div class="glyphicon glyphicon-book"></div></h1>
+		
+</header>
 	<section class="event-details" id="event-details">
             <img class="banner" src="{pigcms:$list.imgurl}" alt="">
 		<section style="margin:0px">
@@ -12,7 +72,8 @@
 				<div><span class="icon-statistics"></span>限额100人</div>
 				
 			</div>
-			<div id="event_register_message" style="display: none;" class="success"> </div>
+		
+              <label  for="number">请选择人数：</label> <div class="number"><i class="number_old">-</i><input class="priceNumber" readonly="readonly" value="1" type="text"><i class="number_add">+</i></div>     
 
 
   <div class="navbar-fixed-bottom btn-signup-lg">
@@ -20,133 +81,60 @@
          <a id="reg_event_btn_enabled" name="reg_event_btn_enabled" href="" class="btn btn-primary btn-block btn-lg" onclick="javascript:startRegisterEvent();return false;">我要报名</a>
     </div>
 
-    <div id="event_register_step2" style="display: none; font-size: 12px;">
-        <br>
-        <h1>验证手机号码/邮箱</h1>
-        <div id="valid_login_code_msg" class="warning" style="display: none; margin-bottom: 10px;"></div>
-        <form id="contact_valid_form" action="/login5" method="POST" data-abide="" prevent-submit="true" novalidate="">
-			<input type="hidden" value="1" name="LoginType" id="login_tab_type">
-			<input type="hidden" value="" name="ContactType" id="login_contact_type">
-			<input type="hidden" value="" name="LoginPhone" id="loginform_login_phone">
-			<input type="hidden" value="" name="RegEmail" id="loginform_login_email">
-			<input type="hidden" name="ex_country" value="中国">
-			<input type="hidden" name="ex_province" value="四川">
-			<input type="hidden" name="ex_city" value="成都">
-			<input type="hidden" name="ex_category" id="ex_category" value="0">
-			<input type="hidden" name="ex_special" id="ex_special" value="8287950531300;4011622609754">
-			<input type="hidden" name="ex_eventid" value="8287950531300">
-			<input type="hidden" name="ex_eventatsn" id="ex_eventatsn" value="0">
-
-			<input type="hidden" name="webTokenValue" id="webTokenValue" value="1221755BC27EE62EAEE6ABC2531D1D943436158F1BC84152F0">
-			<label class="titlelabel">邮箱或手机<font style="color: red;">&nbsp;*</font></label>
-			<input type="text" placeholder="您的手机号或者邮箱" id="valid_login_contact" class="form-control required" required="" value="" onblur="javascript:changeLoginContact(this);" data-validation-message="帐号格式错误" data-validation-type="warning">
-			<a id="valid_code_login_send_btn" class="btn btn-primary">发送验证码<span id="login_sending_remain" style="display: none;"></span> </a>
-			<br>
-			<br>
-			<label class="titlelabel">收到的验证码<font style="color: red;">&nbsp;*</font></label>
-			<input type="text" value="" name="LoginCode" id="valid_login_code_value" class="form-control required" required="" placeholder="请输入您收到的验证码" data-validation-message="请填写验证码" data-validation-type="warning">
-			<br>
-			<label class="titlelabel">姓名<font style="color: red;">&nbsp;*</font></label>
-			<input type="text" name="RegName" placeholder="请填写您的姓名" class="form-control required" required="" maxlength="10" data-validation-message="请填写您的姓名" data-validation-type="warning">
-			<div style="display: none;">
-				<br>
-				<label class="titlelabel">称呼 <font style="color: red;">&nbsp;*</font></label>
-				<label class="radio inline" style="min-width: 40px; padding-top: 0px; margin-top: -5px;">
-					<input type="radio" name="RegGender" value="1" style="margin-top: 0px;" checked="checked">先生
-				</label>
-				<label class="radio inline" style="min-width: 40px; padding-top: 0px; margin-top: -5px;margin-left: 0px;">
-					<input type="radio" name="RegGender" value="2" style="margin-top: 0px;">小姐
-				</label>
-			</div>
-			<div style="display: none;">
-				<br>
-				<label class="titlelabel">昵称</label>
-				<input type="text" name="RegNick" placeholder="请填写您的昵称，限20字以内" class="form-control" maxlength="20">
-			</div>
-			<div id="fast_add_contact_div" style="display: none;">
-				<br>
-				<label class="titlelabel" id="fast_add_contact_label">
-				</label>
-				<input type="text" id="fast_add_contact" class="form-control" value="" data-validation-message="请补充您的联系方式" data-validation-type="warning">
-			</div>
-			<br>
-			<br>
-			<div class="text-right">
-				<a class="btn btn-link" onclick="javascript:return2Home();return false;">返回</a>
-				&nbsp;&nbsp;
-				<a id="regform_login_submit_btn" class="btn btn-primary" onclick="javascript:loginSubmit();return false;">确定</a>
-			</div>
-        </form>
-    </div>
-    <div id="event_register_step3" style="display: none;">
-        <br>
-        <h1>填写报名表单</h1>
-        <form id="user_base_info_register_form" method="POST" action="/account/saveuser" data-abide="" prevent-submit="true" novalidate="">
-            <input type="hidden" name="webTokenValue" value="1257D47AB17C453A549638D3B320D4246BD50465D0C2CE96E7">
-			<input type="hidden" name="ex_category" value="0">
-			<input type="hidden" name="ex_special" value="8287950531300;4011622609754">
-            <input type="hidden" name="ex_country" value="中国">
-            <input type="hidden" name="ex_province" value="四川">
-            <input type="hidden" name="ex_city" value="成都">
-            <div class="form-group">
-				<label class="control-label">姓名<font style="color:red;">&nbsp;*</font></label>
-                <input class="form-control required" required="" type="text" placeholder="请填写联系人姓名" name="RealName" value="" maxlength="10">
-            </div>
-			<div class="form-group">
-				<label class="control-label">昵称</label>
-                <input class="form-control" type="text" placeholder="请填写联系人昵称" name="Nick" value="" maxlength="20">
-            </div>
-            <div class="form-group">
-				<label class="control-label">手机<font style="color:red;">&nbsp;*</font></label>
-                <input class="form-control required" required="" type="text" placeholder="请填写联系手机号" name="Phone" id="user_base_info_phone" value="">
-            </div>
-            <div class="form-group">
-				<label class="control-label">常用邮箱<font style="color:red;">&nbsp;*</font></label>
-                <input class="form-control email required" required="" type="text" placeholder="请填写联系邮箱" name="Email" id="user_base_info_email" value="">
-            </div>
-        </form>
-        <form id="event_home_register_form" method="POST" action="/event/reg_submit?id=8287950531300" data-abide="" novalidate="">
-			<input type="hidden" value="8287950531300" name="eid">
-			<input type="hidden" value="0" name="sn">
-			<input type="hidden" value="1" name="ordnum">
-			<input type="hidden" value="False" name="reqpt">
-			<input type="hidden" name="location">
-			<input type="hidden" name="country" value="中国">
-			<input type="hidden" name="province" value="四川">
-			<input type="hidden" name="city" value="成都">
-			<input type="hidden" name="district" value="">
-			<input type="hidden" name="regfrom" value="1">
-			<input type="hidden" name="coupon" value="">
-			<input type="hidden" name="gacid" id="google_analytics_client_id" value="929458657.1435237722">
-			<div id="event_template_form_fields" style="font-size: 12px;"></div>
-			<div style="clear: both;"></div>
-			<div class="text-right">
-				<a class="btn btn-link" onclick="javascript:return2Home();return false;">取消</a>
-				&nbsp;&nbsp;
-				<a class="btn btn-primary" id="submit_home_reg_form_btn" onclick="javascript:CheckLoginAndRegister();return false;">提交</a>
-			</div>
-        </form>
-    </div>
+  
 
 		</section>
 			
 		<section>
-			<div class="title">
+			<div class="title">	
+		
 				<h2>活动介绍</h2>
 				
 			</div>
 			<div style="margin-top:8px;" id="event_content">
 				<div id="home_event_description">
 					{pigcms:$list.content}
-					
+						<p>
+				sdfsdfsdfsdfsdfsdfsdfd
+					sdfsdfsdfsdfsdfsdfsdfd
+				
+				</p>
 
 				</div>
 			</div>
 				      
 		</section>
-
+        <footer></footer>
 	
 	</section>
+<script>
+$(document).ready(function(){
+
+$(".number_add").click(function(){
+  var n=$(".priceNumber").val();
+  var num=parseInt(n)+1;
+
+ if(num==0){return}
+
+  $(".priceNumber").val(num);
+
+});
+
+$(".number_old").click(function(){
+
+  var n=$(".priceNumber").val();
+
+  var num=parseInt(n)-1;
+
+ if(num==0){ return}
+
+  $(".priceNumber").val(num);
+
+  });
+
+});
+
+</script>
 
 
 <div class="bottom_tools">
@@ -154,9 +142,6 @@
 </div>
 
 
-		<footer>
-				
-	    </footer>
 		
         
         
