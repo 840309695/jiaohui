@@ -63,6 +63,7 @@
 	<section class="event-details" id="event-details">
             <img class="banner" src="{pigcms:$list.imgurl}" alt="">
 		<section style="margin:0px">
+		<form   id="aa"  action="{pigcms::U('Action/baoming', array('token' => $token, 'wecha_id' => $wecha_id))}" method="post">
 			<h1>
 				{pigcms:$list.name}
 			</h1>
@@ -76,7 +77,7 @@
 				
 			</div>
 		      <?php if(time()<$list['end_time']){?>
-              <label  for="number">请选择人数：</label> <div class="number"><i class="number_old">-</i><input class="priceNumber" readonly="readonly" value="1" type="text"><i class="number_add">+</i></div>     
+              <label  for="number">请选择人数：</label> <div class="number"><i class="number_old">-</i><input class="priceNumber" readonly="readonly" value="1" type="text" name="nu"><i class="number_add">+</i></div>     
                <?php }else{?>
                    <p>活动结束了</p>
                
@@ -84,11 +85,10 @@
 
   <div class="navbar-fixed-bottom btn-signup-lg">
       
-         <a id="reg_event_btn_enabled" name="reg_event_btn_enabled" href="" class="btn btn-primary btn-block btn-lg <?php if(time()>$list['end_time']) echo disabled;?> " onclick="javascript:startRegisterEvent();return false;">我要报名</a>
+         <input  type="submit"   id="reg_event_btn_enabled" href="" class="btn btn-primary btn-block btn-lg <?php if(time()>$list['end_time']) echo disabled;?> "  value="我要报名">
     </div>
 
-  
-
+         </form>
 		</section>
 			
 		<section>
@@ -106,7 +106,15 @@
 			</div>
 				      
 		</section>
-        <footer></footer>
+        <footer> 
+        <div class="col-6">
+					<a href="http://www.huodongxing.com/app"><span></span>我的教会平台</a>
+				</div>
+          
+          <div class="col-6">
+					<a href="http://www.huodongxing.com/app"><span></span>联系方式：840309695@qq.com</a>
+				</div>
+        </footer>
 	
 	</section>
 <script>
@@ -137,7 +145,14 @@ $(".number_old").click(function(){
 });
 
 </script>
+<script>
+function save(){
+	 $('#aa').submit()
+	
+}
 
+
+</script>
 
 <div class="bottom_tools">
 	<a id="gotop" class="fade hide" href="#">返回顶部</a>

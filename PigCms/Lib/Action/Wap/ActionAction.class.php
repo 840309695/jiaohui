@@ -23,4 +23,12 @@ class ActionAction extends WapAction{
 		$this->display();
 	}
 	
+	public  function baoming(){
+		dump($_POST);
+		die;
+		$this->display();
+		
+		
+	}
+	
 }
