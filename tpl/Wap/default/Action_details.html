@@ -68,17 +68,20 @@
 			</h1>
 			<div class="event-info">
 			    <div><span class="icon-time"></span>2015-06-28 13:30 ～ 07-28 16:00</div>
-                <div class="text-link"><span class="icon-place"></span><a href="http://api.map.baidu.com/geocoder?address=成都成都市高新区天府软件园D区5栋灵感咖啡&amp;output=html&amp;src=huodongxing">四川成都成都市高新区天府软件园D区5栋灵感咖啡</a></div>
-				<div><span class="icon-statistics"></span>限额100人</div>
+                <div class="text-link"><span class="icon-place"></span><a href="">四川成都成都市高新区天府软件园D区5栋灵感咖啡</a></div>
+				<div><span class="icon-statistics"></span>限额{pigcms:$list.needs_nu}人</div>
 				
 			</div>
-		
+		      <?php if(time()<$list['end_time']){?>
               <label  for="number">请选择人数：</label> <div class="number"><i class="number_old">-</i><input class="priceNumber" readonly="readonly" value="1" type="text"><i class="number_add">+</i></div>     
-
+               <?php }else{?>
+                   <p>活动结束了</p>
+               
+               <?php }?>
 
   <div class="navbar-fixed-bottom btn-signup-lg">
       
-         <a id="reg_event_btn_enabled" name="reg_event_btn_enabled" href="" class="btn btn-primary btn-block btn-lg" onclick="javascript:startRegisterEvent();return false;">我要报名</a>
+         <a id="reg_event_btn_enabled" name="reg_event_btn_enabled" href="" class="btn btn-primary btn-block btn-lg <?php if(time()>$list['end_time']) echo disabled;?> " onclick="javascript:startRegisterEvent();return false;">我要报名</a>
     </div>
 
   
@@ -94,11 +97,7 @@
 			<div style="margin-top:8px;" id="event_content">
 				<div id="home_event_description">
 					{pigcms:$list.content}
-						<p>
-				sdfsdfsdfsdfsdfsdfsdfd
-					sdfsdfsdfsdfsdfsdfsdfd
 				
-				</p>
 
 				</div>
 			</div>
