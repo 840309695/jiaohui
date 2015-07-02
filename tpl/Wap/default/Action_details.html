@@ -68,7 +68,10 @@
 			</h1>
 			<div class="event-info">
 			    <div><span class="icon-time"></span>2015-06-28 13:30 ～ 07-28 16:00</div>
-                <div class="text-link"><span class="icon-place"></span><a href="">四川成都成都市高新区天府软件园D区5栋灵感咖啡</a></div>
+                <div class="text-link"><span class="icon-place"></span><a >{pigcms:$list['address']}</a></div>
+                
+                
+                
 				<div><span class="icon-statistics"></span>限额{pigcms:$list.needs_nu}人</div>
 				
 			</div>
@@ -96,9 +99,9 @@
 			</div>
 			<div style="margin-top:8px;" id="event_content">
 				<div id="home_event_description">
+				    
 					{pigcms:$list.content|htmlspecialchars_decode}
-				
-
+				    
 				</div>
 			</div>
 				      
