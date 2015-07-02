@@ -17,7 +17,8 @@ uploadJson : '/index.php?g=User&m=Upyun&a=kindedtiropic',
 items : [
 'source','undo','clearhtml','hr',
 'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-'insertunorderedlist', '|', 'emoticons', 'image','link', 'unlink','baidumap','lineheight','table','anchor','preview','print','template','code','cut', 'music', 'video']
+'insertunorderedlist', '|', 'emoticons', 'image','link', 'unlink','baidumap','lineheight','table','anchor','preview','print','template','code','cut', 'music', 'video','|','formatblock','forecolor', 'hilitecolor', 'bold', 'italic', 'underline','hr', 'fontname', 'fontsize'],
+afterBlur: function(){this.sync();}
 });
 
 });
