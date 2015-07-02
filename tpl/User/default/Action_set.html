@@ -59,6 +59,15 @@ afterBlur: function(){this.sync();}
   </TD>
 </TR>
 <TR>
+  <th valign="top"><span class="red">*</span>活动地址：</th>
+  <TD>
+	<input type="input" class="px" id="title" value="{pigcms:$list。address}" name="address" style="width:400px" />
+  	<br />
+  
+  </TD>
+</TR>
+
+<TR>
 <th valign="top"><span class="red">*</span>活动海报：</th>
 <td><input type="text" name="imgurl" value="{pigcms:$list.imgurl}" class="px" id="pic" style="width:400px;" />  <script src="/tpl/static/upyun.js"></script><a href="###" onclick="upyunPicUpload('pic',700,700,'{pigcms:$token}')" class="a_upload">上传</a> <a href="###" onclick="viewImg('pic')">预览</a></td> 
 <input type="hidden" name="status" value="0">

@@ -52,5 +52,10 @@ CREATE TABLE `pigcms_action_user` (
 ;
 
 
+ALTER TABLE `pigcms_action`
+ADD COLUMN `address`  varchar(400) utf8 COLLATE utf8_general_ci  NULL AFTER `needs_nu`;
+
+
+
 
 
