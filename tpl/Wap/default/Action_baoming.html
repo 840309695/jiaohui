@@ -1,0 +1,58 @@
+  <include file="Wap:header" />
+    <header style="">
+				<div class="navbar-left"><div onclick="javascript:if(history.length>=2) { history.go(-1); } else { window.location = ''; }"><div class="glyphicon glyphicon-menu-left"></div></div></div>
+                <div class="navbar-right">
+                    <a href="{pigcms::U('Index/index', array('token' => $token, 'wecha_id' => $wecha_id))}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+                </div>
+				<h1><div class="glyphicon glyphicon-book"></div></h1>
+		
+</header>
+    <div id="event_register_step3" >
+        <br>
+        <h1>填写报名表单</h1>
+        <form id="user_base_info_register_form" method="POST" action="/account/saveuser" data-abide="" prevent-submit="true" novalidate="">
+            <input type="hidden" name="webTokenValue" value="1257D47AB17C453A549638D3B320D4246BD50465D0C2CE96E7">
+			<input type="hidden" name="ex_category" value="0">
+			<input type="hidden" name="ex_special" value="8287950531300;4011622609754">
+            <input type="hidden" name="ex_country" value="中国">
+            <input type="hidden" name="ex_province" value="四川">
+            <input type="hidden" name="ex_city" value="成都">
+            <div class="form-group">
+				<label class="control-label">姓名<font style="color:red;">&nbsp;*</font></label>
+                <input class="form-control required" required="" type="text" placeholder="请填写联系人姓名" name="RealName" value="" maxlength="10">
+            </div>
+			<div class="form-group">
+				<label class="control-label">昵称</label>
+                <input class="form-control" type="text" placeholder="请填写联系人昵称" name="Nick" value="" maxlength="20">
+            </div>
+            <div class="form-group">
+				<label class="control-label">手机<font style="color:red;">&nbsp;*</font></label>
+                <input class="form-control required" required="" type="text" placeholder="请填写联系手机号" name="Phone" id="user_base_info_phone" value="">
+            </div>
+            <div class="form-group">
+				<label class="control-label">常用邮箱<font style="color:red;">&nbsp;*</font></label>
+                <input class="form-control email required" required="" type="text" placeholder="请填写联系邮箱" name="Email" id="user_base_info_email" value="">
+            </div>
+        </form>
+        <form id="event_home_register_form" method="POST" action="/event/reg_submit?id=8287950531300" data-abide="" novalidate="">
+			<input type="hidden" value="8287950531300" name="eid">
+			<input type="hidden" value="0" name="sn">
+			<input type="hidden" value="1" name="ordnum">
+			<input type="hidden" value="False" name="reqpt">
+			<input type="hidden" name="location">
+			<input type="hidden" name="country" value="中国">
+			<input type="hidden" name="province" value="四川">
+			<input type="hidden" name="city" value="成都">
+			<input type="hidden" name="district" value="">
+			<input type="hidden" name="regfrom" value="1">
+			<input type="hidden" name="coupon" value="">
+			<input type="hidden" name="gacid" id="google_analytics_client_id" value="929458657.1435237722">
+			<div id="event_template_form_fields" style="font-size: 12px;"></div>
+			<div style="clear: both;"></div>
+			<div class="text-right">
+				<a class="btn btn-link" onclick="javascript:return2Home();return false;">取消</a>
+				&nbsp;&nbsp;
+				<a class="btn btn-primary" id="submit_home_reg_form_btn" onclick="javascript:CheckLoginAndRegister();return false;">提交</a>
+			</div>
+        </form>
+    </div>
