@@ -55,6 +55,18 @@ ALTER TABLE `pigcms_action`
 ADD COLUMN `address` varchar(400) CHARACTER SET utf8 COLLATE utf8_general_ci NULL AFTER `needs_nu`;
 
 
+CREATE TABLE `pigcms_myaction` (
+`id`  int AUTO_INCREMENT NULL ,
+`info`  text NULL ,
+`nu`  int NULL ,
+`aid`  int NULL ,
+`uid`  int NULL ,
+`crate_time`  timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ,
+PRIMARY KEY (`id`)
+)
+;
+
+
 
 
 
