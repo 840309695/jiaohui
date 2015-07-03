@@ -84,8 +84,8 @@
                <?php }?>
 
   <div class="navbar-fixed-bottom btn-signup-lg">
-      
-         <input  type="submit"   id="reg_event_btn_enabled" href="" class="btn btn-primary btn-block btn-lg <?php if(time()>$list['end_time']) echo disabled;?> "  value="我要报名">
+        <a id="reg_event_btn_enabled" name="reg_event_btn_enabled" href="" class="btn btn-primary btn-block btn-lg <?php if(time()>$list['end_time']) echo disabled;?> " onclick="javascript:startRegisterEvent();return false;">我要报名</a
+      <!--   <input  type="submit"   id="reg_event_btn_enabled" href="" class="btn btn-primary btn-block btn-lg <?php if(time()>$list['end_time']) echo disabled;?> "  value="我要报名">-->
     </div>
 
          </form>
