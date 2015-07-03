@@ -52,23 +52,17 @@
 </style>
 	<!-- mobile端 datatable分页，添加jquery标志-->
         <input id="isHuoDongXingMobile" type="hidden" value="true">
-  <header style="">
-				<div class="navbar-left"><div onclick="javascript:if(history.length>=2) { history.go(-1); } else { window.location = ''; }"><div class="glyphicon glyphicon-menu-left"></div></div></div>
-                <div class="navbar-right">
-                    <a href="{pigcms::U('Index/index', array('token' => $token, 'wecha_id' => $wecha_id))}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
-                </div>
-				<h1><div class="glyphicon glyphicon-book"></div></h1>
-		
-</header>
+<include file="style:header" />
 	<section class="event-details" id="event-details">
             <img class="banner" src="{pigcms:$list.imgurl}" alt="">
 		<section style="margin:0px">
-		<form   id="aa"  action="{pigcms::U('Action/baoming', array('token' => $token, 'wecha_id' => $wecha_id))}" method="post">
+		<form   id="aciton"  action="{pigcms::U('Personal/baoming', array('token' => $token, 'wecha_id' => $wecha_id,'id'=>$list['id']))}" method="post">
+			<input type="hidden" name="aid" value="{pigcms:$list.id}"/>
 			<h1>
 				{pigcms:$list.name}
 			</h1>
 			<div class="event-info">
-			    <div><span class="icon-time"></span>2015-06-28 13:30 ～ 07-28 16:00</div>
+			    <div><span class="icon-time"></span>{pigcms:$list.start_time|date='Y-m-d',###}～{pigcms:$list.end_time|date='Y-m-d',###}</div>
                 <div class="text-link"><span class="icon-place"></span><a >{pigcms:$list['address']}</a></div>
                 
                 
@@ -84,7 +78,7 @@
                <?php }?>
 
   <div class="navbar-fixed-bottom btn-signup-lg">
-        <a id="reg_event_btn_enabled" name="reg_event_btn_enabled" href="" class="btn btn-primary btn-block btn-lg <?php if(time()>$list['end_time']) echo disabled;?> " onclick="javascript:startRegisterEvent();return false;">我要报名</a
+        <a id="reg_event_btn_enabled" name="reg_event_btn_enabled" href="#" class="btn btn-primary btn-block btn-lg <?php if(time()>$list['end_time']) echo disabled;?> " >我要报名</a
       <!--   <input  type="submit"   id="reg_event_btn_enabled" href="" class="btn btn-primary btn-block btn-lg <?php if(time()>$list['end_time']) echo disabled;?> "  value="我要报名">-->
     </div>
 
@@ -146,10 +140,13 @@ $(".number_old").click(function(){
 
 </script>
 <script>
-function save(){
-	 $('#aa').submit()
-	
-}
+$(function () {
+    $("#reg_event_btn_enabled").click(function () {
+ 
+    	$("form").submit(); 
+        
+    });
+});
 
 
 </script>
