@@ -9,11 +9,16 @@
 			<h2>已参加</h2>
 		</div>
 	</div>
+	<if condition="$list">
+	
+
 	
 	<foreach name="list" item="vo">
+	  
 	<ul id="" class="event-admin" style="margin: 0px;">
 
 		<li>
+		    	
 			<div>
 
 				<h2>
@@ -37,7 +42,26 @@
 			</ul>
 		<li>
 	</ul>
-	</foreach> 
+	</foreach>
+	<else />
+	<ul id="" class="event-admin" style="margin: 0px;">
+
+		<li>
+		    	
+			<div>
+
+				你没有参加活动
+	           
+	           <span style="  height: 20px; display: block;"></span>
+			</div>
+			
+			
+			
+		<li>
+	</ul>
+	
+	 
+	</if>
 
 </section>
 
