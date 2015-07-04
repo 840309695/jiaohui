@@ -2,11 +2,11 @@
 class PersonalAction extends WapAction {
 	function _initialize() {
 		parent::_initialize ();
-		// if(!$this->islogin()){
-		// $this->error("请登录或者注册",U('Wapuser/login',array('token'=>
+		if(!$this->islogin()){
+		$this->error("请登录或者注册",U('Wapuser/login',array('token'=>
 		
-		// $this->token)));
-		// }
+		$this->token)));
+		}
 		$this->assign ( 'staticFilePath', str_replace ( './', '/', THEME_PATH . 
 
 		'common/css/action' ) );
@@ -34,7 +34,7 @@ class PersonalAction extends WapAction {
 				// }
 				
 				$_POST ['info'] = serialize ( $data );
-				$_POST ['uid'] = cookie ( "wapuid" );
+				$_POST ['uid'] = cookie ( "wapuid");
 				$_POST ['token'] = $this->token;
 				
 				M ( "Myaction" )->add ( $_POST );
