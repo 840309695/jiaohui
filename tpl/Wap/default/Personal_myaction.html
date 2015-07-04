@@ -1,2 +1,49 @@
 <include file="Wap:header" />
 <include file="style:header" />
+
+
+<div class="nav-menu modal fade"></div>
+<section>
+	<div class="event-lite">
+		<div class="title">
+			<h2>已参加</h2>
+		</div>
+	</div>
+	
+	<foreach name="list" item="vo">
+	<ul id="" class="event-admin" style="margin: 0px;">
+
+		<li>
+			<div>
+
+				<h2>
+					<a href="/event/7289095084200">{pigcms:$vo.title}</a>
+				</h2>
+
+				<div>活动时间{pigcms:$vo.stime|date='Y-m-d',###}-{pigcms:$vo.etime|date='Y-m-d',###}</div>
+
+
+				<div class="col-6"></div>
+
+
+
+
+			</div>
+			<ul class="tickets-list" id="ticket_list_7289095084200" style="">
+				<li><span class="name">参加人：</span><em>更新.小光 </em>
+					<div>{pigcms:$vo.tel}</div>
+
+					<div>报名时间：{pigcms:$vo.crate_time}</div></li>
+			</ul>
+		<li>
+	</ul>
+	</foreach> 
+
+</section>
+
+<!-- <div class="bottom_tools">
+	    <a id="gotop" class="fade hide" href="#">返回顶部</a>
+	</div> -->
+<include file="style:footer" />
+</body>
+</html>
