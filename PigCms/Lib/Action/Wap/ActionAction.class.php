@@ -23,10 +23,11 @@ class ActionAction extends WapAction{
 		$this->display();
 	}
 	
-	public  function baoming(){
-		dump($_POST);
-		die;
-		$this->display();
+	public  function more(){
+		$hostlist=$this->action->where(array("token"=>$this->token))->order('create_date  desc')->select();
+		$this->assign("hostlist",$hostlist);
+		$this->display("index");
+		
 		
 		
 	}

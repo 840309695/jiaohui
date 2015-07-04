@@ -18,8 +18,14 @@
                
          
     </ul>
-        <a class="btn btn-primary btn-lg btn-block" href="javascript:nextPage();">查看更多活动</a>
-    </div>
+    
+     
+     
+     
+        <?php  if(ACTION_NAME!='more'){?>
+        <a class="btn btn-primary btn-lg btn-block" href="{pigcms::U('Action/more',array('token'=>$token,'wechat_id'=>$wecha_id,'id'=>$list['id']))}"">查看更多活动</a>
+         <?php }?>
+ </div>
 </section>
 		
 
