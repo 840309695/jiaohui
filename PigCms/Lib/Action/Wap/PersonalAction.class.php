@@ -52,7 +52,6 @@ class PersonalAction extends WapAction {
 		$this->display ();
 	}
 	public function myaction() {
-		cookie ( "wapuid", 1 );
 		$user = cookie ( "wapuid" );
 		$Model = new Model ();
 		$sql = "SELECT
