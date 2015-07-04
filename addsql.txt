@@ -67,6 +67,10 @@ PRIMARY KEY (`id`)
 ;
 
 
+ALTER TABLE `pigcms_myaction`
+DROP COLUMN `token`,
+ADD COLUMN `token`  varchar(100) NULL AFTER `crate_time`;
+
 
 
 
