@@ -71,5 +71,10 @@ ALTER TABLE `pigcms_myaction`
 ADD COLUMN `token`  varchar(100) NULL AFTER `crate_time`;
 
 
+ALTER TABLE `pigcms_action`
+MODIFY COLUMN `create_date`  timestamp NULL DEFAULT CURRENT_TIMESTAMP AFTER `status`;
+
+
+
 
 
