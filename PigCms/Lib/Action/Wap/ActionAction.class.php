@@ -17,8 +17,10 @@ class ActionAction extends WapAction{
 	}
 	
 	public  function  details(){
-		
+		$amap=new amap();
 		$data=$this->action->where(array("token"=>$this->token,"id"=>$this->_get("id")))->order('create_date  desc')->find();
+		$mapurl=$amap->getPointMapLink($data['lng'],$data['lat'],"name");
+		$this->assign("mapurl",$mapurl);
 		$this->assign("list",$data);
 		$this->display();
 	}
@@ -31,5 +33,7 @@ class ActionAction extends WapAction{
 		
 		
 	}
+	
+	
 	
 }
