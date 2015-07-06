@@ -63,7 +63,7 @@
 			</h1>
 			<div class="event-info">
 			    <div><span class="icon-time"></span>{pigcms:$list.start_time|date='Y-m-d',###}～{pigcms:$list.end_time|date='Y-m-d',###}</div>
-                <div class="text-link"><span class="icon-place"></span><a >{pigcms:$list['address']}</a></div>
+                <div class="text-link"><span class="icon-place"></span><a  <if  condition="$mapurl">href="{pigcms:$mapurl}" <else />href="#"</if> >{pigcms:$list['address']}</a></div>
                 
                 
                 

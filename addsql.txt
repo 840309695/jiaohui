@@ -76,5 +76,7 @@ MODIFY COLUMN `create_date`  timestamp NULL DEFAULT CURRENT_TIMESTAMP AFTER `sta
 
 
 
-
+ALTER TABLE `pigcms_action`
+ADD COLUMN `lng`  varchar(30) NULL AFTER `token`,
+ADD COLUMN `lat`  varchar(30) NULL AFTER `lng`;
 

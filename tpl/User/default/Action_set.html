@@ -66,6 +66,19 @@ afterBlur: function(){this.sync();}
   
   </TD>
 </TR>
+    <script>
+                function setlatlng(longitude,latitude){
+	art.dialog.data('longitude', longitude);
+	art.dialog.data('latitude', latitude);
+	// 此时 iframeA.html 页面可以使用 art.dialog.data('test') 获取到数据，如：
+	// document.getElementById('aInput').value = art.dialog.data('test');
+	art.dialog.open('{pigcms::U('Map/setLatLng',array('token'=>$token,'id'=>$id))}',{lock:false,title:'设置经纬度',width:600,height:400,yesText:'关闭',background: '#000',opacity: 0.87});
+}
+                </script>
+ <tr> 
+        <th><span class="red"></span>活动坐标：</th> 
+        <td>经度 <input type="text" id="longitude"  name="lng" size="14" class="px" value="{pigcms:$list.lng}" /> 纬度 <input type="text"  name="lat" size="14" id="latitude" class="px" value="{pigcms:$list.lat}" /> <a href="###" onclick="setlatlng($('#longitude').val(),$('#latitude').val())">在地图中查看/设置</a></td> 
+       </tr>
 
 <TR>
 <th valign="top"><span class="red">*</span>活动海报：</th>
