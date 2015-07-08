@@ -5,6 +5,8 @@ class WapuserAction extends WapAction
 	public function _initialize(){
 		parent::_initialize();
 		$this->userdb=M("Front_user");
+		$tplinfo = M('Wxuser')->where("token = '{$this->token}'")->find();
+		$this->assign("tpl",$tplinfo);
 	
 	}
 	
@@ -28,6 +30,7 @@ class WapuserAction extends WapAction
    		
    		
    	}
+  
    	$this->display();
    }
   
