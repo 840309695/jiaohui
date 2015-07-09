@@ -27,7 +27,7 @@ class PersonalAction extends WapAction {
 					$this->error ( "您已经报名了" );
 				}
 				
-				$this->action->where ( "id={$_GET['id']}" )->setInc ( 'people_nu' );
+				$this->action->where ("id={$_GET['id']}" )->setInc ('people_nu',intval($_POST['nu']));
 				// if(!$l){
 				// M()->rollback();//回滚
 				// $this->error('错误提示');

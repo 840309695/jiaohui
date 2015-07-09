@@ -1,7 +1,10 @@
 <include file="Wap:header"/>
 <div class='container'>
+<div class="col-md-12">
+   <div class=" text-center"  style="margin-top:10%;">
+				<h2>{pigcms:$tpl.wxname}用户注册</h2>
+			</div>
 	<form action='' class='form-signin' role='form'  method="post" >
-		<h4 class='form-signin-heading'>注册户账户</h4>
 		<input type='text' class='form-control input-lg'  placeholder='请输入姓名' required
 			autofocus name="name">
 		<div style='height: 10px; clear: both; display: block'></div>
@@ -26,6 +29,7 @@
 	</form>
 	<div style='height: 10px; clear: both; display: block'></div>
 	<div class="text-center"><p><a  href="{pigcms::U('Wapuser/login', array('token' => $token, 'wecha_id' => $wecha_id))}">已有有账号，现在登录</a></p></div>
+</div>
 </div>
 </body>
 </html>
