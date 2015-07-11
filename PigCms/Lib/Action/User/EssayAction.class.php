@@ -64,6 +64,7 @@ class EssayAction extends ImgBaseAction{
 
 	public function upsave(){
 		$_POST['info']=str_replace('\'','&apos;',$_POST['info']);
+		$_POST['gid']=serialize($_POST['gid']);
 		$db=D('Img');
 		if($db->create()===false){
 			$this->error($db->getError());
