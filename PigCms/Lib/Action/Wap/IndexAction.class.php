@@ -197,6 +197,7 @@ class IndexAction extends WapAction{
 	
 
 		$imgdata = M('Img')->field('id')->where("classid = $classid")->find();
+		 
 	
 	
 		if(!empty($sub) AND empty($imgdata)){
@@ -322,6 +323,19 @@ class IndexAction extends WapAction{
 					}
 					$res[$key]['info'] = strip_tags(htmlspecialchars_decode(mb_substr($val['text'],0,10,'utf-8')));
 				}
+				//cookie("wapuid",2);
+				$groupid=M("Front_user")->field('group_id')->where(array("id"=>cookie("wapuid")))->find();
+			 
+				//根据权限显示内容
+				$resd=array();
+				foreach ($res as $k => $v) {
+					if(in_array($groupid['group_id'],unserialize($v['gid']))){
+						$resd[$k]=$v;
+					}
+					
+				}
+				$res=$resd;
+			
 				
 			//当列表页只有一篇内容,直接显示内容
 				$listNum = count($res);

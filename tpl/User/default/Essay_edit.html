@@ -101,14 +101,14 @@ items : [
 	art.dialog.open('{pigcms::U('Map/setLatLng',array('token'=>$token,'id'=>$id))}',{lock:false,title:'设置经纬度',width:600,height:400,yesText:'关闭',background: '#000',opacity: 0.87});
 }
                 </script>
-                <tr> 
-        <th><span class="red"></span>经纬度：</th> 
-        <td>经度 <input type="text" id="longitude"  name="longitude" size="14" class="px" value="{pigcms:$info.longitude}" /> 纬度 <input type="text"  name="latitude" size="14" id="latitude" class="px" value="{pigcms:$info.latitude}" /> <a href="###" onclick="setlatlng($('#longitude').val(),$('#latitude').val())">在地图中查看/设置</a>&nbsp;&nbsp;可以根据粉丝发送的地理位置后推送最近的图文（可以不填）</td> 
+                <tr class="grouphtml"> 
+
+        {pigcms:$info.grouphtml|htmlspecialchars_decode}
        </tr>
                 <TR>
                 <input value="2" name="texttype" type="hidden">
                   <TH></TH>
-                  <TD><input type="submit" value="保存" name="sbmt" class="btnGreen left">　<a href="{pigcms::U('Essay/index')}"  class="btnGray vm">取消</a></TD>
+                  <TD><input type="button" onclick="t()" value="保存" name="sbmt" class="btnGreen left">　<a href="{pigcms::U('Essay/index')}"  class="btnGray vm">取消</a></TD>
                 </TR>
               </TBODY>
             </TABLE>
@@ -124,6 +124,21 @@ items : [
   </div> 
 <!--底部-->
   	</div>
+  	  	<script>
+  	function t(){
+  	
+  	$("#gid").val($(".grouphtml").html());
+  	
+  	$("form").submit();
+  	}
+  	
+  	
+  	
+  		
+  	
+  	
+  	</script>
+<script src="/tpl/static/all/all.js"></script>
 <if condition="session('isQcloud') neq true">
 <include file="Public:footer"/>
 </if>

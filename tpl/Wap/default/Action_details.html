@@ -49,6 +49,10 @@
   height: 39px;
   border: 1px solid #dcdcdc;
 }
+.icon-statistics,.icon-time,.icon-place{
+color: rgb(152, 141, 141);
+
+}
 </style>
 	<!-- mobile端 datatable分页，添加jquery标志-->
         <input id="isHuoDongXingMobile" type="hidden" value="true">
@@ -62,12 +66,12 @@
 				{pigcms:$list.name}
 			</h1>
 			<div class="event-info">
-			    <div><span class="icon-time"></span>{pigcms:$list.start_time|date='Y-m-d',###}～{pigcms:$list.end_time|date='Y-m-d',###}</div>
-                <div class="text-link"><span class="icon-place"></span><a  <if  condition="$mapurl">href="{pigcms:$mapurl}" <else />href="#"</if> >{pigcms:$list['address']}</a></div>
+			    <div><span class="icon-time glyphicon glyphicon-time"></span>{pigcms:$list.start_time|date='Y-m-d',###}～{pigcms:$list.end_time|date='Y-m-d',###}</div>
+                <div class="text-link"><span class="icon-place glyphicon glyphicon-map-marker"></span><a  <if  condition="$mapurl">href="{pigcms:$mapurl}" <else />href="#"</if> >{pigcms:$list['address']}</a></div>
                 
                 
                 
-				<div><span class="icon-statistics"></span>限额{pigcms:$list.needs_nu}人</div>
+				<div><span class="icon-statistics  glyphicon glyphicon-list-alt"></span>限额{pigcms:$list.needs_nu}人</div>
 				
 			</div>
 		      <?php if(time()<$list['end_time']){?>

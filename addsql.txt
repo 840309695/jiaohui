@@ -28,6 +28,12 @@ PRIMARY KEY (`id`)
 
 
 
+ALTER TABLE `pigcms_img`
+ADD COLUMN `auth`  varchar(49) NULL AFTER `usorts`;
+
+ALTER TABLE `pigcms_img`
+ADD COLUMN `grouphtml`  text NULL AFTER `gid`;
+
 	CREATE TABLE `pigcms_action` (
 	`id`  int NULL AUTO_INCREMENT ,
 	`name`  varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
