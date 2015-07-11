@@ -99,19 +99,16 @@ items : [
 	art.dialog.open('{pigcms::U('Map/setLatLng',array('token'=>$token,'id'=>$id))}',{lock:false,title:'设置经纬度',width:600,height:400,yesText:'关闭',background: '#000',opacity: 0.87});
 }
                 </script>
-         <!--        
-        <tr> 
-        <th><span class="red"></span>经纬度：</th> 
-        <td>经度 <input type="text" id="longitude"  name="longitude" size="14" class="px" value="{pigcms:$set.longitude}" /> 纬度 <input type="text"  name="latitude" size="14" id="latitude" class="px" value="{pigcms:$set.latitude}" /> <a href="###" onclick="setlatlng($('#longitude').val(),$('#latitude').val())">在地图中查看/设置</a>&nbsp;&nbsp;可以根据粉丝发送的地理位置后推送最近的图文（可以不填）</td> 
-       </tr>
-        -->
+        
+       
         <tr class="grouphtml">
          <TH>可见：</TH>
           <td>全教会<input type="checkbox"  name="checkall" id="all"/>
-        <volist name="Grouplist" id="list">
-       {pigcms:$list.group_name }<input type="checkbox" name="gid[]"  id="{pigcms:$list.id}"   value="{pigcms:$list.id}" ></td>
+       
+        <foreach name="Grouplist" item="list">
+          {pigcms:$list.group_name }<input type="checkbox" name="gid[]"  id="{pigcms:$list.id}"   value="{pigcms:$list.id}" >
           
-        </volist>
+        </foreach>
         <input id="gid" type="hidden" value="" name="grouphtml">
         </td>
         </tr>
