@@ -24,6 +24,13 @@ items : [
 
 });
 </script>
+<style>
+.grouphtml span{
+margin-left:10px;
+
+}
+</style>
+
 
 <div class="content" <if condition="session('isQcloud') eq true">style="float:center;"</if>>
           <div class="cLineB"><h4>编辑文章内容</h4><a href="javascript:history.go(-1);"  class="right btnGrayS vm" style="margin-top:-27px" >返回</a></div>
@@ -106,7 +113,7 @@ items : [
           <td>全教会<input type="checkbox"  name="checkall" id="all"/>
        
         <foreach name="Grouplist" item="list">
-          {pigcms:$list.group_name }<input type="checkbox" name="gid[]"  id="{pigcms:$list.id}"   value="{pigcms:$list.id}" >
+         <span> <label>{pigcms:$list.group_name }</label><input type="checkbox" name="gid[]"  id="{pigcms:$list.id}"   value="{pigcms:$list.id}" ></span>
           
         </foreach>
         <input id="gid" type="hidden" value="" name="grouphtml">
