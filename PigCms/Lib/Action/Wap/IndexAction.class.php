@@ -449,15 +449,12 @@ class IndexAction extends WapAction{
 		$groupid=M("Front_user")->field('group_id')->where(array("id"=>cookie("wapuid")))->find();
 		
 		//根据权限显示内容
-		$resd=array();
-		foreach ($res as $k => $v) {
-			if(in_array($groupid['group_id'],unserialize($v['gid']))){
-				$resd[$k]=$v;
+		
+			if(in_array($groupid['group_id'],unserialize($res['gid']))){
+				$res="";
 			}
 				
-		}
-		$res=$resd;
-			
+	
 
 		if($classid == ''){
 			$classid = $res['classid'];
