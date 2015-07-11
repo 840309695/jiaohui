@@ -28,7 +28,7 @@ items : [
 <div class="content" <if condition="session('isQcloud') eq true">style="float:center;"</if>>
           <div class="cLineB"><h4>编辑文章内容</h4><a href="javascript:history.go(-1);"  class="right btnGrayS vm" style="margin-top:-27px" >返回</a></div>
          
-          <form method="post"   action="{pigcms::U('Essay/insert')}"  enctype="multipart/form-data" >
+          <form method="post"   action="{pigcms::U('Essay/insert')}"  enctype="multipart/form-data"  onSubmit="return t();">
           <div class="msgWrap form">
             <TABLE class="userinfoArea" border="0" cellSpacing="0" cellPadding="0" width="100%">
               <THEAD>
@@ -114,7 +114,7 @@ items : [
         </tr>
                 <TR>
                   <TH></TH>
-                  <TD><input type="button" onclick="t()" value="保存" name="sbmt" class="btnGreen left">　<a href="{pigcms::U('Essay/index')}"  class="btnGray vm">取消</a></TD>
+                  <TD><input type="submit"   value="保存" name="sbmt" class="btnGreen left">　<a href="{pigcms::U('Essay/index')}"  class="btnGray vm">取消</a></TD>
                 </TR>
               </TBODY>
             </TABLE>
@@ -131,18 +131,17 @@ items : [
 <!--底部-->
   	</div>
   	<script>
-  	function t(){
-  	
-  	$("#gid").val($(".grouphtml").html());
-  	$("form").submit();
-  	}
-  	
-  	
-  	
-  		
-  	
-  	
-  	</script>
+	  	function t(){
+	  	
+	  	$("#gid").val($(".grouphtml").html());
+	  	
+	  	return true;
+	  	}
+	  	
+	  	
+	  	
+	 
+	  	</script>
 <script src="/tpl/static/all/all.js"></script>
 <if condition="session('isQcloud') neq true">
 <include file="Public:footer"/>
