@@ -29,7 +29,7 @@ PRIMARY KEY (`id`)
 
 
 ALTER TABLE `pigcms_img`
-ADD COLUMN `auth`  varchar(49) NULL AFTER `usorts`;
+ADD COLUMN `gid`  varchar(49) NULL AFTER `usorts`;
 
 ALTER TABLE `pigcms_img`
 ADD COLUMN `grouphtml`  text NULL AFTER `gid`;
