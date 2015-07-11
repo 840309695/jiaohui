@@ -325,7 +325,7 @@ class IndexAction extends WapAction{
 				}
 			
 				$groupid=M("Front_user")->field('group_id')->where(array("id"=>cookie("wapuid")))->find();
-			 
+				if(!$this->publics){
 				//根据权限显示内容
 				$resd=array();
 				foreach ($res as $k => $v) {
@@ -335,7 +335,7 @@ class IndexAction extends WapAction{
 					
 				}
 				$res=$resd;
-			
+				}
 				
 			//当列表页只有一篇内容,直接显示内容
 // 				$listNum = count($res);
@@ -412,7 +412,7 @@ class IndexAction extends WapAction{
 				$count=count($flash);
 				$this->assign('flash',$flash);
 				$this->assign('num',$count);
-				$this->assign('flashbgcount',count($flashbg));
+				$this->assign('flashbgcount',count($flashbg));	
 				$this->assign('info',$res);
 				$this->assign('tpl',$tpldata);
 				$this->assign('copyright',$this->copyright);
@@ -448,14 +448,16 @@ class IndexAction extends WapAction{
 		$res = $img->where("id = ".intval($id)." AND token = '$token'")->find();
 		$groupid=M("Front_user")->field('group_id')->where(array("id"=>cookie("wapuid")))->find();
 		
-		//根据权限显示内容
-		
+		 //根据权限显示内容
+		  if(!$this->publics){
 			if(!in_array($groupid['group_id'],unserialize($res['gid']))){
 				$res="";
 			}
-				
-	
-
+		  }	
+         
+		  
+		  
+		  
 		if($classid == ''){
 			$classid = $res['classid'];
 		}
@@ -480,6 +482,7 @@ class IndexAction extends WapAction{
 			
 
 		$lists=$img->where("classid = ".intval($classid)." AND token = '$token' AND id != ".intval($id))->limit(5)->order('uptatetime')->select();
+		if(!$this->publics){
 		$li=array();
 		foreach ($lists as $k => $v) {
 			if(in_array($groupid['group_id'],unserialize($v['gid']))){
@@ -488,6 +491,7 @@ class IndexAction extends WapAction{
 		
 		}
 		$lists=$li;
+		}
 		$lists = $this->convertLinks($lists);
 		
 		
