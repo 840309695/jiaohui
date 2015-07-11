@@ -12,6 +12,8 @@ class EssayAction extends ImgBaseAction{
 
 	public function add(){
 		parent::add();
+		$Grouplist=M("Group")->where(array("token"=>session('token')))->select();
+		$this->assign("Grouplist",$Grouplist);
 		$this->display();
 	}
 
@@ -39,7 +41,7 @@ class EssayAction extends ImgBaseAction{
 		$_POST['info']=str_replace('\'','&apos;',$_POST['info']);
 		$usersdata=M('Users');
 		$usersdata->where(array('id'=>$this->user['id']))->setInc('diynum');
-
+		$_POST['gid']=serialize($_POST['gid']);
 		$db=D('Img');
 		if($db->create()===false){
 			$this->error($db->getError());
