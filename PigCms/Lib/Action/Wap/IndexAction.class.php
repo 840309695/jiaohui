@@ -483,6 +483,14 @@ class IndexAction extends WapAction{
 			
 
 		$lists=$img->where("classid = ".intval($classid)." AND token = '$token' AND id != ".intval($id))->limit(5)->order('uptatetime')->select();
+		$li=array();
+		foreach ($lists as $k => $v) {
+			if(in_array($groupid['group_id'],unserialize($v['gid']))){
+				$li[$k]=$v;
+			}
+		
+		}
+		$lists=$li;
 		$lists = $this->convertLinks($lists);
 		
 		
