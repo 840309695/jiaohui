@@ -338,14 +338,14 @@ class IndexAction extends WapAction{
 			
 				
 			//当列表页只有一篇内容,直接显示内容
-				$listNum = count($res);
+// 				$listNum = count($res);
 
-				if($listNum == 1){
-					$contid = $res[0]['id'];
-					$cid = $res[0]['classid'];
-					$this->content($contid,$cid);
-					exit;
-				}
+// 				if($listNum == 1){
+// 					$contid = $res[0]['id'];
+// 					$cid = $res[0]['classid'];
+// 					$this->content($contid,$cid);
+// 					exit;
+// 				}
 				
 			//幻灯片m
 
