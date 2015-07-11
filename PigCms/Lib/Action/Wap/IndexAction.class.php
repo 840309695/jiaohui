@@ -450,7 +450,7 @@ class IndexAction extends WapAction{
 		
 		//根据权限显示内容
 		
-			if(in_array($groupid['group_id'],unserialize($res['gid']))){
+			if(!in_array($groupid['group_id'],unserialize($res['gid']))){
 				$res="";
 			}
 				
