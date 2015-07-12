@@ -110,10 +110,10 @@ margin-left:10px;
        
         <tr class="grouphtml">
          <TH>可见：</TH>
-          <td>全教会<input type="checkbox"  name="checkall" id="all"/>
+          <td>全教会<input type="checkbox"   name="checkall" id="all" checked="checked"/>
        
         <foreach name="Grouplist" item="list">
-         <span> <label>{pigcms:$list.group_name }</label><input type="checkbox" name="gid[]"  id="{pigcms:$list.id}"   value="{pigcms:$list.id}" ></span>
+         <span> <label>{pigcms:$list.group_name }</label><input type="checkbox" name="gid[]"  id="{pigcms:$list.id}"   value="{pigcms:$list.id}"  checked="checked"></span>
           
         </foreach>
         <input id="gid" type="hidden" value="" name="grouphtml">
