@@ -15,7 +15,7 @@ class WapuserAction extends WapAction
    	if($this->isPost()){
    		 if(!empty($_POST)){
    		 	if($userinfo=$this->userdb->where(array("token"=>$this->token,"name"=>$_POST['name'],"password"=>md5($_POST['password'])))->find()){
-   		 		cookie("wapuid",$userinfo['id']);
+   		 		cookie("wapuid",$userinfo['id'],360000);
    		 		
    		 	    if(!$userinfo['status']) {$this->error("您的账号还没有通过管理员审核",U('Index/index',array("token"=>$this->token,"wecha_id"=>$this->wecha_id)));}	
    		 	     $this->success("登录成功",U('Index/index',array("token"=>$this->token,"wecha_id"=>$this->wecha_id)));
@@ -47,7 +47,7 @@ class WapuserAction extends WapAction
    			}else{
 			 $id=$this->userdb->add();
 			if($id==true){
-				cookie("wapuid",$id);
+				cookie("wapuid",$id,360000);
 				$this->success('注册成功等待管理审核',U('Index/index',array("token"=>$this->token,"wecha_id"=>$this->wecha_id)));
 				
 			}else{
