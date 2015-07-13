@@ -212,7 +212,7 @@ $(document).ready(function(){
 <ul>
 <foreach name="Reply" item="replylist">
  <li class="newsmore">
-          <div><img src="tpl/static/business/img/commentdefaultIcon.jpg" width="25">{pigcms:$replylist.username}:</div>
+          <div><img src="tpl/static/business/img/commentdefaultIcon.jpg" width="25"><if condition="$replylist['username'] eq '0' ">匿名:<else/>{pigcms:$replylist.username}:</if></div>
           <div class="clr"></div>
           <div style="margin-left:20px"><p>{pigcms:$replylist.info}</p>
           
@@ -236,7 +236,7 @@ $(document).ready(function(){
                    
 		  <ul class="huifu sub" >
 
-		     <li><span style="font-size:12px;"><img src="tpl/static/business/img/commentdefaultIcon.jpg" width="25">{pigcms:$va.username}回复：{pigcms:$va.msn} <span class="time">{pigcms:$va.time}</span></span></li>
+		     <li><span style="font-size:12px;"><img src="tpl/static/business/img/commentdefaultIcon.jpg" width="25"><if condition="$va['username'] eq '0' ">匿名<else/>{pigcms:$va.username}</if>回复：{pigcms:$va.msn} <span class="time">{pigcms:$va.time}</span></span></li>
           </ul> 
         
           </foreach>
