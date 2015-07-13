@@ -493,8 +493,8 @@ class IndexAction extends WapAction{
 		$lists=$li;
 		}
 		$lists = $this->convertLinks($lists);
-		
-		
+		$Reply = $this->Reply($id);
+     
 		$this->assign('info',$this->info);			//分类信息
 		$this->assign('copyright',$this->copyright);	//版权是否显示		
 		$this->assign('res',$res);
@@ -504,7 +504,69 @@ class IndexAction extends WapAction{
 	
 	}
 	
+	public function Reply($id){	
+		
+		$data=M("Article_leave")->where(array("article_id"=>$id))->select();
+		
+		foreach ($data as $k => $v) {
+			$data[$k]['vo'] =M("Article_reply")->where(array("leave_id"=>$v['id']))->order("time DESC")->select();
+			
+			
+		}
+		
+		$this->assign("Reply",$data);
+	}
+	
+	public function replyadd(){
+		
+		if($username=M("Front_user")->field('name')->where(array("id"=>cookie("wapuid")))->find()){
+			$_GET['username']=$username;
+			
+		}
+		 $lastime=M("Article_reply")->where(array("token"=>$this->token))->getField("max(time)");
+		 $timeres= time()- strtotime($lastime);
+		 if($timeres<60){
+		 	echo 3;
+		 	die;
+		 }
+		
+		if(M("Article_reply")->add($_GET)){
+			echo 1;
+		}else{
+			echo 0;
+		}
 
+	}
+	
+	
+	public function Leaveadd(){
+
+		if($username=M("Front_user")->field('name')->where(array("id"=>cookie("wapuid")))->find()){
+			$_GET['username']=$username;
+				
+		}
+		$lastime=M("Article_leave")->where(array("token"=>$this->token))->getField("max(time)");
+		
+		$timeres= time()- strtotime($lastime);
+		if($timeres<60){
+			echo 3;
+			die;
+		}
+		
+
+		if(M("Article_leave")->add($_GET)){
+			echo 1;
+		}else{
+			echo 0;
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
 
 	public function flash(){
 		$where['token']=$this->_get('token','trim');
