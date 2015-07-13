@@ -95,7 +95,7 @@ CREATE TABLE `pigcms_article_leave` (
 `title`  varchar(50) NULL ,
 `info`  text CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
 `time`  timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-`username`  varchar(20) NULL DEFAULT '匿名',
+`username`  varchar(20)  CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '匿名',
 PRIMARY KEY (`id`)
 )
 ;
@@ -107,7 +107,7 @@ CREATE TABLE `pigcms_article_reply` (
 `leave_id`  int NULL ,
 `msn`  text NULL ,
 `time`  timestamp NULL DEFAULT CURRENT_TIMESTAMP ,
-`username`  varchar(20) NULL DEFAULT '匿名',
+`username`  varchar(20)  CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '匿名',
 
 PRIMARY KEY (`id`)
 )
