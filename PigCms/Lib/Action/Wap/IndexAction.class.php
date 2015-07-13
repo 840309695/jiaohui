@@ -544,6 +544,8 @@ class IndexAction extends WapAction{
 		if($username=M("Front_user")->field('name')->where(array("id"=>cookie("wapuid")))->find()){
 			$_GET['username']=$username;
 				
+		}else{
+			$_GET['username']='0';
 		}
 		$lastime=M("Article_leave")->where(array("token"=>$this->token))->getField("max(time)");
 		
