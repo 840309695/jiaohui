@@ -520,7 +520,7 @@ class IndexAction extends WapAction{
 	public function replyadd(){
 		
 		if($username=M("Front_user")->field('name')->where(array("id"=>cookie("wapuid")))->find()){
-			$_GET['username']=$username;
+			$_GET['username']=$username['name'];
 			
 		}
 		 $lastime=M("Article_reply")->where(array("token"=>$this->token))->getField("max(time)");
