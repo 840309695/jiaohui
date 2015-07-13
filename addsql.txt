@@ -1,4 +1,4 @@
-ALTER TABLE `pigcms_classify`
+﻿ALTER TABLE `pigcms_classify`
 ADD COLUMN `public`  int(11) NULL DEFAULT 0 AFTER `pc_web_id`;
 
 
