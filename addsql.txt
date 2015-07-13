@@ -95,6 +95,7 @@ CREATE TABLE `pigcms_article_leave` (
 `title`  varchar(50) NULL ,
 `info`  text CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
 `time`  timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+`username`  varchar(20) NULL DEFAULT 'ÂåøÂêç',
 PRIMARY KEY (`id`)
 )
 ;
@@ -106,18 +107,20 @@ CREATE TABLE `pigcms_article_reply` (
 `leave_id`  int NULL ,
 `msn`  text NULL ,
 `time`  timestamp NULL DEFAULT CURRENT_TIMESTAMP ,
+`username`  varchar(20) NULL DEFAULT 'ÂåøÂêç',
+
 PRIMARY KEY (`id`)
 )
 ;
 
 
 ALTER TABLE `pigcms_article_leave`
-ADD COLUMN `username`  varchar(20) NULL DEFAULT 'ƒ‰√˚' AFTER `time`;
+ADD COLUMN `username`  varchar(20) NULL DEFAULT 'ÂåøÂêç' AFTER `time`;
 
 
 
 ALTER TABLE `pigcms_article_reply`
-ADD COLUMN `username`  varchar(30) NULL DEFAULT 'ƒ‰√˚' AFTER `time`;
+ADD COLUMN `username`  varchar(30) NULL DEFAULT 'ÂåøÂêç' AFTER `time`;
 
 ALTER TABLE `pigcms_article_reply`
 ADD COLUMN `wecha_id`  varchar(100) NULL AFTER `username`;
