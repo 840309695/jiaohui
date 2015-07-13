@@ -505,8 +505,10 @@ class IndexAction extends WapAction{
 	}
 	
 	public function Reply($id){	
-		
-		$data=M("Article_leave")->where(array("article_id"=>$id))->select();
+		$username=M("Front_user")->field('name')->where(array("id"=>cookie("wapuid")))->find();
+		dump($username);
+		die;
+		$data=M("Article_leave")->where(array("article_id"=>$id))->order("time DESC")->select();
 		
 		foreach ($data as $k => $v) {
 			$data[$k]['vo'] =M("Article_reply")->where(array("leave_id"=>$v['id']))->order("time DESC")->select();
