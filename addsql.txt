@@ -130,4 +130,16 @@ ADD COLUMN `wecha_id`  varchar(100) NULL AFTER `username`;
 ALTER TABLE `pigcms_article_leave`
 MODIFY COLUMN `username`  varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '0' AFTER `time`;
 
+ALTER TABLE `pigcms_action`
+ADD COLUMN `gid`  varchar(100) NULL AFTER `lat`;
+
+ALTER TABLE `pigcms_action`
+ADD COLUMN `grouphtml`  text  CHARACTER SET utf8 COLLATE utf8_general_ci NULL AFTER `gid`;
+
+
+
+
+
+
+
 

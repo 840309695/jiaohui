@@ -25,7 +25,7 @@ class ReplyAction extends WapAction{
         $this->assign('token',$this->token);
     } 
      public function index(){ //显示数据
-      
+      return 12;
          $leave_model =M("leave");  
          
             $where = array("token"=>$this->token,'checked'=>1);

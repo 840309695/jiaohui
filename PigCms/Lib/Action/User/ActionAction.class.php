@@ -3,7 +3,7 @@ class ActionAction extends UserAction{
 	public function _initialize() {
 		parent::_initialize();
 		$this->token=session('token');
-		$this->db=M('Action');
+		$this->db=D('Action');
 		
 		
 	}
@@ -23,15 +23,20 @@ class ActionAction extends UserAction{
 	 public function addnew(){ 
 	 	if($this->isPost()){
 	 		$_POST['token'] = session('token');
+	 		$_POST['gid']=serialize($_POST['gid']);
 	 	    $this-> postset();
 	        $this->insert();	
 	 	}
+	 	$grouplist=M("Group")->where(array("token"=>session('token')))->select();
+	 
+	 	$this->assign("grouplist",$grouplist);
 	 	$this->display("set");
 	 	 
 	 }
 	 
 	 public function  edit(){
 	 	if($this->isPost()){
+	 		$_POST['gid']=serialize($_POST['gid']);
 	 		$this-> postset();	
 	 		$this->save();
 	 	}
