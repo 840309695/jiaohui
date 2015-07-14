@@ -41,6 +41,14 @@ class ActionAction extends WapAction{
 	
 	public  function more(){
 		$hostlist=$this->action->where(array("token"=>$this->token))->order('create_date  desc')->select();
+		$list=array();
+		foreach ($hostlist as $k => $v) {
+			if(in_array($this->groupid['group_id'],unserialize($v['gid']))){
+				$list[$k]=$v;
+			}
+		
+		}
+		$hostlist=$list;
 		$this->assign("hostlist",$hostlist);
 		$this->display("index");
 		
