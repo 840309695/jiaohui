@@ -168,6 +168,21 @@ class UsersAction extends BaseAction{
 				$this->error('手机号填写不正确',U('Index/login'));
 			}
 		}
+		
+		
+		
+		if (!isset($_POST['jiaohui_name'])){
+		        
+				$this->error('请填写教会名字',U('Index/login'));
+			
+		}
+		
+		if (!isset($_POST['jiaohui_addrs'])){
+		
+			$this->error('请选择写教会所在地',U('Index/login'));
+				
+		}
+		
 		if ($this->isAgent){
 			$_POST['agentid']=$this->thisAgent['id'];
 		}

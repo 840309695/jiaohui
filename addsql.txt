@@ -137,7 +137,9 @@ ALTER TABLE `pigcms_action`
 ADD COLUMN `grouphtml`  text  CHARACTER SET utf8 COLLATE utf8_general_ci NULL AFTER `gid`;
 
 
-
+ALTER TABLE `pigcms_users`
+ADD COLUMN `jiaohui_name`  varchar(20)  CHARACTER SET utf8 COLLATE utf8_general_ci  NULL AFTER `usertplid`,
+ADD COLUMN `jiaohui_addrs`  varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci  NULL AFTER `jiaohui_name`;
 
 
 

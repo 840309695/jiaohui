@@ -13,9 +13,9 @@ class CardAction extends WapAction{
 		//
 		$this->token=$this->_get('token');
 		$this->thisUser = M('Userinfo')->where(array('token'=>$this->_get('token'),'wecha_id'=>$this->wecha_id))->find();
-		if (!$this->wecha_id){
-			$this->error('您没有权限使用会员卡，如需使用请关注微信“'.$this->wxuser['wxname'].'”并回复会员卡',U('Index/index',array('token'=>$this->token)));
-		}
+// 		if (!$this->wecha_id){
+// 			$this->error('您没有权限使用会员卡，如需使用请关注微信“'.$this->wxuser['wxname'].'”并回复会员卡',U('Index/index',array('token'=>$this->token)));
+// 		}
 		
 		
 		if (C('baidu_map')){
@@ -153,6 +153,8 @@ class CardAction extends WapAction{
 			$this->display();
 		}else {			
 			$link=$this->amap->getPointMapLink($thisCompany['longitude'],$thisCompany['latitude'],$thisCompany['name']);
+			echo $link;
+			
 			header('Location:'.$link);
 		}
 		
