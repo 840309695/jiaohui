@@ -204,10 +204,34 @@ $(document).ready(function(){
 	});
 })
 
+
+
+$(document).on("click",".btnIcon-1",function(){
+	 $(".icon").addClass("action");
+    $.ajax({
+        type:"post",
+        url:"index.php?g=Wap&m=Index&a=praise&id={pigcms:$_GET['id']}&token={pigcms:$token}&wecha_id={pigcms:$wecha_id}",
+        success:function(result){
+            if(result!=0){
+              $(".btnIcon-1").html('<i class="icon icon2 icon2-25 action"></i>'+result)
+            
+            }
+         }
+    });
+});
+
+
+
+
 </script>
+<div class="fl">			
+					<a class="btnIcon btnIcon-1 mr07m praise" action="add"><i class="icon icon2 icon2-25"></i>{pigcms:$res.praise}</a>	
+					<a href="#" class="btnIcon btnIcon-2 mr07m"><i class=" icon2-27"></i>阅读 {pigcms:$res.click}</a>
+                  
+</div>
 <div class="list">
 <div id="olload">
-<span>留言</span>
+<span >留言</span>
 </div>
 <ul>
 <foreach name="Reply" item="replylist">

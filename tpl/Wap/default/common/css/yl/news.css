@@ -2311,7 +2311,7 @@ margin-left:-110px;
 .showpic img{
     width: 100%;margin-top: 5px;
 }
-.page-bizinfo{padding:15px 9px 0 10px;}
+.page-bizinfo,.fl{padding:15px 9px 0 10px;}
 .page-bizinfo .header #activity-name {
 	font-size:20px;
 	color:#000;
@@ -2429,6 +2429,37 @@ margin-left:-110px;
 	background: url("img/recommend.png") no-repeat scroll left center transparent;
 	background-size: 20px auto;
 }
+.icon{
+	background: url("img/icon.png") 
+}
+.icon2-25 {
+  background-position: -200px -40px;
+}
+.icon2 {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+.icon2-27 {
+  background-position: -240px -40px;
+}
+.btnIcon {
+  background-color: #fff;
+  height: 2em;
+  line-height: 2.2em;
+  border-radius: 4px;
+  border: 1px solid #7a8a99;
+  color: #7a8a99;
+  display: inline-block;
+  padding: 0 .5em;
+}
+.action{
+	background-position: -220px -40px;
+	
+	
+}
+
+
 #news .newsmore{
 	display:block;
 	margin-top: 0;

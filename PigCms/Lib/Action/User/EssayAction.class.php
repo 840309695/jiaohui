@@ -39,6 +39,7 @@ class EssayAction extends ImgBaseAction{
 		$lastid = M("Img")->where(array('token'=>session('token')))->order('usort DESC')->limit(1)->getField('usort');
 		$_POST['usort'] = $lastid+1;
 		$_POST['info']=str_replace('\'','&apos;',$_POST['info']);
+		$_POST['praise_time']=time();
 		$usersdata=M('Users');
 		$usersdata->where(array('id'=>$this->user['id']))->setInc('diynum');
 		$_POST['gid']=serialize($_POST['gid']);

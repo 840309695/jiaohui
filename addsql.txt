@@ -142,6 +142,19 @@ ADD COLUMN `jiaohui_name`  varchar(20)  CHARACTER SET utf8 COLLATE utf8_general_
 ADD COLUMN `jiaohui_addrs`  varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci  NULL AFTER `jiaohui_name`;
 
 
+ALTER TABLE `pigcms_img`
+ADD COLUMN `praise`  int(11) NULL AFTER `grouphtml`;
+
+ALTER TABLE `pigcms_img`
+MODIFY COLUMN `praise`  int(11) NULL DEFAULT 0 AFTER `grouphtml`;
+
+ALTER TABLE `pigcms_img`
+ADD COLUMN `praise_time`  varchar(13) NULL AFTER `praise`;
+
+
+
+
+
 
 
 
