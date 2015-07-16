@@ -207,7 +207,7 @@ $(document).ready(function(){
 
 
 $(document).on("click",".btnIcon-1",function(){
-	 $(".icon").addClass("action");
+	 $(".btnIcon-1 .icon").addClass("action");
     $.ajax({
         type:"post",
         url:"index.php?g=Wap&m=Index&a=praise&id={pigcms:$_GET['id']}&token={pigcms:$token}&wecha_id={pigcms:$wecha_id}",
