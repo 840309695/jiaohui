@@ -152,7 +152,8 @@ ALTER TABLE `pigcms_img`
 ADD COLUMN `praise_time`  varchar(13) NULL AFTER `praise`;
 
 
-
+ALTER TABLE `pigcms_img`
+MODIFY COLUMN `praise`  int(11) NULL DEFAULT 0 AFTER `grouphtml`;
 
 
 
