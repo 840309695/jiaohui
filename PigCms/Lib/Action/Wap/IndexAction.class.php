@@ -583,7 +583,9 @@ class IndexAction extends WapAction {
 		$img = M ( 'Img' );
 		
 		$list = $img->where ( "id={$_GET['id']}" )->find ();
-		if ((time () - $list ['praise_time']) >180) {
+		
+		$time=time()-$list ['praise_time'];
+		if ( $time>180) {
 			
 			if ($img->where ( "id={$_GET['id']}" )->setInc ( 'praise' )) {
 				$img->where ( "id={$_GET['id']}" )->setField ( "praise_time", time () );
