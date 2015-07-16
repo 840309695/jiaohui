@@ -2459,6 +2459,21 @@ margin-left:-110px;
 	
 }
 
+.icon1-6 {
+  background-position: -15px -15px;
+}
+.icon1 {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+}
+
+.replylistinfo{
+ padding: 10px 0;
+	
+	
+}
+
 
 #news .newsmore{
 	display:block;

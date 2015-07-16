@@ -220,6 +220,22 @@ $(document).on("click",".btnIcon-1",function(){
     });
 });
 
+ 
+function replyPraise(id){
+	 $("#"+id+" "+".icon").addClass("action");
+	 
+   $.ajax({
+       type:"post",
+       url:"index.php?g=Wap&m=Index&a=replyPraise&id="+id+"&token={pigcms:$token}&wecha_id={pigcms:$wecha_id}",
+       success:function(result){
+           if(result!=0){
+             $("#"+id).html('<i class="icon icon2 icon2-25 action"></i>'+result)
+           
+           }
+        }
+   });
+}
+
 
 
 
@@ -236,14 +252,18 @@ $(document).on("click",".btnIcon-1",function(){
 <ul>
 <foreach name="Reply" item="replylist">
  <li class="newsmore">
-          <div><img src="tpl/static/business/img/commentdefaultIcon.jpg" width="25"><if condition="$replylist['username'] eq '0' ">匿名:<else/>{pigcms:$replylist.username}:</if></div>
-          <div class="clr"></div>
-          <div style="margin-left:20px"><p>{pigcms:$replylist.info}</p>
-          
-            <div class="time">{pigcms:$replylist.time}<a  class="hhbt czan js1"  date="{pigcms:$replylist.id}" href="javascript:void(0)" id="close{pigcms:$replylist.id}" style="color: #0088dd;"> [回复]</a> </div>
+          <div><img src="tpl/static/business/img/commentdefaultIcon.jpg" width="25"><if condition="$replylist['username'] eq '0' ">匿名<else/>{pigcms:$replylist.username}</if></div>
+          <div class="clr"  style="height: 10px;"></div>
+           <div class="time"><i class="icon  icon1 icon1-6"></i><span style="margin-left:2px;">{pigcms:$replylist.time}</span> </div>
+          <div class="replylistinfo"><p>{pigcms:$replylist.info}</p>
+         
+           
           </div>
          
-        
+         <div class="" style="margin-bottom: 10px;">
+					<a class="btnIcon  mr07m replyPraise" id="{pigcms:$replylist.id}"  onclick="replyPraise(this.id)"><i class="icon icon2 icon2-25"></i>{pigcms:$replylist.praise}</a>
+					<a class="btnIcon hhbt czan js1 " rid="39711a"  date="{pigcms:$replylist.id}" href="javascript:void(0)"><i class=""></i>回复</a>
+				</div>
             <dl class="huifu {pigcms:$replylist.id}"  style="display:none" >
               <dt><span>　<a  class="hhbt czan js1"  date="{pigcms:$replylist.id}" href="javascript:void(0)" id="close{pigcms:$replylist.id}"></a> 
                           

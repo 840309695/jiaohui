@@ -572,6 +572,7 @@ class IndexAction extends WapAction {
 			echo 3;
 			die ();
 		}
+		 $_GET['praise_time']=time();
 		
 		if (M ( "Article_leave" )->add ( $_GET )) {
 			echo 1;
@@ -598,6 +599,31 @@ class IndexAction extends WapAction {
 			echo 0;
 		}
 	}
+	
+	
+	public function replyPraise() {
+		$leave= M ('Article_leave' );
+	
+		$list = $leave->where ( "id={$_GET['id']}" )->find ();
+		
+		$time=time()-$list ['praise_time'];
+		if ( $time>180) {
+			
+			if ($leave->where ( "id={$_GET['id']}" )->setInc ( 'praise' )) {
+				$leave->where ( "id={$_GET['id']}" )->setField ( "praise_time", time () );
+				$data = $leave->where ( "id={$_GET['id']}" )->find ();
+				echo $data ['praise'];
+			}else {
+				echo 0;
+			}
+		}else {
+			echo 0;
+		}
+	}
+	
+	
+	
+	
 	public function flash() {
 		$where ['token'] = $this->_get ( 'token', 'trim' );
 		$flash = M ( 'Flash' )->where ( $where )->select ();
