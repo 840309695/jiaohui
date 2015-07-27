@@ -126,8 +126,15 @@ class IndexAction extends WapAction {
 		
 		$tpldata ['tpltypeid'] = $tplinfo ['tpltypeid'];
 		$tpldata ['tpltypename'] = $tplinfo ['tpltypename'];
+		$readlog=unserialize ($_COOKIE["readlog"]);
+		foreach ($readlog as  $k => $v ) {
+			$info[$v['classid']]['red']=1;
+			
+		}
+		
 		
 		foreach ( $info as $k => $v ) {
+			
 			
 			if ($info [$k] ['url'] == '') {
 				$info [$k] ['url'] = U ( 'Index/lists', array (
@@ -185,7 +192,9 @@ class IndexAction extends WapAction {
 		$this->assign ( 'flashbgcount', count ( $flashbg ) );
 		$this->assign ( 'tpl', $this->tpl );
 		$this->assign ( 'copyright', $this->copyright );
-		$this->display ( $this->tpl ['tpltypename'] );
+		
+		//$this->tpl ['tpltypename']
+		$this->display ( "1272_index_sf43" );
 	}
 	public function lists() {
 		$this->check ();
@@ -434,6 +443,16 @@ class IndexAction extends WapAction {
 					$flash_db->add ( $arr );
 				}
 			}
+			$readlog=unserialize ($_COOKIE["readlog"]);
+			
+			foreach ($res as $k => $v) {
+				
+				if($readlog[$v['id']] && $v['uptatetime']==$readlog[$v['id']]['update']){
+					
+					$res[$k]['read']=1;
+				}
+			}
+			
 			$count = count ( $flash );
 			$this->assign ( 'flash', $flash );
 			$this->assign ( 'num', $count );
@@ -442,6 +461,7 @@ class IndexAction extends WapAction {
 			$this->assign ( 'tpl', $tpldata );
 			$this->assign ( 'copyright', $this->copyright );
 			$this->assign ( 'thisClassInfo', $info );
+			
 			$this->display ( $tpldata ['tpltypename'] );
 		}
 	}
@@ -512,6 +532,15 @@ class IndexAction extends WapAction {
 			}
 			$lists = $li;
 		}
+		
+		$readlog=unserialize ($_COOKIE["readlog"]);
+		if(!$readlog[$res['id']]){
+			
+     	  $readlog[$res['id']]=array("classid"=>intval ( $classid ),"content"=>$res['id'],"update"=>$res['uptatetime']);
+     	 setCookie("readlog",serialize($readlog),time()+52*7*24*3600);
+	    }
+
+	
 		$lists = $this->convertLinks ( $lists );
 		$Reply = $this->Reply ( $id );
 		
