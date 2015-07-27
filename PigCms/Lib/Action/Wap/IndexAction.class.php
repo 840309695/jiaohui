@@ -194,7 +194,7 @@ class IndexAction extends WapAction {
 		$this->assign ( 'copyright', $this->copyright );
 		
 		//$this->tpl ['tpltypename']
-		$this->display ( "1272_index_sf43" );
+		$this->display ( $this->tpl ['tpltypename']);
 	}
 	public function lists() {
 		$this->check ();
