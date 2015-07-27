@@ -34,7 +34,26 @@
         </script>
 
     </head>
+  
     <body id="cate4">
+      <style>
+    .d{
+       position: absolute;
+ 
+      width: 10px;
+    height: 10px;
+    text-align: center;
+  line-height: 16px;
+  background: #df3636;
+  border-radius: 8px;
+      }
+      
+      .link{
+        position: relative;
+      
+      }
+    
+    </style>
     <!--背景音乐-->
     <if condition="$homeInfo['musicurl'] neq false">
 <include file="Index:music"/>
@@ -65,13 +84,15 @@
         <div id="todayList">
             <ul class="todayList">
                 <volist name="info" id="vo">
-                    <li class="only4">
-                        <a href="<if condition="$vo['url'] eq ''">{pigcms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{pigcms:$vo.url|htmlspecialchars_decode}</if>">
-                            <div class="img"><img src="{pigcms:$vo.img}"></div>
-                            <h2>{pigcms:$vo.name}</h2>
+                    <li class="only4" >
+                        <a   href="<if condition="$vo['url'] eq ''">{pigcms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{pigcms:$vo.url|htmlspecialchars_decode}</if>">
+                             <div class="img"><img src="{pigcms:$vo.img}"></div>
+                            <h2 class="link"> <if condition="$vo['read'] neq 1"><span class="d"></span></if>&nbsp;&nbsp;{pigcms:$vo.name}</h2>
+                            
                             <p class="onlyheight">{pigcms:$vo.info}</p>
                             <span class="icon">&nbsp;</span>
                             <div class="clr"></div>
+                           
                         </a>
                     </li>
                 </volist>
