@@ -70,7 +70,7 @@
 
             <volist name="info" id="vo">
                 <li>
-                    <div class="menubtn">
+                    <div class="menubtn" <if condition="$vo['read'] neq 1">style="border: 1px solid red;"</if> >
                        <a href="<if condition="$vo['url'] eq ''">{pigcms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{pigcms:$vo.url|htmlspecialchars_decode}</if>">
                             <div class="menumesg">
                                 <div class="menuimg"><img src="{pigcms:$vo.img}"></div>

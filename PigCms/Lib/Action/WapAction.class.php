@@ -108,14 +108,14 @@ class WapAction extends BaseAction{
 		}
 		$catemenu=$menures;
 		$this->bottomeMenus=$catemenu;
-
-		$this->assign('catemenu',$this->bottomeMenus);
+		//$this->assign('catemenu',$this->bottomeMenus);
 
 		//判断菜单风格
 		$radiogroup=$homeInfo['radiogroup'];
 		if($radiogroup==false){
 			$radiogroup=0;
 		}
+		$radiogroup=9;
 		$cateMenuFileName='tpl/Wap/default/Index_menuStyle'.$radiogroup.'.html';
 		$this->assign('cateMenuFileName',$cateMenuFileName);
 		$this->assign('radiogroup',$radiogroup);
