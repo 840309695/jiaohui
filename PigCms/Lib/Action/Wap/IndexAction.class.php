@@ -76,12 +76,15 @@ class IndexAction extends WapAction {
 				
 		}
 		$bottomeMenus=$this->bottomeMenus;
+		
 		foreach ($bottomeMenus as $key => $value) {
-			preg_match_all('#classid\=(\d+)#',$value['url'],$matches);
+			
 			//echo $matches[1][0]."<br>";
-			$count=M('Img')->where("classid={$matches[1][0]}")->count();
-			if($info[$matches[1][0]]){
-				if($count-$info[$matches[1][0]]['read']>0){
+			$classid=$this->cl($value['url']);
+			$count=M('Img')->where(array("classid"=>$classid))->count();
+			if($info[$classid]){
+				echo $count;
+				if($count-$info[$classid]['read']>0){
 					$bottomeMenus[$key]['red']=1;
 				}
 			}
@@ -90,6 +93,12 @@ class IndexAction extends WapAction {
 		}
 	
 		$this->assign('catemenu',$bottomeMenus);
+		
+	}
+	
+	public function cl($url){
+		preg_match_all('#classid\=(\d+)#',$url,$matches);
+		return $matches[1][0];
 		
 	}
 	public function debug() {
