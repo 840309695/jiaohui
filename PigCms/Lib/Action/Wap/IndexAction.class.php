@@ -65,6 +65,31 @@ class IndexAction extends WapAction {
 		$this->info = $info;
 		$tpl ['color_id'] = intval ( $tpl ['color_id'] );
 		$this->tpl = $tpl;
+		foreach ($info as $key => $value) {
+			$info[ $key]['read']=0;
+		}
+		$readlog=unserialize ($_COOKIE["readlog"]);
+		foreach ($readlog as  $k => $v ) {
+			if($info[$v['classid']]){
+				$info[$v['classid']]['read']+=1;
+			}
+				
+		}
+		$bottomeMenus=$this->bottomeMenus;
+		foreach ($bottomeMenus as $key => $value) {
+			preg_match_all('#classid\=(\d+)#',$value['url'],$matches);
+			$count=M('Img')->where("classid={$matches[1][0]}")->count();
+			if($info[$matches[1][0]]){
+				if($count-$info[$matches[1][0]]['read']>0){
+					$bottomeMenus[$key]['red']=1;
+				}
+			}
+		
+		
+		}
+	
+		$this->assign('catemenu',$bottomeMenus);
+		
 	}
 	public function debug() {
 	}
@@ -126,13 +151,7 @@ class IndexAction extends WapAction {
 		
 		$tpldata ['tpltypeid'] = $tplinfo ['tpltypeid'];
 		$tpldata ['tpltypename'] = $tplinfo ['tpltypename'];
-		$readlog=unserialize ($_COOKIE["readlog"]);
-		foreach ($readlog as  $k => $v ) {
-			$info[$v['classid']]['red']=1;
-			
-		}
-		
-		
+	
 		foreach ( $info as $k => $v ) {
 			
 			
@@ -183,6 +202,8 @@ class IndexAction extends WapAction {
 				'token' => $this->token 
 		) )->find ();
 		$zd ['code'] = htmlspecialchars_decode ( base64_decode ( $zd ['code'] ), ENT_QUOTES );
+	
+		
 		$this->assign ( 'zd', $zd );
 		$count = count ( $flash );
 		$this->assign ( 'flash', $flash );
