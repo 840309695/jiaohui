@@ -78,6 +78,7 @@ class IndexAction extends WapAction {
 		$bottomeMenus=$this->bottomeMenus;
 		foreach ($bottomeMenus as $key => $value) {
 			preg_match_all('#classid\=(\d+)#',$value['url'],$matches);
+			//echo $matches[1][0]."<br>";
 			$count=M('Img')->where("classid={$matches[1][0]}")->count();
 			if($info[$matches[1][0]]){
 				if($count-$info[$matches[1][0]]['read']>0){
