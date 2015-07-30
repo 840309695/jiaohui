@@ -37,7 +37,7 @@ ul, li { list-style:none; margin:0; padding:0 }
 #cate19 .device {bottom: 49px;}
 #cate19 #indicator {bottom: 330px;}
 #cate19 .pagination {bottom: 60px;}
-  .d{
+  .y{
        position: absolute;
  
       width: 10px;
@@ -55,7 +55,7 @@ ul, li { list-style:none; margin:0; padding:0 }
     <nav>
     <ul id="top_menu" class="top_menu">
     <volist name="catemenu" id="vo">
-        <li><span></span><if condition="$vo['red'] eq 1"><span class="d"></span></if><a <?php if($vo['vo']){echo 'onclick="javascript:displayit('.$vo['k'].')"';}else{echo 'href="'.$vo['url'].'"';}?>><img src="{pigcms:$vo.picurl}"><label>{pigcms:$vo.name}</label></a>
+        <li><span></span><if condition="$vo['red'] eq 1"><span class="y"></span></if><a <?php if($vo['vo']){echo 'onclick="javascript:displayit('.$vo['k'].')"';}else{echo 'href="'.$vo['url'].'"';}?>><img src="{pigcms:$vo.picurl}"><label>{pigcms:$vo.name}</label></a>
         <?php if ($vo['vo']){
         	?>
             <ul id="menu_list{pigcms:$vo['k']}" class="menu_font" style=" display:none">
