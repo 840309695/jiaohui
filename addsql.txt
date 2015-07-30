@@ -161,6 +161,9 @@ ADD COLUMN `praise`  int(11) NULL DEFAULT 0 AFTER `username`;
 ALTER TABLE `pigcms_article_leave`
 ADD COLUMN `praise_time`  varchar(13) NULL AFTER `praise`;
 
+ALTER TABLE `pigcms_front_user`
+MODIFY COLUMN `status`  int(11) NULL DEFAULT 1 AFTER `token`;
+
 
 
 
