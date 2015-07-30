@@ -83,7 +83,7 @@ class IndexAction extends WapAction {
 			$classid=$this->cl($value['url']);
 			$count=M('Img')->where(array("classid"=>$classid))->count();
 			if($info[$classid]){
-				echo $count;
+				//echo $count;
 				if($count-$info[$classid]['read']>0){
 					$bottomeMenus[$key]['red']=1;
 				}
