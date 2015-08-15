@@ -22,7 +22,7 @@ class IndexAction extends WapAction {
 		// 父类信息
 		$allClasses = M ( 'Classify' )->where ( array (
 				'token' => $this->_get ( 'token' ),
-				'status' => 1 
+				//'status' => 1 
 		) )->order ( 'sorts desc' )->select ();
 		$allClasses = $this->convertLinks ( $allClasses ); // 加外链等信息
 		$info = array ();
@@ -91,6 +91,7 @@ class IndexAction extends WapAction {
 		
 		
 		}
+
 	
 		$this->assign('catemenu',$bottomeMenus);
 		

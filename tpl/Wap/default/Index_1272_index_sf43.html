@@ -60,8 +60,11 @@ document.addEventListener('DOMContentLoaded', loaded, false);
     <div class="clr"></div>
 </div>
 
-<div class="mainmenu">
+<div class="mainmenu" style="position: relative;  margin: 0 auto;">
 <ul><div id="insert1" ></div>
+{pigcms:$wxuser.wxname}
+<img src="{pigcms:$wxuser.headerpic}">
+<!--  
 <volist name="info" id="vo">  
 <li>
 <div class="menubtn">
@@ -69,8 +72,9 @@ document.addEventListener('DOMContentLoaded', loaded, false);
 </div>
 
 </li>
+
  </volist>
- 	
+ 	-->
 
         <div id="insert2" ></div>
         
