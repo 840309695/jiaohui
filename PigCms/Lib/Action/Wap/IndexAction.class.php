@@ -2,7 +2,7 @@
 function strExists($haystack, $needle) {
 	return ! (strpos ( $haystack, $needle ) === FALSE);
 }
-class IndexAction extends WapAction {
+class IndexAction extends WapAction { 
 	private $tpl; // 微信公共帐号信息
 	private $info; // 分类信息
 	public $wecha_id;
