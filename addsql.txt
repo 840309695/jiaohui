@@ -166,5 +166,10 @@ MODIFY COLUMN `status`  int(11) NULL DEFAULT 1 AFTER `token`;
 
 
 
+ALTER TABLE `pigcms_article_reply`
+ADD COLUMN `differ`  int NULL DEFAULT 0 AFTER `username`;
+
+
+
 
 
