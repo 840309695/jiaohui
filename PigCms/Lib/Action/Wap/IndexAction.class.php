@@ -582,6 +582,7 @@ class IndexAction extends WapAction {
 		$this->assign ( 'res', $res );
 		$this->assign ( 'lists', $lists );
 		$this->assign ( 'tpl', $tplinfo );
+		 $tplinfo ['tpltypename']="yl_content" ;
 		$this->display ( $tplinfo ['tpltypename'] );
 	}
 	public function Reply($id) {

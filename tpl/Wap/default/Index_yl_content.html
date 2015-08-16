@@ -280,7 +280,7 @@ function replyPraise(id){
                    
 		  <ul class="huifu sub" >
 
-		     <li><span style="font-size:12px;"><img src="tpl/static/business/img/commentdefaultIcon.jpg" width="25"><if condition="$va['username'] eq '0' ">匿名<else/>{pigcms:$va.username}</if>回复：{pigcms:$va.msn} <span class="time">{pigcms:$va.time}</span></span></li>
+		     <li><span style="font-size:12px;"><img src="tpl/static/business/img/commentdefaultIcon.jpg" width="25"><if condition="$va['differ']">管理员<else/><if condition="$va['username'] eq '0' ">匿名<else/>{pigcms:$va.username}</if></if>回复：{pigcms:$va.msn} <span class="time">{pigcms:$va.time}</span></span></li>
           </ul> 
         
           </foreach>
