@@ -1,0 +1,72 @@
+
+<foreach name="Reply" item="replylist">
+ <li class="newsmore">
+          <div><img src="tpl/static/business/img/commentdefaultIcon.jpg" width="25"><if condition="$replylist['username'] eq '0' ">匿名<else/>{pigcms:$replylist.username}</if></div>
+          <div class="clr"  style="height: 10px;"></div>
+           <div class="time"><i class="icon  icon1 icon1-6"></i><span style="margin-left:2px;">{pigcms:$replylist.time}</span> </div>
+          <div class="replylistinfo"><p>{pigcms:$replylist.info}</p>
+         
+           
+          </div>
+         
+         <div class="" style="margin-bottom: 10px;">
+					<a class="btnIcon  mr07m replyPraise" id="{pigcms:$replylist.id}"  onclick="replyPraise(this.id)"><i class="icon icon2 icon2-25"></i>{pigcms:$replylist.praise}</a>
+					<a class="btnIcon hhbt czan js1 " rid="39711a"  date="{pigcms:$replylist.id}" href="javascript:void(0)"><i class=""></i>回复</a>
+				</div>
+            <dl class="huifu {pigcms:$replylist.id}"  style="display:none" >
+              <dt><span>　<a  class="hhbt czan js1"  date="{pigcms:$replylist.id}" href="javascript:void(0)" id="close{pigcms:$replylist.id}"></a> 
+                          
+			  <p  class="hhly{pigcms:$val.id}" > <textarea name="info{pigcms:$replylist.id}" id="info{pigcms:$replylist.id}" class="pxtextarea hly{pigcms:$replylist.id}" ></textarea> 
+                              <a class="hhsubmit submit sure" date="{pigcms:$replylist.id}" id="{pigcms:$replylist.id}" href="javascript:void(0)"> 确定</a> </p></span></dt>
+          </dl>
+          <font id="huifu{pigcms:$val.id}"></font>
+           
+         <php></php>
+          <!--回复内容-->
+          <foreach name="replylist['vo']" item="va">
+          
+         
+                   
+		  <ul class="huifu sub" >
+
+		     <li><span style="font-size:12px;"><img src="tpl/static/business/img/commentdefaultIcon.jpg" width="25"><if condition="$va['differ']">管理员<else/><if condition="$va['username'] eq '0' ">匿名<else/>{pigcms:$va.username}</if></if>回复：{pigcms:$va.msn} <span class="time">{pigcms:$va.time}</span></span></li>
+          </ul> 
+        
+          </foreach>
+         </li>
+
+
+
+</foreach>
+   <li  class="green bounceInDown nob ly2" style="display:none" >
+                                
+			<dl>
+                
+			 <dt><textarea name="info" class="pxtextarea" style=" height:60px;" id="infolliu"  placeholder="请输入留言"></textarea></dt>
+			<dt><a id="showcard1"  class="submit" href="javascript:void(0)">提交留言</a> </dt>
+          </dl>
+                  
+		</li>
+		
+		<a><h2 class="first first2" style="position: relative;" id="close2">点击留言</h2></a>
+<script>
+
+$(function(){
+	
+	$(".hhbt").click(function () { 
+		 var objid = $(this).attr("date");
+		  $("."+objid).slideToggle();
+		 
+
+	});  
+
+	$(document).ready(function(){
+		  $(".first").click(function(){
+		  $(".ly2").slideToggle();
+		  });
+		});
+	})
+
+
+
+</script>

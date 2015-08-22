@@ -575,8 +575,8 @@ class IndexAction extends WapAction {
 
 	
 		$lists = $this->convertLinks ( $lists );
-		$Reply = $this->Reply ( $id );
-		
+		$data = $this->Reply ( $id );
+		$this->assign ( "Reply", $data );
 		$this->assign ( 'info', $this->info ); // 分类信息
 		$this->assign ( 'copyright', $this->copyright ); // 版权是否显示
 		$this->assign ( 'res', $res );
@@ -595,8 +595,8 @@ class IndexAction extends WapAction {
 					"leave_id" => $v ['id'] 
 			) )->order ( "time DESC" )->select ();
 		}
+		return $data;
 		
-		$this->assign ( "Reply", $data );
 	}
 	public function replyadd() {
 		if ($username = M ( "Front_user" )->field ( 'name' )->where ( array (
@@ -614,7 +614,9 @@ class IndexAction extends WapAction {
 		}
 		
 		if (M ( "Article_reply" )->add ( $_GET )) {
-			echo 1;
+			$data=$this->Reply($_GET['article_id']);
+			$this->assign ( "Reply", $data );
+			$this->display("reply_html");
 		} else {
 			echo 0;
 		}
@@ -638,7 +640,9 @@ class IndexAction extends WapAction {
 		 $_GET['praise_time']=time();
 		
 		if (M ( "Article_leave" )->add ( $_GET )) {
-			echo 1;
+			$data=$this->Reply($_GET['article_id']);
+			$this->assign ( "Reply", $data );
+			$this->display("reply_html");
 		} else {
 			echo 0;
 		}
