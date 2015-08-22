@@ -18,10 +18,11 @@ class WapuserAction extends WapAction
    		 		 cookie("wapuid",$userinfo['id'],52*7*24*3600);
    		 		
    		 	    if(!$userinfo['status']) {$this->error("您的账号还没有通过管理员审核",U('Index/index',array("token"=>$this->token,"wecha_id"=>$this->wecha_id)));}	
-   		 	     $this->success("登录成功",U('Index/index',array("token"=>$this->token,"wecha_id"=>$this->wecha_id)));
+   		 	     $this->redirect('Index/index',array('token'=>$this->token,"wecha_id"=>$this->wecha_id ));
+   		 	    //$this->success("登录成功",U('Index/index',array("token"=>$this->token,"wecha_id"=>$this->wecha_id)));
    		 	     
    		 	}else{
-   		 		$this->error("用户名或密码错误");
+   		 		$this->error("用户名或密码错误",U('Wapuser/login',array("token"=>$this->token)));
    		 		
    		 	}
    		 	
