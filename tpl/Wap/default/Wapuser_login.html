@@ -1,5 +1,14 @@
 <include file="Wap:header" />
+
+
 <div class='container'>
+<include file="Wap:erro" />
+   <if condition="$_GET['erro']">
+    <script type="text/javascript"> 
+//ZENG.SysMsg.show('邮件格式错误！', "error"); 
+ZENG.SysMsg.show('此板块未对外开放请登录或者注册！', "alert"); 
+</script> 
+ </if>
 	<div class="row">
 		<div class="col-md-12">
 			<div class=" text-center" style="margin-top:10%;">

@@ -347,7 +347,8 @@ class WapAction extends BaseAction{
 		if(!$this->ispublic()){
 			$this->publics=0;
 			if(!$this->islogin()){
-				$this->error("此板块未对外开放请登录或者注册",U('Wapuser/login',array('token'=>$this->token)));
+				 $this->redirect('Wapuser/login',array('token'=>$this->token,'erro'=>1));
+				//$this->error("此板块未对外开放请登录或者注册",U('Wapuser/login',array('token'=>$this->token)));
 			}
 		}else{
 			$this->publics=1;
