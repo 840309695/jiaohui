@@ -51,8 +51,8 @@ oWin.style.display = "block"
 };
 oLay.onclick = function ()
 {
-oLay.style.display = "none";
-oWin.style.display = "none"	
+  oLay.style.display = "none";
+  oWin.style.display = "none"	
 }
 };
 </script>
@@ -64,7 +64,7 @@ oWin.style.display = "none"
 <a class="ui-btn-right_home" href="{pigcms::U('Index/index',array('token'=>$tpl['token']))}"></a>
 </div>
 </div>
-<div id="overlay"></div>
+<div id="overlay" style="z-index: 0;"></div>
 <div id="win">
 <ul class="dropdown"> 
 <volist name="info" id="vo">

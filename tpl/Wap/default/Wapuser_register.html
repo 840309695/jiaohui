@@ -5,17 +5,31 @@
 				<h3>{pigcms:$tpl.wxname}用户注册</h3>
 			</div>
 	<form action='' class='form-signin' role='form'  method="post" >
-		<input type='text' class='form-control input-lg'  placeholder='请输入姓名' required
-			autofocus name="name">
+		<div class="input-group">
+		<input type='text' class='form-control input-lg'  placeholder='请输入真实姓名' required
+			autofocus name="name"  style="border-radius: 6px;">
+		 <span class="input-group-addon" style="color: #F00; font-family:SimSun;background:none;border:none;">*</span>
+		 </div>
+       
 		<div style='height: 10px; clear: both; display: block'></div>
-		<input  
+		<div class="input-group">
+		<input  style="border-radius: 6px;"
 			type='password'
 			class='form-control input-lg'  name="password" placeholder='请输入密码'  required>
+	      <span class="input-group-addon" style="color: #F00; font-family:SimSun;background:none;border:none;">*</span>
+			
+	   </div>
+	
 			<div style='height: 10px; clear: both; display: block'></div>
-			<input
+	<div class="input-group">
+			<input style="border-radius: 6px;"
 			type='text' name="tel"
 			class='form-control input-lg' placeholder='请输入手机号'   pattern="^1[3-9]\d{9}$"  required oninvalid="setCustomValidity('填写正确手机号');" oninput="setCustomValidity('');">
-		 <div style='height: 10px; clear: both; display: block'></div>
+		 <span class="input-group-addon" style="color: #F00; font-family:SimSun;background:none;border:none;">*</span>
+		</div> 
+		 
+		 
+     <div style='height: 10px; clear: both; display: block'></div>
 		
  
     <select class="form-control"  style="width: auto;"  name="group_id">
