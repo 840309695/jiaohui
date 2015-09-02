@@ -1,7 +1,6 @@
 <include file="Wap:header" />
-
-
-<div class='container'>
+<div style="
+    height: 80px;">
 <include file="Wap:erro" />
    <if condition="$_GET['erro']">
     <script type="text/javascript"> 
@@ -9,9 +8,20 @@
 ZENG.SysMsg.show('此板块未对外开放请登录或者注册！', "alert"); 
 </script> 
  </if>
+ </div>
+ <style type="text/css">
+ body{
+    text-align: center;
+
+  }
+
+ </style>
+
+<div class='container'>
+
 	<div class="row">
 		<div class="col-md-12">
-			<div class=" text-center" style="margin-top:10%;">
+			<div class=" text-center" >
 				<div class="logo">
 					<div class="circle"></div>
 					<img id="img" src="{pigcms:$tpl.headerpic}" class="img-circle" width="104" height="104">
