@@ -2,7 +2,7 @@
 function strExists($haystack, $needle) {
 	return ! (strpos ( $haystack, $needle ) === FALSE);
 }
-class IndexAction extends WapAction { 
+class IndexAction extends WapAction {
 	private $tpl; // 微信公共帐号信息
 	private $info; // 分类信息
 	public $wecha_id;
@@ -21,9 +21,10 @@ class IndexAction extends WapAction {
 		}
 		// 父类信息
 		$allClasses = M ( 'Classify' )->where ( array (
-				'token' => $this->_get ( 'token' ),
-				//'status' => 1 
-		) )->order ( 'sorts desc' )->select ();
+				'token' => $this->_get ( 'token' ) 
+		) )
+		// 'status' => 1
+		->order ( 'sorts desc' )->select ();
 		$allClasses = $this->convertLinks ( $allClasses ); // 加外链等信息
 		$info = array ();
 		if ($allClasses) {
@@ -65,42 +66,68 @@ class IndexAction extends WapAction {
 		$this->info = $info;
 		$tpl ['color_id'] = intval ( $tpl ['color_id'] );
 		$this->tpl = $tpl;
-		foreach ($info as $key => $value) {
-			$info[ $key]['read']=0;
+		foreach ( $info as $key => $value ) {
+			$info [$key] ['read'] = 0;
 		}
-		$readlog=unserialize ($_COOKIE["readlog"]);
-		foreach ($readlog as  $k => $v ) {
-			if($info[$v['classid']]){
-				$info[$v['classid']]['read']+=1;
+		$readlog = unserialize ( $_COOKIE ["readlog"] );
+		foreach ( $readlog as $k => $v ) {
+			if ($info [$v ['classid']]) {
+				$info [$v ['classid']] ['read'] += 1;
 			}
-				
 		}
-		$bottomeMenus=$this->bottomeMenus;
-		
-		foreach ($bottomeMenus as $key => $value) {
+		$bottomeMenus = $this->bottomeMenus;
+		/* 为底部菜单添加红点 */
+		$action_count = M ( 'Action' )->where ( array (
+				"token" => $this->token 
+		) )->count ();
+		foreach ( $bottomeMenus as $key => $value ) {
 			
-			//echo $matches[1][0]."<br>";
-			$classid=$this->cl($value['url']);
-			$count=M('Img')->where(array("classid"=>$classid))->count();
-			if($info[$classid]){
-				//echo $count;
-				if($count-$info[$classid]['read']>0){
-					$bottomeMenus[$key]['red']=1;
+			// echo $matches[1][0]."<br>";
+			$classid = $this->cl ( $value ['url'] );
+			$action = $this->al ( $value ['url'] );
+			$count = M ( 'Img' )->where ( array (
+					"classid" => $classid 
+			) )->count ();
+			if ($info [$classid]) {
+				// echo $count;
+				if ($count - $info [$classid] ['read'] > 0) {
+					$bottomeMenus [$key] ['red'] = 1;
 				}
 			}
-		
-		
+			if ($action) {
+				if ($action_count)
+					$bottomeMenus [$key] ['red'] = 1;
+			}
+			
+			if ($value ['vo']) {
+				foreach ( $value ['vo'] as $subk => $subv ) {
+					$actionsub = $this->al ( $subv ['url'] );
+					$classid_sub = $this->cl ( $subv ['url'] );
+					if ($actionsub) {
+						if ($action_count)
+							$bottomeMenus [$key] ['vo'] [$subk] ['red'] = 1;
+					}
+					if ($info [$classid_sub]) {
+						$count_sub = M ( 'Img' )->where ( array (
+								"classid" => $classid_sub 
+						) )->count ();
+						if ($count - $info [$classid] ['read'] > 0) {
+							$bottomeMenus [$key] ['vo'] [$subk] ['red'] = 1;
+						}
+					}
+				}
+			}
 		}
-
-	
-		$this->assign('catemenu',$bottomeMenus);
 		
+		$this->assign ( 'catemenu', $bottomeMenus );
 	}
-	
-	public function cl($url){
-		preg_match_all('#classid\=(\d+)#',$url,$matches);
-		return $matches[1][0];
-		
+	public function cl($url) {
+		preg_match_all ( '#classid\=(\d+)#', $url, $matches );
+		return $matches [1] [0];
+	}
+	public function al($url) {
+		preg_match_all ( '#m\=(\w+)#', $url, $matches );
+		return $matches [1] [0];
 	}
 	public function debug() {
 	}
@@ -162,9 +189,8 @@ class IndexAction extends WapAction {
 		
 		$tpldata ['tpltypeid'] = $tplinfo ['tpltypeid'];
 		$tpldata ['tpltypename'] = $tplinfo ['tpltypename'];
-	
+		
 		foreach ( $info as $k => $v ) {
-			
 			
 			if ($info [$k] ['url'] == '') {
 				$info [$k] ['url'] = U ( 'Index/lists', array (
@@ -213,7 +239,6 @@ class IndexAction extends WapAction {
 				'token' => $this->token 
 		) )->find ();
 		$zd ['code'] = htmlspecialchars_decode ( base64_decode ( $zd ['code'] ), ENT_QUOTES );
-	
 		
 		$this->assign ( 'zd', $zd );
 		$count = count ( $flash );
@@ -225,7 +250,7 @@ class IndexAction extends WapAction {
 		$this->assign ( 'tpl', $this->tpl );
 		$this->assign ( 'copyright', $this->copyright );
 		
-		//$this->tpl ['tpltypename']
+		// $this->tpl ['tpltypename']
 		$this->display ( "1272_index_sf43" );
 	}
 	public function lists() {
@@ -475,13 +500,13 @@ class IndexAction extends WapAction {
 					$flash_db->add ( $arr );
 				}
 			}
-			$readlog=unserialize ($_COOKIE["readlog"]);
+			$readlog = unserialize ( $_COOKIE ["readlog"] );
 			
-			foreach ($res as $k => $v) {
+			foreach ( $res as $k => $v ) {
 				
-				if($readlog[$v['id']] && $v['uptatetime']==$readlog[$v['id']]['update']){
+				if ($readlog [$v ['id']] && $v ['uptatetime'] == $readlog [$v ['id']] ['update']) {
 					
-					$res[$k]['read']=1;
+					$res [$k] ['read'] = 1;
 				}
 			}
 			
@@ -493,7 +518,7 @@ class IndexAction extends WapAction {
 			$this->assign ( 'tpl', $tpldata );
 			$this->assign ( 'copyright', $this->copyright );
 			$this->assign ( 'thisClassInfo', $info );
-			$tpldata ['tpltypename']="101_index";
+			$tpldata ['tpltypename'] = "101_index";
 			
 			$this->display ( $tpldata ['tpltypename'] );
 		}
@@ -566,14 +591,17 @@ class IndexAction extends WapAction {
 			$lists = $li;
 		}
 		
-		$readlog=unserialize ($_COOKIE["readlog"]);
-		if(!$readlog[$res['id']]){
+		$readlog = unserialize ( $_COOKIE ["readlog"] );
+		if (! $readlog [$res ['id']]) {
 			
-     	  $readlog[$res['id']]=array("classid"=>intval ( $classid ),"content"=>$res['id'],"update"=>$res['uptatetime']);
-     	 setCookie("readlog",serialize($readlog),time()+52*7*24*3600);
-	    }
-
-	
+			$readlog [$res ['id']] = array (
+					"classid" => intval ( $classid ),
+					"content" => $res ['id'],
+					"update" => $res ['uptatetime'] 
+			);
+			setCookie ( "readlog", serialize ( $readlog ), time () + 52 * 7 * 24 * 3600 );
+		}
+		
 		$lists = $this->convertLinks ( $lists );
 		$data = $this->Reply ( $id );
 		$this->assign ( "Reply", $data );
@@ -582,7 +610,7 @@ class IndexAction extends WapAction {
 		$this->assign ( 'res', $res );
 		$this->assign ( 'lists', $lists );
 		$this->assign ( 'tpl', $tplinfo );
-		 $tplinfo ['tpltypename']="yl_content" ;
+		$tplinfo ['tpltypename'] = "yl_content";
 		$this->display ( $tplinfo ['tpltypename'] );
 	}
 	public function Reply($id) {
@@ -596,7 +624,6 @@ class IndexAction extends WapAction {
 			) )->order ( "time DESC" )->select ();
 		}
 		return $data;
-		
 	}
 	public function replyadd() {
 		if ($username = M ( "Front_user" )->field ( 'name' )->where ( array (
@@ -614,9 +641,9 @@ class IndexAction extends WapAction {
 		}
 		
 		if (M ( "Article_reply" )->add ( $_GET )) {
-			$data=$this->Reply($_GET['article_id']);
+			$data = $this->Reply ( $_GET ['article_id'] );
 			$this->assign ( "Reply", $data );
-			$this->display("reply_html");
+			$this->display ( "reply_html" );
 		} else {
 			echo 0;
 		}
@@ -637,12 +664,12 @@ class IndexAction extends WapAction {
 			echo 3;
 			die ();
 		}
-		 $_GET['praise_time']=time();
+		$_GET ['praise_time'] = time ();
 		
 		if (M ( "Article_leave" )->add ( $_GET )) {
-			$data=$this->Reply($_GET['article_id']);
+			$data = $this->Reply ( $_GET ['article_id'] );
 			$this->assign ( "Reply", $data );
-			$this->display("reply_html");
+			$this->display ( "reply_html" );
 		} else {
 			echo 0;
 		}
@@ -652,45 +679,39 @@ class IndexAction extends WapAction {
 		
 		$list = $img->where ( "id={$_GET['id']}" )->find ();
 		
-		$time=time()-$list ['praise_time'];
-		if ( $time>180) {
+		$time = time () - $list ['praise_time'];
+		if ($time > 180) {
 			
 			if ($img->where ( "id={$_GET['id']}" )->setInc ( 'praise' )) {
 				$img->where ( "id={$_GET['id']}" )->setField ( "praise_time", time () );
 				$data = $img->where ( "id={$_GET['id']}" )->find ();
 				echo $data ['praise'];
-			}else {
-			  echo 0;
+			} else {
+				echo 0;
 			}
-		}else {
+		} else {
 			echo 0;
 		}
 	}
-	
-	
 	public function replyPraise() {
-		$leave= M ('Article_leave' );
-	
+		$leave = M ( 'Article_leave' );
+		
 		$list = $leave->where ( "id={$_GET['id']}" )->find ();
 		
-		$time=time()-$list ['praise_time'];
-		if ( $time>180) {
+		$time = time () - $list ['praise_time'];
+		if ($time > 180) {
 			
 			if ($leave->where ( "id={$_GET['id']}" )->setInc ( 'praise' )) {
 				$leave->where ( "id={$_GET['id']}" )->setField ( "praise_time", time () );
 				$data = $leave->where ( "id={$_GET['id']}" )->find ();
 				echo $data ['praise'];
-			}else {
+			} else {
 				echo 0;
 			}
-		}else {
+		} else {
 			echo 0;
 		}
 	}
-	
-	
-	
-	
 	public function flash() {
 		$where ['token'] = $this->_get ( 'token', 'trim' );
 		$flash = M ( 'Flash' )->where ( $where )->select ();
