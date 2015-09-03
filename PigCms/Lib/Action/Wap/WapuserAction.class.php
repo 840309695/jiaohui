@@ -49,7 +49,7 @@ class WapuserAction extends WapAction
 			 $id=$this->userdb->add();
 			if($id==true){
 				cookie("wapuid",$id,52*7*24*3600);
-				$this->success('注册成功等待管理审核',U('Index/index',array("token"=>$this->token,"wecha_id"=>$this->wecha_id)));
+				$this->success('注册成功',U('Index/index',array("token"=>$this->token,"wecha_id"=>$this->wecha_id)));
 				
 			}else{
 				$this->error('操作失败');

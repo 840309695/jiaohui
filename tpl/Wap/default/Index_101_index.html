@@ -38,6 +38,24 @@
     </head>
 
     <body id="cate1">
+       <style>
+    .d{
+       position: absolute;
+ 
+      width: 8px;
+    height: 8px;
+    text-align: center;
+  line-height: 16px;
+  background: #df3636;
+  border-radius: 8px;
+      }
+      
+      .link{
+        position: relative;
+      
+      }
+    
+    </style>
     <!--背景音乐-->
     <if condition="$homeInfo['musicurl'] neq false">
 <include file="Index:music"/>
@@ -70,11 +88,11 @@
 
             <volist name="info" id="vo">
                 <li>
-                    <div class="menubtn" <if condition="$vo['read'] neq 1">style="border: 1px solid red;"</if> >
+                    <div class="menubtn" >
                        <a href="<if condition="$vo['url'] eq ''">{pigcms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{pigcms:$vo.url|htmlspecialchars_decode}</if>">
                             <div class="menumesg">
                                 <div class="menuimg"><img src="{pigcms:$vo.img}"></div>
-                                <div class="menutitle">{pigcms:$vo.name}</div>
+                                <div class="menutitle">{pigcms:$vo.name} <if condition="$vo['read'] neq 1"><span class="d"></span></if></div>
                             </div>
                         </a>
                     </div>

@@ -493,7 +493,7 @@ class IndexAction extends WapAction {
 			$this->assign ( 'tpl', $tpldata );
 			$this->assign ( 'copyright', $this->copyright );
 			$this->assign ( 'thisClassInfo', $info );
-			$tpldata ['tpltypename']="104_index";
+			$tpldata ['tpltypename']="101_index";
 			
 			$this->display ( $tpldata ['tpltypename'] );
 		}
