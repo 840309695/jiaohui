@@ -17,12 +17,38 @@ class PersonalAction extends WapAction {
 		$data = $this->action->where ( array (
 				'id' => $_GET ['id'] 
 		) )->find ();
+		
+		
+ 
 		if (time () < $data ['end_time']) {
 			
 			if ($data ['needs_nu'] > $data ['people_nu']) {
+				if($_POST['myaction_id']){
+					$data=M("myaction")->where(array("id"=>$_POST['myaction_id']))->setField('nu',$_POST['nu']);
+					if($data){
+						if($_POST['nu']==0){
+							$this->action->where ("id={$_GET['id']}" )->setDec('people_nu',intval($_POST['nu']));
+							$this->success ( '已经取消' );
+							die;
+						}else{
+							$this->action->where ("id={$_GET['id']}" )->setInc ('people_nu',intval($_POST['nu']));
+							$this->success ( '修改成功' );
+							die;
+								
+						}
+				
+					}else{
+						$this->error ( '修改失败' );
+					}
+				   //die;
+				
+				}
+				
+				
 				if (M ( "Myaction" )->where ( array (
 						"aid" => $_POST ['aid'],
-						"uid" => cookie ( "wapuid" ) 
+						"uid" => cookie ( "wapuid" ) ,
+						"nu"=>array('neq',0)
 				) )->find ()) {
 					$this->error ( "您已经报名了" );
 				}
@@ -48,7 +74,7 @@ class PersonalAction extends WapAction {
 		} else {
 			$this->error ( "活动已结束" );
 		}
-		
+	
 		$this->display ();
 	}
 	public function myaction() {

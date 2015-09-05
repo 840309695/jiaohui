@@ -75,14 +75,20 @@ color: rgb(152, 141, 141);
 				
 			</div>
 		      <?php if(time()<$list['end_time']){?>
-              <label  for="number">请选择人数：</label> <div class="number"><i class="number_old">-</i><input class="priceNumber" readonly="readonly" value="1" type="text" name="nu"><i class="number_add">+</i></div>     
+		           <?php  if(!$myacton){ ?>
+                     <label  for="number">请选择人数：</label> <div class="number"><i class="number_old">-</i><input class="priceNumber" readonly="readonly" value="1" type="text" name="nu"><i class="number_add">+</i></div>     
+                     <?php }else{?>
+                      <div> <label>报名人:</label>{pigcms:$myacton.username}</div>
+                      <label  for="number">修改人数：</label> <div class="number"><i class="number_old">-</i><input class="priceNumber" readonly="readonly" value="{pigcms:$myacton.nu}" type="text" name="nu"><i class="number_add">+</i></div>     
+                      <input type="hidden"  name="myaction_id" value="{pigcms:$myacton.id}">
+                      <?php }?>
                <?php }else{?>
                    <p>活动结束了</p>
-               
+                 
                <?php }?>
 
   <div class="navbar-fixed-bottom btn-signup-lg">
-        <a id="reg_event_btn_enabled" name="reg_event_btn_enabled" href="#" class="btn btn-primary btn-block btn-lg <?php if(time()>$list['end_time']) echo disabled;?> " >我要报名</a
+        <a id="reg_event_btn_enabled" name="reg_event_btn_enabled" href="#" class="btn btn-primary btn-block btn-lg <?php if(time()>$list['end_time']) echo disabled;?> " ><?php  if($myacton){ echo "提交修改";} else{ echo "我要报名";}?></a
       <!--   <input  type="submit"   id="reg_event_btn_enabled" href="" class="btn btn-primary btn-block btn-lg <?php if(time()>$list['end_time']) echo disabled;?> "  value="我要报名">-->
     </div>
 
@@ -127,9 +133,11 @@ $(".number_old").click(function(){
   var n=$(".priceNumber").val();
 
   var num=parseInt(n)-1;
-
+ if(!"{pigcms:$myacton.id}"){
  if(num==0){ return}
-
+ }else{
+	 if(num<0){ return} 
+ }
   $(".priceNumber").val(num);
 
   });

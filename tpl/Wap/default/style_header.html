@@ -1,7 +1,7 @@
 
   
   <header style="">
-				<div class="navbar-left"><div onclick="javascript:if(history.length>=2) { history.go(-1); } else { window.location = ''; }"><div class="glyphicon glyphicon-menu-left"></div></div></div>
+				<div class="navbar-left"><a  style="color: #fff;" href="{pigcms::U('Action/index', array('token' => $token, 'wecha_id' => $wecha_id))}"><div class="glyphicon glyphicon-menu-left"></div></a></div>
                 <div class="navbar-right">
                     <a href="{pigcms::U('Personal/myaction', array('token' => $token, 'wecha_id' => $wecha_id))}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
                 </div>

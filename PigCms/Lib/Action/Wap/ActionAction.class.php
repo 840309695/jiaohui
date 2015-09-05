@@ -42,7 +42,35 @@ class ActionAction extends WapAction{
 			);
 			setCookie ( "actionlog", serialize ( $actionlog ), time () + 52 * 7 * 24 * 3600 );
 		}
+		
+		$user = cookie ( "wapuid" );
+		$Model = new Model ();
+		$sql = "SELECT
+		myaction.id,
+		myaction.uid,
+		myaction.crate_time,
+		myaction.aid,
+		myaction.nu,
+		action.`name` AS title,
+		action.`imgurl` AS url,
+		action.start_time AS stime,
+		action.end_time AS etime,
+		`user`.`name` AS username,
+		`user`.tel
+		FROM
+		pigcms_myaction AS myaction ,
+		pigcms_action AS action ,
+		pigcms_front_user AS `user`
+		WHERE
+		myaction.aid = action.id AND
+		myaction.uid = `user`.id AND
+		myaction.token='{$this->token}' AND
+		myaction.aid = '{$this->_get("id")}'  AND
+		myaction.nu  <> 0  AND
+		myaction.uid =$user";
+		$myacton = $Model->query ( $sql );
 		$this->assign("mapurl",$mapurl);
+		$this->assign("myacton",$myacton[0]);
 		$this->assign("list",$data);
 		$this->display();
 	}
