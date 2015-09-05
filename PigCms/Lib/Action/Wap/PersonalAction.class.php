@@ -98,6 +98,7 @@ class PersonalAction extends WapAction {
 		myaction.aid = action.id AND
 		myaction.uid = `user`.id AND
 		myaction.token='{$this->token}' AND
+		myaction.nu  <> 0  AND
 		myaction.uid =$user";
 		$list = $Model->query ( $sql );
 		$this->assign("list",$list);
