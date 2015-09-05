@@ -75,13 +75,16 @@ class IndexAction extends WapAction {
 				$info [$v ['classid']] ['read'] += 1;
 			}
 		}
+		$actionlog = unserialize( $_COOKIE ["actionlog"] );
 		$bottomeMenus = $this->bottomeMenus;
 		/* 为底部菜单添加红点 */
 		$action_count = M ( 'Action' )->where ( array (
 				"token" => $this->token 
 		) )->count ();
+		
+		$action_count=$action_count-sizeof($actionlog);
 		foreach ( $bottomeMenus as $key => $value ) {
-			
+		
 			// echo $matches[1][0]."<br>";
 			$classid = $this->cl ( $value ['url'] );
 			$action = $this->al ( $value ['url'] );
@@ -95,7 +98,7 @@ class IndexAction extends WapAction {
 				}
 			}
 			if ($action) {
-				if ($action_count)
+				if ($action_count>0)
 					$bottomeMenus [$key] ['red'] = 1;
 			}
 			
@@ -104,7 +107,8 @@ class IndexAction extends WapAction {
 					$actionsub = $this->al ( $subv ['url'] );
 					$classid_sub = $this->cl ( $subv ['url'] );
 					if ($actionsub) {
-						if ($action_count)
+						if ($action_count > 0)
+							
 							$bottomeMenus [$key] ['vo'] [$subk] ['red'] = 1;
 					}
 					if ($info [$classid_sub]) {

@@ -34,6 +34,14 @@ class ActionAction extends WapAction{
 		}
 		
 		$mapurl=$amap->getPointMapLink($data['lng'],$data['lat'],"name");
+		$actionlog = unserialize ( $_COOKIE ["actionlog"] );
+		if (! $actionlog[$data ['id']]) {
+				
+			$actionlog [$data ['id']] = array (
+					"id" => $data ['id']
+			);
+			setCookie ( "actionlog", serialize ( $actionlog ), time () + 52 * 7 * 24 * 3600 );
+		}
 		$this->assign("mapurl",$mapurl);
 		$this->assign("list",$data);
 		$this->display();
