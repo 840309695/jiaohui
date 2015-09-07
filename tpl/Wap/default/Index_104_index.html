@@ -86,7 +86,7 @@
                 <volist name="info" id="vo">
                     <li class="only4" >
                         <a   href="<if condition="$vo['url'] eq ''">{pigcms::U('Wap/Index/lists',array('classid'=>$vo['id'],'token'=>$vo['token']))}<else/>{pigcms:$vo.url|htmlspecialchars_decode}</if>">
-                             <div class="img"><img src="{pigcms:$vo.img}"></div>
+                             <div class="img"><img src="{pigcms:$vo.img}"><span style="font-size:12px;color:gray;font-weight: normal;">{pigcms:$vo.createtime|date="Y-m-d",###}</span></div>
                             <h2 class="link"> <if condition="$vo['read'] neq 1"><span class="d"></span></if>&nbsp;&nbsp;{pigcms:$vo.name}</h2>
                             
                             <p class="onlyheight">{pigcms:$vo.info}</p>

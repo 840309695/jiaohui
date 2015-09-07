@@ -3,6 +3,9 @@ class ActionAction extends WapAction{
 	
 	function _initialize() {
 		parent::_initialize();
+		 if(! $this->islogin()){
+		      $this->redirect('Wapuser/login',array('token'=>$this->token,'erro'=>1));
+		 }
 		$this->assign('staticFilePath', str_replace('./', '/', THEME_PATH . 'common/css/action'));
 		$this->action=M("Action");
 		$this->groupid=M("Front_user")->field('group_id')->where(array("id"=>cookie("wapuid")))->find();

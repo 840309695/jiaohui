@@ -12,7 +12,7 @@
     <volist  name="hostlist" id="list">
     
                 <li>
-                    <a href="{pigcms::U('Action/details',array('token'=>$token,'wechat_id'=>$wecha_id,'id'=>$list['id']))}"><img src="{pigcms:$list.imgurl}" alt="{pigcms:$list.name}"><h3>{pigcms:$list.name}</h3></a>
+                    <a href="{pigcms::U('Action/details',array('token'=>$token,'wechat_id'=>$wecha_id,'id'=>$list['id']))}"><img src="{pigcms:$list.imgurl}" alt="{pigcms:$list.name}"><h3>{pigcms:$list.name}</h3><h3 style="font-size:12px;color:gray;font-weight: normal;" >{pigcms:$list.create_date|substr=0,10}</h3></a>
                 </li>
         </volist>  
                
