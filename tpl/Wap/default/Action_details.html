@@ -78,6 +78,7 @@ color: rgb(152, 141, 141);
 		           <?php  if(!$myacton){ ?>
                      <label  for="number">请选择人数：</label> <div class="number"><i class="number_old">-</i><input class="priceNumber" readonly="readonly" value="1" type="text" name="nu"><i class="number_add">+</i></div>     
                      <?php }else{?>
+					   <p style="color:#62b651"><b>已报名<b></p>
                       <div> <label>报名人:</label>{pigcms:$myacton.username}</div>
                       <label  for="number">修改人数：</label> <div class="number"><i class="number_old">-</i><input class="priceNumber" readonly="readonly" value="{pigcms:$myacton.nu}" type="text" name="nu"><i class="number_add">+</i></div>     
                       <input type="hidden"  name="myaction_id" value="{pigcms:$myacton.id}">
