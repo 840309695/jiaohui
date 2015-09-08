@@ -16,24 +16,31 @@ function showApiInfo(id,name){
 	art.dialog.open('?g=User&m=Index&a=apiInfo&id='+id,{lock:true,title:name+'接口信息',width:830,height:270,yesText:'关闭',background: '#000',opacity: 0.45});
 }
 </script>
+<style>
+.usercontent ul li {
+    width: 328px;
+}
+
+</style>
 <div class="content">
 <div class="usercontent">
 
 <ul>
+<!--  
   <li>
     <a href="###" class="gold" title="查看资金" >
       <p><strong>账户余额：</strong>{pigcms:$thisUser.moneybalance}</p>
       <p>充值数：{pigcms:$thisUser.money}</p>
     </a>
-  </li>
+  </li>-->
 
   <li class="addli">
     <a class="addwx" title="添加公众号" onclick="location.href='{pigcms::U('Index/add')}';">添加公众号</a>
   </li>
-
+<!--  
   <li>
     <a href="index.php?g=User&m=Alipay&a=index" title="会员充值" class="goldbuy">会员充值</a>
-  </li>
+  </li>-->
 
   <li>
     <div class="qqqun">
@@ -43,7 +50,7 @@ function showApiInfo(id,name){
   </li>
 
   <li class="addli">
-    <a class="addbiz" title="添加企业号" onclick="addbiz()">添加企业号</a>
+    <a class="addbiz" title="添加企业号" onclick="addbiz()">我的教会</a>
   </li>
 <script type="text/javascript">
   function addbiz(){

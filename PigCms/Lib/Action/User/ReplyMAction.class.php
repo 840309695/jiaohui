@@ -64,12 +64,12 @@ class ReplyMAction extends UserAction{
 		import("ORG.Util.Page"); // 导入分页类
 		$where = array('token'=>$this->token);
 		
-		$count      = $leave_model->join('pigcms_img ON article_id = pigcms_img.id')->count();// 查询满足要求的总记录数
+		$count      = $leave_model->join('pigcms_img ON article_id = pigcms_img.id')->where(array("pigcms_img.token"=>$this->token))->count();// 查询满足要求的总记录数
 		
 		$Page       = new Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数
 		$show       = $Page->show();// 分页显示输出
 		// 进行分页数据查询 注意limit方法的参数要使用Page类的属性
-		$res=$leave_model->join('pigcms_img ON article_id = pigcms_img.id')->field('pigcms_article_leave.*')->order('pigcms_article_leave.id DESC')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$res=$leave_model->join('pigcms_img ON article_id = pigcms_img.id')->field('pigcms_article_leave.*')->where(array("pigcms_img.token"=>$this->token))->order('pigcms_article_leave.id DESC')->limit($Page->firstRow.','.$Page->listRows)->select();
 		//$res = $leave_model->where($where)->order('id DESC')->limit($Page->firstRow.','.$Page->listRows)->select();
 		foreach($res as $key=>$val){
 			$reply_model = M("article_reply");

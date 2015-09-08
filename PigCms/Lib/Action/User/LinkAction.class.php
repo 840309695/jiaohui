@@ -138,9 +138,9 @@ class LinkAction extends UserAction{
 	}
 	public function modules(){
 		$t=array(
-		array('module'=>'Home','linkcode'=>'{siteUrl}/index.php?g=Wap&m=Index&a=index&token='.$this->token.'&wecha_id={wechat_id}','name'=>'微站首页','sub'=>0,'canselected'=>1,'linkurl'=>'','keyword'=>$this->modules['Home'],'askeyword'=>1),
+// 		array('module'=>'Home','linkcode'=>'{siteUrl}/index.php?g=Wap&m=Index&a=index&token='.$this->token.'&wecha_id={wechat_id}','name'=>'微站首页','sub'=>0,'canselected'=>1,'linkurl'=>'','keyword'=>$this->modules['Home'],'askeyword'=>1),
 		array('module'=>'Home','linkcode'=>'{siteUrl}/index.php?g=Wap&m=Action&a=index&token='.$this->token.'&wecha_id={wechat_id}','name'=>'教会活动','sub'=>0,'canselected'=>1,'linkurl'=>'','keyword'=>$this->modules['Home'],'askeyword'=>1),
-		array('module'=>'Classify','linkcode'=>'{siteUrl}/index.php?g=Wap&m=Index&a=lists&token='.$this->token.'&wecha_id={wechat_id}','name'=>$this->modules['Classify'],'sub'=>1,'canselected'=>0,'linkurl'=>'','keyword'=>'','askeyword'=>0),
+	/* 	array('module'=>'Classify','linkcode'=>'{siteUrl}/index.php?g=Wap&m=Index&a=lists&token='.$this->token.'&wecha_id={wechat_id}','name'=>$this->modules['Classify'],'sub'=>1,'canselected'=>0,'linkurl'=>'','keyword'=>'','askeyword'=>0),
 		array('module'=>'Img','linkcode'=>'{siteUrl}/index.php?g=Wap&m=Index&a=content&token='.$this->token.'&wecha_id={wechat_id}','name'=>$this->modules['Img'],'sub'=>1,'canselected'=>0,'linkurl'=>'','keyword'=>'','askeyword'=>1),
 		array('module'=>'Company','linkcode'=>'{siteUrl}/index.php?g=Wap&m=Company&a=map&token='.$this->token.'&wecha_id={wechat_id}','name'=>$this->modules['Company'],'sub'=>1,'canselected'=>1,'linkurl'=>'','keyword'=>'地图','askeyword'=>1),
 		array('module'=>'Adma','linkcode'=>'{siteUrl}/index.php/show/'.$this->token,'name'=>$this->modules['Adma'],'sub'=>0,'canselected'=>1,'linkurl'=>'','keyword'=>'','askeyword'=>0),
@@ -177,21 +177,21 @@ class LinkAction extends UserAction{
 		array('module'=>'Market','linkcode'=>'{siteUrl}/index.php?g=Wap&m=Market&a=index&token='.$this->token.'&wecha_id={wechat_id}','name'=>$this->modules['Market'],'sub'=>0,'canselected'=>1,'linkurl'=>'','keyword'=>'','askeyword'=>0),
 		array('module'=>'Research','linkcode'=>'','name'=>$this->modules['Research'],'sub'=>1,'canselected'=>0,'linkurl'=>'','keyword'=>'','askeyword'=>0),
 		array('module'=>'Fansign','linkcode'=>'{siteUrl}/index.php?g=Wap&m=Fanssign&a=index&token='.$this->token.'&wecha_id={wechat_id}','name'=>$this->modules['Fansign'],'sub'=>0,'canselected'=>1,'linkurl'=>'','keyword'=>'','askeyword'=>0),
-		array('module'=>'OutsideLink','linkcode'=>'','name'=>$this->modules['OutsideLink'],'sub'=>1,'canselected'=>0,'linkurl'=>'','keyword'=>'','askeyword'=>0),
+		array('module'=>'OutsideLink','linkcode'=>'','name'=>$this->modules['OutsideLink'],'sub'=>1,'canselected'=>0,'linkurl'=>'','keyword'=>'','askeyword'=>0), */
 		
 		);
 		
 		$sub=isset($_GET['sub'])?intval($_GET['sub']):0;
-		foreach ($this->arr as $ka){
-			$className='FunctionLibrary_'.$ka;
-			if (class_exists($className)){
-				$classInstance=new $className($this->token,$sub);
-				$o=$classInstance->index();
-				$canselected=$o['link']?1:0;
-				$s=array('module'=>$ka,'linkcode'=>$o['link'],'name'=>$o['name'],'sub'=>$o['sublinks'],'canselected'=>$canselected,'linkurl'=>'?g=User&m=Link&a=commondetail&module='.$ka.'&iskeyword=0','keyword'=>$o['keyword'],'askeyword'=>0);
-				array_push($t,$s);
-			}
-		}
+// 		foreach ($this->arr as $ka){
+// 			$className='FunctionLibrary_'.$ka;
+// 			if (class_exists($className)){
+// 				$classInstance=new $className($this->token,$sub);
+// 				$o=$classInstance->index();
+// 				$canselected=$o['link']?1:0;
+// 				$s=array('module'=>$ka,'linkcode'=>$o['link'],'name'=>$o['name'],'sub'=>$o['sublinks'],'canselected'=>$canselected,'linkurl'=>'?g=User&m=Link&a=commondetail&module='.$ka.'&iskeyword=0','keyword'=>$o['keyword'],'askeyword'=>0);
+// 				array_push($t,$s);
+// 			}
+// 		}
 		
 		return $t;
 	}

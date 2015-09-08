@@ -167,6 +167,14 @@ class FunctionAction extends UserAction{
 	$man = M('Userinfo')->where(array('token'=>$this->token,'sex'=>1))->count();
 	$woman = M('Userinfo')->where(array('token'=>$this->token,'sex'=>2))->count();
 	$other = M('Userinfo')->where(array('token'=>$this->token,'sex'=>3))->count();
+	//留言统计
+	$leave_model =M("article_leave");
+	$leave_count  = $leave_model->join('pigcms_img ON article_id = pigcms_img.id')->where(array("pigcms_img.token"=>$this->token))->count();
+	$this->assign('leave_count',$leave_count);
+	//活动统计
+	$Action_count=M("Action")->where(array("token"=>$this->token))->count();
+	$this->assign('Action_count',$Action_count);
+	
 	if($man == 0 && $woman == 0 && $other == 0){
 		$man	=	rand(1,50);
 		$woman	=	rand(1,100);
