@@ -86,7 +86,7 @@ function showApiInfo(id,name){
 					<TR>
 					  <TD><p><a href="{pigcms::U('Function/index',array('id'=>$vo['id'],'token'=>$vo['token']))}" title="点击进入功能管理"><img src="{pigcms:$vo.headerpic}" width="40" height="40"></a></p><p>{pigcms:$vo.wxname}</p></TD>
 					  <TD align="center">{pigcms:$thisGroup.name}</TD>
-					  <TD><p>创建时间:{pigcms:$vo.createtime|date="Y-m-d",###}</p><p>到期时间:{pigcms:$viptime|date="Y-m-d",###}</p><p><a href="###" onclick="addFee()" id="smemberss" class="green"><em>升降级vip续费</em></a></p></Td>
+					  <TD><p>创建时间:{pigcms:$vo.createtime|date="Y-m-d",###}</p><p>到期时间:{pigcms:$viptime|date="Y-m-d",###}</p><p><!--  <a href="###" onclick="addFee()" id="smemberss" class="green"><em>升降级vip续费</em></a>--></p></Td>
 					  <TD><p>图文：<php>echo $_SESSION['diynum'].'/'.$group[$_SESSION['gid']]['did'];</php></p></TD>
 					   <TD><p>总请求数:<php>echo $_SESSION['connectnum']</php></p><p> 本月请求数:<php>echo $group[$_SESSION['gid']]['cid'];</php></p></TD>
 					  
